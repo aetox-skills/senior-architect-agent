@@ -1,0 +1,13 @@
+flowchart LR
+  User[User] --> App[React App]
+  App --> TodoList[TodoList Component]
+  TodoList --> TodoStorage[todoStorage Service]
+  TodoStorage --> BrowserStorage[(Browser Storage)]
+
+  BackendAPI[Future Backend API]:::future
+  Database[(Future Database)]:::future
+
+  TodoStorage -. open question .-> BackendAPI
+  BackendAPI -. proposed only .-> Database
+
+  classDef future stroke-dasharray: 5 5;
