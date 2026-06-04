@@ -110,9 +110,8 @@ For raw ideas, create the smallest useful proposal set:
 
 Use Mermaid when a diagram improves clarity.
 
-For v1, do not create SVG files. If a visual export would help later, document
-that SVG is a future presentation or review artifact and keep Mermaid as the
-editable source of truth.
+Create SVG visual artifacts only when they help presentation or review. Generate
+SVG from Mermaid and keep Mermaid as the editable source of truth.
 
 ## 7. Document
 

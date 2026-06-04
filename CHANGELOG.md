@@ -1,15 +1,30 @@
 # Changelog
 
-## v1.0.0 - Flagship Content Readiness
+## v1.1.0 - SVG Visual Artifacts
 
 Pending review.
+
+Added:
+
+- SVG visual artifacts for both example output packages.
+- Documentation updates that define SVG as a generated presentation or review
+  artifact.
+
+Preserved:
+
+- Markdown and Mermaid remain the editable source of truth.
+- No package dependency or SVG export automation was added.
+
+## v1.0.0 - Flagship Content Readiness
+
+Released.
 
 Updated:
 
 - Two operating modes are now first-class:
   Existing System Mapping Mode and Idea-to-Architecture Mode.
 - Markdown and Mermaid remain the editable source of truth.
-- SVG is documented as a future visual artifact, not generated in v1.
+- SVG is documented as a visual artifact role.
 - Thai project core document is the directional source of truth.
 - Optional `agents/openai.yaml` interface metadata is included without becoming
   a core skill dependency.

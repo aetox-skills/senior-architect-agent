@@ -25,18 +25,19 @@ Good diagram candidates:
    real unless evidence or user context supports them.
 7. Use simple, render-safe labels.
 8. Keep Mermaid as the editable source of truth.
-9. Treat SVG as a later visual artifact for presentation or review, not as the
+9. Treat SVG as a visual artifact for presentation or review, not as the
    source of truth.
 
-## SVG In v1
+## SVG Visual Artifacts
 
-Do not create `.svg` files for v1 content readiness.
+Create SVG only when it helps humans review or present the architecture.
+Generate SVG from Mermaid and keep the `.mmd` file as the editable source.
 
-If SVG would help later, document its role briefly in the relevant output:
+When an SVG artifact exists, document its role briefly in the relevant output:
 
 ```txt
 SVG Visual Artifact:
-  Deferred for v1. Mermaid remains the editable source of truth.
+  Available at `diagram.svg`. Mermaid remains the editable source of truth.
 ```
 
 Do not create empty placeholder SVG documents.

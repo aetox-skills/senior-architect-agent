@@ -11,8 +11,8 @@ Failure mode prevented: The agent creates impressive-looking diagrams that are n
 5. Do not include technologies that were not observed or provided.
 6. Split large diagrams instead of making unreadable all-in-one diagrams.
 7. State what each diagram is intended to clarify.
-8. For v1, document future SVG artifacts only when useful. Do not create `.svg`
-   files.
+8. Use SVG only as a generated presentation or review artifact. Keep Mermaid as
+   the editable source of truth.
 
 ## Diagram Types
 

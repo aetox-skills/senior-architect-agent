@@ -96,6 +96,7 @@ Primary outputs:
 - Risk register
 - AI agent notes
 - Mermaid diagrams
+- SVG visual artifacts when useful for presentation or review
 
 ### Idea-to-Architecture Mode
 
@@ -132,6 +133,7 @@ Primary outputs:
 - Risk register
 - AI agent notes
 - Mermaid diagrams
+- SVG visual artifacts when useful for presentation or review
 
 ## Step 1: Intake
 
@@ -250,8 +252,9 @@ Use Mermaid for diagrams when helpful.
 Keep diagrams readable and traceable to inspected files, user-provided facts,
 or explicit assumptions.
 
-Treat SVG as a later visual artifact for presentation or review. Do not use SVG
-as the architecture source of truth.
+Treat SVG as an optional visual artifact for presentation or review. Generate
+it from Mermaid when it helps, and do not use SVG as the architecture source of
+truth.
 
 ## Step 7: Document
 
@@ -292,6 +295,7 @@ Before reporting, validate the outputs:
 - Every assumption is visible.
 - Open questions are explicit.
 - Diagrams match the written map.
+- SVG visual artifacts, when present, match their Mermaid source.
 - Risks are specific and actionable.
 - Recommendations respect existing structure unless redesign was requested.
 - Documentation is lean enough to maintain.

@@ -100,7 +100,7 @@ flowchart LR
 
 ## SVG Visual Artifact
 
-Deferred for v1. Mermaid remains the editable source of truth.
+Available at `diagram.svg`. Mermaid remains the editable source of truth.
 
 ## Next Steps
 
