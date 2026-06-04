@@ -2,6 +2,19 @@
 
 Purpose: Record architecture risks, uncertainty, and practical mitigation options.
 
+## Scope
+
+- Project:
+- Inspection source:
+
+## Confirmed Facts
+
+-
+
+## Reasonable Inferences
+
+-
+
 ## Risks
 
 | Risk | Evidence | Impact | Likelihood | Mitigation |
@@ -18,4 +31,16 @@ Purpose: Record architecture risks, uncertainty, and practical mitigation option
 
 Items considered but not currently treated as architecture risks.
 
-- 
+-
+
+## Decisions
+
+-
+
+## Open Questions
+
+-
+
+## Next Steps
+
+-

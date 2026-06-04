@@ -1,13 +1,22 @@
 ---
 name: senior-architect-agent
-description: Architecture inspection and documentation discipline for AI agents. Use when Codex or another AI agent must understand a software project, map architecture, produce architecture documentation, prepare handoff notes, review boundaries, ask architecture-impacting questions, or propose architecture changes before editing code. Especially useful for codebase onboarding, system design review, refactoring plans, module responsibility mapping, risk analysis, and preventing unsupported assumptions.
+description: >-
+  Architecture inspection and documentation discipline for AI agents. Use when
+  an AI agent must understand a software project, map architecture, produce
+  architecture documentation, prepare handoff notes, review boundaries, ask
+  architecture-impacting questions, or propose architecture changes before
+  editing code.
 ---
 
 # Senior Architect Agent
 
 Use this skill to make the agent understand before it acts.
 
-This skill is not a diagram generator. It is a discipline layer for architecture work. It requires inspection, classification, questioning, mapping, documentation, validation, and reporting before architecture recommendations or code edits.
+This skill is not a diagram generator. It is a discipline layer for
+architecture work.
+
+Require inspection, classification, questioning, mapping, documentation,
+validation, and reporting before architecture recommendations or code edits.
 
 Core flow:
 
@@ -24,13 +33,16 @@ Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report
 5. Ask important architecture questions before final architecture conclusions.
 6. Prefer useful documentation over decorative documentation.
 7. Prefer Markdown and Mermaid before SVG.
-8. Protect existing project structure, naming conventions, and architectural intent unless redesign is explicitly approved.
+8. Protect existing project structure, naming conventions, and architectural
+   intent unless redesign is explicitly approved.
 9. Avoid document bloat. Create only the files needed for the system's complexity.
 10. Refuse unsupported claims.
 
 ## Step 1: Inspect
 
-Inspect available project files, folders, docs, configs, tests, package manifests, build scripts, deployment files, naming patterns, and architecture signals.
+Inspect available project files, folders, docs, configs, tests, package
+manifests, build scripts, deployment files, naming patterns, and architecture
+signals.
 
 Minimum inspection targets when available:
 
@@ -65,7 +77,10 @@ If a category is not present, mark it as not observed. Do not invent it.
 
 ## Step 3: Question
 
-Identify architecture-impacting unknowns before finalizing architecture. Ask questions when missing details could change the map, risk assessment, or recommendation.
+Identify architecture-impacting unknowns before finalizing architecture.
+
+Ask questions when missing details could change the map, risk assessment, or
+recommendation.
 
 Ask only important questions. Do not block on minor details that can be marked as assumptions.
 
@@ -114,7 +129,8 @@ Do not create every template by default. Choose based on actual complexity and u
 
 Before reporting, validate the outputs:
 
-- Every claim is backed by inspected files, user-provided context, or clearly marked inference.
+- Every claim is backed by inspected files, user-provided context, or clearly
+  marked inference.
 - Open questions are explicit.
 - Diagrams match the written map.
 - Risks are specific and actionable.
@@ -146,4 +162,7 @@ Load these files when deeper guidance is needed:
 
 ## Philosophy Reference
 
-Keep operational work concise. Read `docs/philosophy.md` only when the user asks about the reasoning behind the skill or when revising the skill's principles.
+Keep operational work concise.
+
+Read `docs/philosophy.md` only when the user asks about the reasoning behind
+the skill or when revising the skill's principles.

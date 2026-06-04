@@ -6,6 +6,11 @@
 - Requested scope: Document architecture before adding a backend API.
 - Inspection source: Provided file tree and observed signals.
 
+## Inspection Limitations
+
+- The actual source file contents were not provided in this example.
+- Claims are limited to the provided file tree and observed signals.
+
 ## Confirmed Facts
 
 - The app is a React frontend built with Vite.
@@ -30,6 +35,21 @@
 | Todo list | Displays and edits todos | `src/components/TodoList.tsx` |
 | Todo storage service | Persists todos locally | `src/services/todoStorage.ts` |
 
+## Evidence
+
+| Claim | Evidence |
+| --- | --- |
+| React and Vite are present | `package.json` lists React and Vite |
+| Frontend entry point exists | `src/main.tsx` was observed |
+| Todo UI is separated as a component | `src/components/TodoList.tsx` was observed |
+| Todo persistence is local | `src/services/todoStorage.ts` reads and writes browser storage |
+| Backend is not currently observed | No backend, database, API route, or deployment config was provided |
+
+## Decisions
+
+- No final backend architecture decision should be made until persistence
+  ownership and authentication requirements are clarified.
+
 ## Open Questions
 
 - Should the future backend own todo persistence, or should local storage remain as offline cache?
@@ -40,3 +60,9 @@
 
 - Moving from local storage to a backend may require migration or data reset behavior.
 - API design is premature until persistence ownership and authentication requirements are known.
+
+## Next Steps
+
+- Inspect actual source files before editing.
+- Answer backend persistence ownership and authentication questions.
+- Map the new API boundary only after those questions are resolved.

@@ -1,6 +1,9 @@
 # Documentation Rules
 
-Failure mode prevented: The agent creates bloated, generic, or decorative documentation that future maintainers will ignore.
+Failure mode prevented:
+
+The agent creates bloated, generic, or decorative documentation that future
+maintainers will ignore.
 
 ## Rules
 

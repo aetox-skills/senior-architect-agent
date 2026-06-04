@@ -4,15 +4,20 @@ Purpose: Help future AI agents understand the system quickly without repeating a
 
 ## Current Understanding
 
-- 
+-
 
 ## Confirmed Facts
 
-- 
+-
 
 ## Reasonable Inferences
 
-- 
+-
+
+## Evidence
+
+- Files inspected:
+- Context provided:
 
 ## Important Paths
 
@@ -22,16 +27,20 @@ Purpose: Help future AI agents understand the system quickly without repeating a
 
 ## Open Questions
 
-- 
+-
 
 ## Risks
 
-- 
+-
+
+## Decisions
+
+-
 
 ## Safe Next Actions
 
-- 
+-
 
 ## Avoid Until Clarified
 
-- 
+-

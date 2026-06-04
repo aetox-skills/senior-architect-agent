@@ -27,8 +27,12 @@ Ask questions to protect architecture quality, not to delay work.
 Use precise questions:
 
 ```txt
-Open question: Is `src/lib/payments.ts` used only by checkout, or is it intended as a shared billing integration?
-Why it matters: This changes whether payment logic should be documented as a feature module or shared external-service adapter.
+Open question:
+  Is `src/lib/payments.ts` used only by checkout, or is it intended as a
+  shared billing integration?
+Why it matters:
+  This changes whether payment logic should be documented as a feature module
+  or shared external-service adapter.
 ```
 
 ## Priority

@@ -1,14 +1,20 @@
 # Philosophy
 
-This skill exists because AI agents often edit code before they understand architecture.
+This skill exists because AI agents often edit code before they understand
+architecture.
 
-The purpose is to make the agent slow down enough to inspect, question, map, and document the system before it proposes architecture changes or modifies code.
+The purpose is to make the agent slow down enough to inspect, question, map,
+and document the system before it proposes architecture changes or modifies
+code.
 
 ## Core Position
 
 Good architecture work begins with evidence.
 
-The agent must distinguish what it has confirmed from what it has inferred. It must name uncertainty instead of hiding it. It must ask questions when missing information could change the architecture decision.
+The agent must distinguish what it has confirmed from what it has inferred.
+It must name uncertainty instead of hiding it.
+It must ask questions when missing information could change the architecture
+decision.
 
 ## What This Skill Is
 
@@ -26,6 +32,9 @@ The agent must distinguish what it has confirmed from what it has inferred. It m
 
 ## Documentation Standard
 
-Useful documentation beats complete documentation. The agent should create the smallest set of outputs that helps the next human or AI understand the system and act safely.
+Useful documentation beats complete documentation.
+
+The agent should create the smallest set of outputs that helps the next human
+or AI understand the system and act safely.
 
 Decorative diagrams, generic summaries, and fake certainty are failures.

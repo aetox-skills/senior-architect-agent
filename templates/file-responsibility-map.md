@@ -2,6 +2,19 @@
 
 Purpose: Identify what important files and folders own.
 
+## Scope
+
+- Project area:
+- Inspection source:
+
+## Confirmed Facts
+
+-
+
+## Reasonable Inferences
+
+-
+
 ## Important Files And Folders
 
 | Path | Responsibility | Evidence | Notes |
@@ -28,4 +41,20 @@ Purpose: Identify what important files and folders own.
 
 ## Unclear Responsibilities
 
-- 
+-
+
+## Decisions
+
+-
+
+## Open Questions
+
+-
+
+## Risks
+
+-
+
+## Next Steps
+
+-

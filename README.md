@@ -2,7 +2,9 @@
 
 Version: `v0.1.0 - Foundation Map`
 
-This project is a reusable AI agent skill that forces an agent to inspect, understand, question, map, document, and validate a software system before suggesting architecture changes or editing code.
+This project is a reusable AI agent skill that forces an agent to inspect,
+understand, question, map, document, and validate a software system before
+suggesting architecture changes or editing code.
 
 Main slogan:
 
@@ -79,13 +81,20 @@ senior-architect-agent/
 
 ## How To Use
 
-Use this skill when an AI agent is asked to understand a codebase, plan architecture changes, review system structure, document architecture, create handoff notes, or propose redesigns.
+Use this skill when an AI agent is asked to understand a codebase, plan
+architecture changes, review system structure, document architecture, create
+handoff notes, or propose redesigns.
 
-The agent should not begin with code edits. It should inspect the project, classify what exists, ask important questions, map the system, document confirmed facts and uncertainty, then report safe next steps.
+The agent should not begin with code edits. It should inspect the project,
+classify what exists, ask important questions, map the system, document
+confirmed facts and uncertainty, then report safe next steps.
 
 ## Preferred Outputs
 
-Use Markdown first. Use Mermaid diagrams when diagrams help. Generate SVG only when explicitly requested or when Markdown and Mermaid cannot express the architecture clearly enough.
+Use Markdown first. Use Mermaid diagrams when diagrams help.
+
+Generate SVG only when explicitly requested or when Markdown and Mermaid cannot
+express the architecture clearly enough.
 
 ## License
 

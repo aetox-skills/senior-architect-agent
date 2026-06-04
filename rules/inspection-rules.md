@@ -1,6 +1,9 @@
 # Inspection Rules
 
-Failure mode prevented: The agent invents architecture from filenames, framework stereotypes, or user intent without reading the real project.
+Failure mode prevented:
+
+The agent invents architecture from filenames, framework stereotypes, or user
+intent without reading the real project.
 
 ## Rules
 
@@ -8,7 +11,8 @@ Failure mode prevented: The agent invents architecture from filenames, framework
 2. Prefer root-level orientation first, then inspect relevant subdirectories.
 3. Read project docs before replacing them with new assumptions.
 4. Treat configs, package files, lockfiles, tests, and deployment files as architecture signals.
-5. Do not assume a database, backend, AI service, or deployment platform exists unless files or user context show it.
+5. Do not assume a database, backend, AI service, or deployment platform exists
+   unless files or user context show it.
 6. If a file cannot be read, record that limitation.
 7. Keep inspection focused on the requested scope when the project is large.
 

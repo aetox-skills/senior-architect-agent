@@ -1,6 +1,9 @@
 # Anti-Overengineering Rules
 
-Failure mode prevented: The agent turns a small architecture task into a large framework, process, or documentation system.
+Failure mode prevented:
+
+The agent turns a small architecture task into a large framework, process, or
+documentation system.
 
 ## Rules
 

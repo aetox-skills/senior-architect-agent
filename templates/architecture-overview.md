@@ -8,14 +8,15 @@ Purpose: Summarize the observed system architecture without hiding uncertainty.
 - Inspection date:
 - Inspected by:
 - Requested scope:
+- Inspection source:
 
 ## Confirmed Facts
 
-- 
+-
 
 ## Reasonable Inferences
 
-- 
+-
 
 ## System Summary
 
@@ -27,18 +28,24 @@ Describe the system in direct, concrete language.
 | --- | --- | --- |
 |  |  |  |
 
-## Architecture Notes
+## Evidence
 
-- 
+- Key files:
+- Key directories:
+- User-provided context:
+
+## Decisions
+
+-
 
 ## Open Questions
 
-- 
+-
 
 ## Risks
 
-- 
+-
 
 ## Next Steps
 
-- 
+-

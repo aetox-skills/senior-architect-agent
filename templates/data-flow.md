@@ -2,6 +2,19 @@
 
 Purpose: Show how data moves through the observed system.
 
+## Scope
+
+- Workflow or feature:
+- Inspection source:
+
+## Confirmed Facts
+
+-
+
+## Reasonable Inferences
+
+-
+
 ## Data Sources
 
 | Source | Data | Evidence |
@@ -31,8 +44,20 @@ flowchart LR
 
 ## Unclear Data Movement
 
-- 
+-
+
+## Decisions
+
+-
+
+## Open Questions
+
+-
 
 ## Risks
 
-- 
+-
+
+## Next Steps
+
+-

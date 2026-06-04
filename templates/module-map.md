@@ -8,6 +8,10 @@ Purpose: Map major modules and their responsibilities.
 | --- | --- | --- | --- |
 |  |  |  |  |
 
+## Reasonable Inferences
+
+-
+
 ## Shared Modules
 
 | Module | Path | Shared By | Notes |
@@ -20,6 +24,10 @@ Purpose: Map major modules and their responsibilities.
 | --- | --- | --- |
 |  |  |  |
 
+## Decisions
+
+-
+
 ## Module Diagram
 
 ```mermaid
@@ -29,4 +37,12 @@ flowchart LR
 
 ## Open Questions
 
-- 
+-
+
+## Risks
+
+-
+
+## Next Steps
+
+-

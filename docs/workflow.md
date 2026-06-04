@@ -1,6 +1,7 @@
 # Workflow
 
-Use this workflow when inspecting a project, preparing architecture documentation, or proposing architecture changes.
+Use this workflow when inspecting a project, preparing architecture
+documentation, or proposing architecture changes.
 
 ```txt
 Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report
@@ -39,7 +40,8 @@ Sort observed components into architecture areas:
 
 ## 3. Question
 
-Ask questions only when the answer could change an architecture decision, risk, system boundary, module responsibility, data flow, or implementation plan.
+Ask questions only when the answer could change an architecture decision, risk,
+system boundary, module responsibility, data flow, or implementation plan.
 
 If the question is not blocking, record it as an open question and continue.
 

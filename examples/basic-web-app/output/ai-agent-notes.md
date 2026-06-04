@@ -2,7 +2,10 @@
 
 ## Current Understanding
 
-The provided context describes a small React and Vite todo app with local browser persistence. No backend, database, API route, or deployment configuration was observed.
+The provided context describes a small React and Vite todo app with local
+browser persistence.
+
+No backend, database, API route, or deployment configuration was observed.
 
 ## Confirmed Facts
 

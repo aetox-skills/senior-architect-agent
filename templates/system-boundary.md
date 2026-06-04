@@ -8,6 +8,14 @@ Purpose: Define what is inside and outside the observed system.
 - Boundary owner:
 - Inspection source:
 
+## Confirmed Facts
+
+-
+
+## Reasonable Inferences
+
+-
+
 ## Inside The System
 
 | Area | Evidence | Notes |
@@ -22,7 +30,11 @@ Purpose: Define what is inside and outside the observed system.
 
 ## Unknown Boundary Areas
 
-- 
+-
+
+## Decisions
+
+-
 
 ## Boundary Diagram
 
@@ -34,4 +46,8 @@ flowchart LR
 
 ## Risks
 
-- 
+-
+
+## Next Steps
+
+-

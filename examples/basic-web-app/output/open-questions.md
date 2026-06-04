@@ -4,7 +4,7 @@
 
 | Question | Why It Matters | Status |
 | --- | --- | --- |
-| Should the backend become the source of truth for todos? | Determines data ownership, API shape, migration, and offline behavior. | Open |
+| Should the backend own todo persistence? | Determines ownership, API shape, migration, and offline behavior. | Open |
 
 ## Important
 

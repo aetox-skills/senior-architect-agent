@@ -2,6 +2,16 @@
 
 Purpose: Track unknowns that affect architecture understanding or future decisions.
 
+## Scope
+
+- Project:
+- Inspection source:
+
+## Evidence
+
+- Files inspected:
+- Context provided:
+
 ## Blocking
 
 Questions that must be answered before final architecture decisions.
@@ -9,6 +19,14 @@ Questions that must be answered before final architecture decisions.
 | Question | Why It Matters | Owner | Status |
 | --- | --- | --- | --- |
 |  |  |  | Open |
+
+## Decisions Affected
+
+-
+
+## Next Steps
+
+-
 
 ## Important
 

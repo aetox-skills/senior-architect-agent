@@ -7,12 +7,25 @@ Purpose: Document a user, system, or background workflow from trigger to result.
 - Name:
 - Trigger:
 - Result:
+- Inspection source:
+
+## Confirmed Facts
+
+-
+
+## Reasonable Inferences
+
+-
 
 ## Steps
 
 | Step | Actor | Action | Evidence |
 | --- | --- | --- | --- |
 | 1 |  |  |  |
+
+## Decisions
+
+-
 
 ## Sequence Diagram
 
@@ -26,8 +39,12 @@ sequenceDiagram
 
 ## Open Questions
 
-- 
+-
 
 ## Risks
 
-- 
+-
+
+## Next Steps
+
+-

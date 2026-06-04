@@ -9,9 +9,28 @@ Purpose: Record a meaningful architecture decision and the reasoning behind it.
 - Status: Proposed
 - Title:
 
+## Scope
+
+- Project area:
+- Inspection source:
+
 ## Context
 
 What situation required this decision?
+
+## Confirmed Facts
+
+-
+
+## Reasonable Inferences
+
+-
+
+## Evidence
+
+| Evidence | Source |
+| --- | --- |
+|  |  |
 
 ## Options Considered
 
@@ -44,3 +63,11 @@ Explain why this option was selected.
 ## Review Trigger
 
 When should this decision be revisited?
+
+## Open Questions
+
+-
+
+## Next Steps
+
+-
