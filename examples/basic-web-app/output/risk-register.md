@@ -54,7 +54,7 @@
 ## Decisions
 
 - Do not treat future backend or database components as confirmed.
-- Do not recommend a database technology in this v0.1.0 example.
+- Do not recommend a database technology in this example.
 
 ## Open Questions
 

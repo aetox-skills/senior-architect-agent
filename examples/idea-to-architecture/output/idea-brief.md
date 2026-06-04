@@ -52,7 +52,7 @@
 - Are coaches booked with courts, separately, or both?
 - Do member discounts apply to courts, coaching, or the full order?
 - Is payment required before a booking is confirmed?
-- Are refunds and cancellations in scope for v0.1.0?
+- Are refunds and cancellations in initial scope?
 
 ## Decisions Requiring Approval
 

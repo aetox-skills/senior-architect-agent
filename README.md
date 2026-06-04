@@ -1,6 +1,6 @@
 # senior-architect-agent
 
-Version target: `v1.1.0 - SVG Visual Artifacts`
+Version target: `v1.0.0 - Flagship Content Readiness`
 
 This project is a reusable AI agent skill that forces an agent to inspect,
 understand, question, map, document, and validate a software system or raw
@@ -65,9 +65,13 @@ data models, and integrations remain proposed until approved.
    proposal behavior.
 6. Provide optional skill interface metadata without making the core skill
    depend on it.
+7. Include SVG visual artifacts generated from Mermaid example diagrams when
+   they help review or presentation.
 
-`v1.1.0` adds SVG visual artifacts generated from the Mermaid example diagrams.
-Mermaid remains the editable source of truth.
+This is content readiness for a skill, not platform/tooling completion.
+CLI, web UI, plugin platform, automation framework, and exporter system work
+are outside the core scope.
+The project remains a skill, not a tooling platform.
 
 ## File Tree
 
@@ -169,6 +173,9 @@ Mermaid is the editable source of truth for diagrams.
 SVG visual artifacts may be included when they make architecture easier to
 review or present. SVG files are generated artifacts and must not replace
 Markdown and Mermaid as source of truth.
+
+`agents/openai.yaml` is lightweight interface metadata only. The core skill
+does not depend on it.
 
 ## License
 

@@ -1,11 +1,11 @@
 ---
 name: senior-architect-agent
 description: >-
-  Architecture inspection and documentation discipline for AI agents. Use when
-  an AI agent must understand an existing software project, map architecture,
-  produce architecture documentation, prepare handoff notes, review boundaries,
-  ask architecture-impacting questions, propose architecture changes before
-  editing code, or turn a raw idea into a reviewable architecture proposal.
+  Architecture inspection and documentation discipline for AI agents.
+  Use when an AI agent must understand an existing software project,
+  map architecture, produce documentation, prepare handoff notes,
+  ask architecture-impacting questions, propose architecture changes
+  before editing code, or turn a raw idea into a reviewable architecture proposal.
 ---
 
 # Senior Architect Agent
@@ -14,6 +14,11 @@ Use this skill to make the agent understand before it acts.
 
 This skill is not a diagram generator. It is a discipline layer for
 architecture work.
+
+This skill is not a CLI, web UI, plugin platform, automation framework, or
+exporter system.
+
+It remains a skill, not a tooling platform.
 
 Expanded direction:
 

@@ -39,7 +39,7 @@
 
 - Whether identity is required for guests.
 - Whether coach booking is part of booking or a separate module.
-- Whether notifications are in v0.1.0 scope.
+- Whether notifications are in initial scope.
 - Whether audit logging is required for admins.
 
 ## Open Questions

@@ -57,19 +57,30 @@ All components are proposed and require approval before implementation.
 
 ```mermaid
 flowchart LR
-  User[Guest or Member] --> Frontend[Frontend App]
+  %% Idea-to-Architecture Mode.
+  %% All implementation components are proposed, not observed.
+  %% Payment Provider is unknown and requires approval.
+
+  User[Guest or Member]:::actor --> Frontend[Frontend App]:::proposed
   Admin[Admin] --> Frontend
-  Frontend --> API[Backend API]
-  API --> Booking[Booking Service]
-  API --> Coach[Coach Service]
-  API --> Pricing[Pricing Service]
-  API --> AdminModule[Admin Module]
-  API --> Payment[Payment Adapter]
-  Booking --> DB[(Database)]
+
+  Frontend --> API[Backend API]:::proposed
+  API --> Booking[Booking Service]:::proposed
+  API --> Coach[Coach Service]:::proposed
+  API --> Pricing[Pricing Service]:::proposed
+  API --> AdminModule[Admin Module]:::proposed
+  API --> Payment[Payment Adapter]:::proposed
+
+  Booking --> DB[(Database)]:::proposed
   Coach --> DB
   Pricing --> DB
   AdminModule --> DB
-  Payment --> Provider[Payment Provider]
+
+  Payment --> Provider[Payment Provider - approval required]:::unknown
+
+  classDef actor fill:#fff,stroke:#555;
+  classDef proposed stroke-dasharray: 5 5;
+  classDef unknown stroke-dasharray: 2 4;
 ```
 
 ## Tradeoffs

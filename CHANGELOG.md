@@ -1,34 +1,26 @@
 # Changelog
 
-## v1.1.0 - SVG Visual Artifacts
+## Unreleased - v1 Flagship Content Readiness
 
 Pending review.
 
 Added:
 
+- Two first-class operating modes:
+  Existing System Mapping Mode and Idea-to-Architecture Mode.
+- Templates and example output packages for both operating modes.
 - SVG visual artifacts for both example output packages.
-- Documentation updates that define SVG as a generated presentation or review
-  artifact.
-
-Preserved:
-
-- Markdown and Mermaid remain the editable source of truth.
-- No package dependency or SVG export automation was added.
-
-## v1.0.0 - Flagship Content Readiness
-
-Released.
 
 Updated:
 
-- Two operating modes are now first-class:
-  Existing System Mapping Mode and Idea-to-Architecture Mode.
 - Markdown and Mermaid remain the editable source of truth.
-- SVG is documented as a visual artifact role.
+- SVG is documented as a secondary visual artifact for review, presentation,
+  README embedding, or human-facing explanation.
 - Thai project core document is the directional source of truth.
 - Optional `agents/openai.yaml` interface metadata is included without becoming
   a core skill dependency.
-- Existing-system and idea-to-architecture examples demonstrate the core flow.
+- CLI, web UI, plugin platform, automation framework, and exporter system work
+  are outside the core scope.
 
 ## v0.1.0 - Foundation Map
 
@@ -47,7 +39,5 @@ Added:
 
 Not included yet:
 
-- Automation scripts.
-- SVG generation.
 - Large reference catalogs.
 - Framework-specific architecture rules.
