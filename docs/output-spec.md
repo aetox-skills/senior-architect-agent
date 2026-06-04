@@ -48,6 +48,12 @@ Mermaid as the editable source of truth.
 
 ## Minimum Architecture Output
 
+Use the smallest output that still protects architectural understanding.
+
+For small or low-risk work, a compact architecture note may be enough when it
+still separates confirmed facts, inferences, assumptions, unknowns, risks, and
+decisions.
+
 For a small existing system, the minimum useful output is usually:
 
 - Architecture overview
@@ -63,6 +69,10 @@ For larger existing systems, add:
 - File responsibility map
 - Risk register
 - Decision records
+
+Use larger output packages when the work spans multiple modules, has unclear
+boundaries, changes persistence, adds integrations, touches payments or
+security, changes major workflows, or needs future-agent handoff.
 
 For a small raw idea, the minimum useful output is usually:
 

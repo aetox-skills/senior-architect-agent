@@ -26,7 +26,7 @@ decision.
 ## What This Skill Is Not
 
 - It is not a diagram generator.
-- It is not documentation automation for its own sake.
+- It is not documentation production for its own sake.
 - It is not a refactoring license.
 - It is not a replacement for project-specific architectural judgment.
 

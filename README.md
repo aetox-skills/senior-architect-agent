@@ -68,10 +68,13 @@ data models, and integrations remain proposed until approved.
 7. Include SVG visual artifacts generated from Mermaid example diagrams when
    they help review or presentation.
 
-This is content readiness for a skill, not platform/tooling completion.
-CLI, web UI, plugin platform, automation framework, and exporter system work
-are outside the core scope.
-The project remains a skill, not a tooling platform.
+This is content readiness for a skill: Markdown architecture docs, Mermaid
+diagram sources, optional SVG visual artifacts, rules, templates, and examples.
+
+For small or low-risk work, the skill should use a compact architecture note
+instead of producing every output file. Full output packages are reserved for
+multi-module work, unclear boundaries, persistence, integrations,
+payments/security, major workflow changes, or future-agent handoff.
 
 ## File Tree
 
@@ -159,6 +162,10 @@ proposal.
 When files exist, the agent should not begin with code edits. It should inspect
 the project, classify what exists, ask important questions, map the system,
 document confirmed facts and uncertainty, then report safe next steps.
+
+Agents may use available inspection tools such as file search, file tree
+inspection, git history, validators, and Mermaid checks. Tool output is
+evidence to interpret, not architecture by itself.
 
 When only an idea exists, the agent should not pretend a system exists. It
 should clarify intent, mark assumptions, propose architecture, identify

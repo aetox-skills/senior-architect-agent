@@ -15,10 +15,8 @@ Use this skill to make the agent understand before it acts.
 This skill is not a diagram generator. It is a discipline layer for
 architecture work.
 
-This skill is not a CLI, web UI, plugin platform, automation framework, or
-exporter system.
-
-It remains a skill, not a tooling platform.
+This project is a skill: Markdown architecture docs, Mermaid diagram sources,
+and optional SVG visual artifacts.
 
 Expanded direction:
 
@@ -64,6 +62,11 @@ Intake
 10. Refuse unsupported claims.
 11. When starting from an idea, never present proposed architecture as existing
     implementation.
+12. Use fast-path output for small or low-risk tasks.
+13. Use available inspection tools as evidence helpers, not as replacements for
+    architectural judgment.
+14. Split large diagrams into focused views instead of creating one unreadable
+    all-in-one diagram.
 
 ## Operating Modes
 
@@ -147,8 +150,13 @@ Read the user's request and identify available inputs:
 - Existing files, project structure, docs, configs, tests, or deployment files
 - Raw idea, product concept, feature request, or business/system goal
 - Explicit constraints, priorities, and requested outputs
+- The narrowest useful project area or module scope
 
 Do not start with architecture conclusions.
+
+Prefer module-level mapping when the user asks about one module or workflow.
+Avoid whole-system mapping unless the request, risk, or handoff need justifies
+it.
 
 ## Step 2: Select Mode
 
@@ -185,6 +193,10 @@ Minimum inspection targets when available:
 - Deployment or infrastructure config
 - Existing architecture notes or ADRs
 
+Use available inspection tools such as file search, file tree inspection, git
+history, validators, and Mermaid checks when they help. Treat tool output as
+evidence to interpret, not as architecture by itself.
+
 Record only what is visible from files, explicitly provided by the user, or
 clearly labeled as assumption.
 
@@ -195,7 +207,7 @@ Classify the system or proposed system into applicable areas:
 - Frontend
 - Backend
 - Database
-- AI or automation
+- AI or background processes
 - External services
 - Infrastructure
 - Shared modules
@@ -234,6 +246,15 @@ Separate:
 Produce maps that help humans and future AI agents understand the system
 quickly.
 
+Fast-path threshold:
+
+- For small or low-risk tasks, keep the output to a compact architecture note.
+- Use a full output package only for multi-module work, unclear boundaries,
+  persistence, integrations, payments, security, major workflow changes, or
+  future-agent handoff.
+- Even on the fast path, still inspect, classify, question, map, validate, and
+  report in compact form.
+
 For existing systems, use the smallest useful set:
 
 - Architecture overview
@@ -256,6 +277,13 @@ Use Mermaid for diagrams when helpful.
 
 Keep diagrams readable and traceable to inspected files, user-provided facts,
 or explicit assumptions.
+
+For large systems, split diagrams by architecture question:
+
+- Boundary
+- Module relationships
+- Workflow
+- Data flow
 
 Treat SVG as an optional visual artifact for presentation or review. Generate
 it from Mermaid when it helps, and do not use SVG as the architecture source of

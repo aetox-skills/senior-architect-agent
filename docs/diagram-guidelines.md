@@ -27,6 +27,7 @@ Good diagram candidates:
 8. Keep Mermaid as the editable source of truth.
 9. Treat SVG as a visual artifact for presentation or review, not as the
    source of truth.
+10. Let one diagram answer one architecture question.
 
 ## SVG Visual Artifacts
 
@@ -55,3 +56,13 @@ flowchart LR
 
 If a diagram becomes hard to read, split it into multiple diagrams instead of
 adding more visual complexity.
+
+Useful decompositions:
+
+- Boundary view
+- Module relationship view
+- Workflow view
+- Data-flow view
+
+Do not force every module into one diagram when focused views are easier to
+review.

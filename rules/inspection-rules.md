@@ -15,6 +15,9 @@ intent without reading the real project.
    unless files or user context show it.
 6. If a file cannot be read, record that limitation.
 7. Keep inspection focused on the requested scope when the project is large.
+8. Prefer the narrowest useful scope before mapping the whole system.
+9. Use available inspection tools to gather evidence faster, then interpret the
+   evidence before making architecture claims.
 
 ## Minimum Evidence
 
@@ -27,3 +30,5 @@ Before documenting architecture, gather evidence for:
 - External integrations
 - Build and runtime path
 - Testing or validation surface
+
+Tool output can support evidence, but it is not architecture by itself.

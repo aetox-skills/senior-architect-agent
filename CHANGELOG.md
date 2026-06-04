@@ -19,8 +19,12 @@ Updated:
 - Thai project core document is the directional source of truth.
 - Optional `agents/openai.yaml` interface metadata is included without becoming
   a core skill dependency.
-- CLI, web UI, plugin platform, automation framework, and exporter system work
-  are outside the core scope.
+- Core scope is expressed as a skill package: Markdown architecture docs,
+  Mermaid diagram sources, optional SVG visual artifacts, rules, templates, and
+  examples.
+- Fast-path guidance now prevents small tasks from turning into full output
+  packages.
+- Diagram guidance now emphasizes focused views for large systems.
 
 ## v0.1.0 - Foundation Map
 

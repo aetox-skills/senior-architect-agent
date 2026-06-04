@@ -13,6 +13,7 @@ Failure mode prevented: The agent creates impressive-looking diagrams that are n
 7. State what each diagram is intended to clarify.
 8. Use SVG only as a generated presentation or review artifact. Keep Mermaid as
    the editable source of truth.
+9. Let one diagram answer one architecture question.
 
 ## Diagram Types
 
@@ -23,3 +24,10 @@ Use:
 - `classDiagram` only when relationships between domain types matter.
 
 Avoid diagrams when text is clearer.
+
+Split large systems into focused views:
+
+- Boundary
+- Module relationships
+- Workflow
+- Data flow

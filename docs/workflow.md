@@ -22,8 +22,12 @@ Read the user request and identify whether the input is:
 - Existing project files, docs, configs, tests, or deployment artifacts
 - A raw idea, product concept, feature request, or business/system goal
 - A mix of existing system evidence and proposed future changes
+- A narrow module, workflow, or whole-system scope
 
 Do not start with an architecture conclusion.
+
+Use the narrowest useful scope. Prefer module-level mapping when the user asks
+about one module or workflow.
 
 ## 2. Select Mode
 
@@ -54,6 +58,10 @@ Inspect files that reveal system shape when available:
 - Tests
 - Deployment and infrastructure files
 
+Use available inspection tools such as file search, file tree inspection, git
+history, validators, and Mermaid checks when they help. Treat their output as
+evidence to interpret, not as architecture by itself.
+
 For raw ideas, extract the user's intent, domain terms, constraints, user
 types, feature list, and success goals.
 
@@ -66,7 +74,7 @@ Sort observed or proposed components into architecture areas:
 - Frontend
 - Backend
 - Database
-- AI or automation
+- AI or background processes
 - External services
 - Infrastructure
 - Shared modules
@@ -108,7 +116,16 @@ For raw ideas, create the smallest useful proposal set:
 - Data model draft
 - Decision options
 
+Use a fast path for small or low-risk work: produce a compact architecture note
+instead of a full output package. Use a full package for multi-module work,
+unclear boundaries, persistence, integrations, payments, security, major
+workflow changes, or future-agent handoff.
+
 Use Mermaid when a diagram improves clarity.
+
+For large systems, split diagrams by purpose, such as boundary, module,
+workflow, and data-flow views. Do not use one diagram when several focused
+views would be clearer.
 
 Create SVG visual artifacts only when they help presentation or review. Generate
 SVG from Mermaid and keep Mermaid as the editable source of truth.
