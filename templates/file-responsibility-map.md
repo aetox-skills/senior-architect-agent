@@ -15,6 +15,10 @@ Purpose: Identify what important files and folders own.
 
 -
 
+## Assumptions
+
+-
+
 ## Important Files And Folders
 
 | Path | Responsibility | Evidence | Notes |
@@ -40,6 +44,10 @@ Purpose: Identify what important files and folders own.
 |  |  |
 
 ## Unclear Responsibilities
+
+-
+
+## Unknowns
 
 -
 

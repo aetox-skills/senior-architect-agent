@@ -12,6 +12,10 @@ Purpose: Map major modules and their responsibilities.
 
 -
 
+## Assumptions
+
+-
+
 ## Shared Modules
 
 | Module | Path | Shared By | Notes |
@@ -23,6 +27,10 @@ Purpose: Map major modules and their responsibilities.
 | Module | Path | Why Unclear |
 | --- | --- | --- |
 |  |  |  |
+
+## Unknowns
+
+-
 
 ## Decisions
 

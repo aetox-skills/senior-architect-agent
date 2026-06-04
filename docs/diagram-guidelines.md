@@ -20,7 +20,26 @@ Good diagram candidates:
 2. Label inferred nodes as inferred in the surrounding text.
 3. Keep diagrams small enough to read.
 4. Avoid showing implementation details that do not affect architecture.
-5. Do not use SVG unless the user asks for it or Mermaid is insufficient.
+5. Do not create fantasy architecture.
+6. Do not show backend, database, AI, infrastructure, or external services as
+   real unless evidence or user context supports them.
+7. Use simple, render-safe labels.
+8. Keep Mermaid as the editable source of truth.
+9. Treat SVG as a later visual artifact for presentation or review, not as the
+   source of truth.
+
+## SVG In v1
+
+Do not create `.svg` files for v1 content readiness.
+
+If SVG would help later, document its role briefly in the relevant output:
+
+```txt
+SVG Visual Artifact:
+  Deferred for v1. Mermaid remains the editable source of truth.
+```
+
+Do not create empty placeholder SVG documents.
 
 ## Mermaid Style
 
@@ -33,4 +52,5 @@ flowchart LR
   API --> DB[(Database)]
 ```
 
-If a diagram becomes hard to read, split it into multiple diagrams instead of adding more visual complexity.
+If a diagram becomes hard to read, split it into multiple diagrams instead of
+adding more visual complexity.

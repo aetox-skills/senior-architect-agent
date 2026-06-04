@@ -16,6 +16,10 @@ Purpose: Propose important workflows for a system idea.
 
 -
 
+## Proposed Architecture Status
+
+- All workflow steps in this file are proposed until approved.
+
 ## Proposed Steps
 
 | Step | Actor | Action | Status |
@@ -33,6 +37,10 @@ sequenceDiagram
 ```
 
 ## Open Questions
+
+-
+
+## Unknowns
 
 -
 

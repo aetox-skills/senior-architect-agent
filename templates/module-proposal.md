@@ -16,6 +16,10 @@ Purpose: Propose module responsibilities for a system idea.
 
 -
 
+## Proposed Architecture Status
+
+- All modules in this file are proposed until approved.
+
 ## Proposed Modules
 
 | Module | Responsibility | Depends On | Status |
@@ -29,6 +33,10 @@ Purpose: Propose module responsibilities for a system idea.
 |  |  | Proposed |
 
 ## Open Questions
+
+-
+
+## Unknowns
 
 -
 

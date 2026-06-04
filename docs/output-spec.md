@@ -40,10 +40,13 @@ Use Mermaid for diagrams when useful:
 - `flowchart`
 - `sequenceDiagram`
 - `classDiagram`
-- `C4-style flowchart` using Mermaid nodes
+- C4-style flowcharts using Mermaid nodes
 
-Use SVG only when explicitly requested or when Mermaid cannot represent the
-needed visual clearly.
+For v1, do not create SVG files.
+
+SVG may be used later as a visual artifact for presentation or review when a
+complex architecture needs a clearer visual export. SVG must not replace
+Markdown and Mermaid as the editable source of truth.
 
 ## Minimum Architecture Output
 
@@ -78,6 +81,17 @@ For larger ideas, add:
 - Decision options
 - Risk register
 - Mermaid diagram
+
+## SVG Visual Artifact
+
+When an output package would benefit from SVG later, add a short note such as:
+
+```txt
+SVG Visual Artifact:
+  Deferred for v1. Mermaid remains the editable source of truth.
+```
+
+Do not create an empty placeholder file.
 
 ## Traceability
 

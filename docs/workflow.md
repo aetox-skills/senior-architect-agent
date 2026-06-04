@@ -39,7 +39,7 @@ request, or business/system goal exists.
 If both exist, map the existing system first and label new architecture as
 proposed.
 
-## 3. Inspect Or Extract Idea
+## 3. Inspect or Extract Idea
 
 Inspect files that reveal system shape when available:
 
@@ -109,6 +109,10 @@ For raw ideas, create the smallest useful proposal set:
 - Decision options
 
 Use Mermaid when a diagram improves clarity.
+
+For v1, do not create SVG files. If a visual export would help later, document
+that SVG is a future presentation or review artifact and keep Mermaid as the
+editable source of truth.
 
 ## 7. Document
 

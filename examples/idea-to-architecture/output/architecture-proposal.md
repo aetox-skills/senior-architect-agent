@@ -42,16 +42,16 @@ All components are proposed and require approval before implementation.
 
 ## Proposed Components
 
-| Component | Responsibility | Status |
-| --- | --- | --- |
-| Frontend app | Booking, member, coach, and admin UI. | Proposed |
-| Backend API | Coordinates booking, pricing, payment, and admin actions. | Proposed |
-| Booking service | Owns court availability and booking lifecycle. | Proposed |
-| Coach service | Owns coach schedules and assignment rules. | Proposed |
-| Pricing service | Calculates prices and member discounts. | Proposed |
-| Payment adapter | Integrates with an external payment provider. | Proposed |
-| Admin module | Manages courts, coaches, discounts, and bookings. | Proposed |
-| Database | Stores users, courts, coaches, bookings, payments, discounts. | Proposed |
+| Component | Responsibility | Status | Rationale |
+| --- | --- | --- | --- |
+| Frontend app | User and admin UI. | Proposed | Entry point for workflows. |
+| Backend API | Coordinates domain actions. | Proposed | Keeps rules outside UI. |
+| Booking service | Court availability and bookings. | Proposed | Owns slot lifecycle. |
+| Coach service | Coach schedules and assignments. | Proposed | Separates coach rules. |
+| Pricing service | Prices and member discounts. | Proposed | Isolates pricing rules. |
+| Payment adapter | External payment integration. | Proposed | Isolates provider details. |
+| Admin module | Operational management. | Proposed | Protects admin workflows. |
+| Database | Durable business records. | Proposed | Stores booking state. |
 
 ## Proposed Boundary
 
@@ -97,6 +97,10 @@ flowchart LR
 - Payment-before-confirmation rule.
 - Account requirement for members and guests.
 - Admin role scope.
+
+## SVG Visual Artifact
+
+Deferred for v1. Mermaid remains the editable source of truth.
 
 ## Next Steps
 

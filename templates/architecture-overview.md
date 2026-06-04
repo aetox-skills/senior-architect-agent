@@ -18,6 +18,10 @@ Purpose: Summarize the observed system architecture without hiding uncertainty.
 
 -
 
+## Assumptions
+
+-
+
 ## System Summary
 
 Describe the system in direct, concrete language.
@@ -39,6 +43,10 @@ Describe the system in direct, concrete language.
 -
 
 ## Open Questions
+
+-
+
+## Unknowns
 
 -
 

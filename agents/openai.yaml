@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior Architect Agent"
+  short_description: "Architecture mapping for systems and ideas"
+  default_prompt: "Use $senior-architect-agent to map this system or idea before proposing architecture changes."

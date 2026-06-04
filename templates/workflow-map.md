@@ -17,6 +17,10 @@ Purpose: Document a user, system, or background workflow from trigger to result.
 
 -
 
+## Assumptions
+
+-
+
 ## Steps
 
 | Step | Actor | Action | Evidence |
@@ -38,6 +42,10 @@ sequenceDiagram
 ```
 
 ## Open Questions
+
+-
+
+## Unknowns
 
 -
 

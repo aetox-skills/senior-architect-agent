@@ -27,7 +27,15 @@ Purpose: Preserve the user's raw idea before turning it into architecture.
 
 -
 
+## Proposed Scope
+
+-
+
 ## Open Questions
+
+-
+
+## Unknowns
 
 -
 

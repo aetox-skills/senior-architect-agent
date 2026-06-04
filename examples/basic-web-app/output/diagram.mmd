@@ -1,8 +1,11 @@
 flowchart LR
   %% Observed from provided file tree and signals.
+  %% Future Backend API and Future Database are not observed.
+  %% Dotted edges are open questions, not confirmed architecture.
+
   User[User] --> App
 
-  subgraph Browser["Observed browser boundary"]
+  subgraph BrowserBoundary[Observed Browser Boundary]
     App[React App]
     TodoList[TodoList Component]
     TodoStorage[todoStorage Service]
@@ -13,11 +16,10 @@ flowchart LR
     TodoStorage --> BrowserStorage
   end
 
-  %% Not observed. Included only because the user request is before adding a backend.
-  BackendAPI[Future Backend API<br/>not observed]:::future
-  Database[(Future Database<br/>not observed)]:::future
+  BackendAPI[Future Backend API]:::future
+  Database[(Future Database)]:::future
 
-  TodoStorage -. "open question: backend persistence" .-> BackendAPI
-  BackendAPI -. "open question: database ownership" .-> Database
+  TodoStorage -.-> BackendAPI
+  BackendAPI -.-> Database
 
   classDef future stroke-dasharray: 5 5;

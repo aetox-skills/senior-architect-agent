@@ -16,6 +16,10 @@ Purpose: Define what is inside and outside the observed system.
 
 -
 
+## Assumptions
+
+-
+
 ## Inside The System
 
 | Area | Evidence | Notes |

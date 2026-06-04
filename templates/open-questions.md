@@ -12,6 +12,18 @@ Purpose: Track unknowns that affect architecture understanding or future decisio
 - Files inspected:
 - Context provided:
 
+## Confirmed Facts
+
+-
+
+## Reasonable Inferences
+
+-
+
+## Assumptions
+
+-
+
 ## Blocking
 
 Questions that must be answered before final architecture decisions.

@@ -20,6 +20,8 @@ Purpose: Turn a raw idea into a reviewable proposed architecture.
 
 Describe the proposed system in direct, concrete language.
 
+All architecture in this file is proposed until approved.
+
 ## Design Rationale
 
 - Explain why each major proposed component exists.
@@ -48,6 +50,10 @@ flowchart LR
 
 -
 
+## Unknowns
+
+-
+
 ## Risks
 
 -
@@ -55,6 +61,10 @@ flowchart LR
 ## Decisions Requiring Approval
 
 -
+
+## SVG Visual Artifact
+
+Deferred for v1. Mermaid remains the editable source of truth.
 
 ## Next Steps
 

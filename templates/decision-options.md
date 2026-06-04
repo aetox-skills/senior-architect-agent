@@ -16,6 +16,10 @@ Purpose: Compare architecture choices that require approval.
 
 -
 
+## Proposed Architecture Status
+
+- All options in this file are proposed until approved.
+
 ## Options
 
 | Option | Benefits | Costs | Risks | Status |
@@ -29,6 +33,14 @@ Purpose: Compare architecture choices that require approval.
 - Status: Requires approval
 
 ## Open Questions
+
+-
+
+## Unknowns
+
+-
+
+## Risks
 
 -
 

@@ -15,6 +15,12 @@ Use this skill to make the agent understand before it acts.
 This skill is not a diagram generator. It is a discipline layer for
 architecture work.
 
+Expanded direction:
+
+> This skill helps AI agents unfold existing systems and raw ideas into
+> architecture maps that humans and future AI agents can understand, review,
+> and continue from.
+
 Require inspection, classification, questioning, mapping, documentation,
 validation, and reporting before architecture recommendations or code edits.
 
@@ -22,7 +28,7 @@ This skill supports both existing systems and raw ideas. In both cases, the
 agent must separate what is known from what is inferred, proposed, unknown, or
 awaiting approval.
 
-Core flow:
+Core flow for both modes:
 
 ```txt
 Intake
@@ -89,6 +95,7 @@ Primary outputs:
 - Open questions
 - Risk register
 - AI agent notes
+- Mermaid diagrams
 
 ### Idea-to-Architecture Mode
 
@@ -124,6 +131,7 @@ Primary outputs:
 - Open questions
 - Risk register
 - AI agent notes
+- Mermaid diagrams
 
 ## Step 1: Intake
 
@@ -145,7 +153,7 @@ Choose one operating mode:
 If both exist, map the existing system first and mark new ideas as proposed
 changes.
 
-## Step 3: Inspect Or Extract Idea
+## Step 3: Inspect or Extract Idea
 
 Inspect available evidence.
 
@@ -242,6 +250,9 @@ Use Mermaid for diagrams when helpful.
 Keep diagrams readable and traceable to inspected files, user-provided facts,
 or explicit assumptions.
 
+Treat SVG as a later visual artifact for presentation or review. Do not use SVG
+as the architecture source of truth.
+
 ## Step 7: Document
 
 Use templates from `templates/` when creating architecture outputs:
@@ -266,6 +277,10 @@ Use templates from `templates/` when creating architecture outputs:
 Do not create every template by default.
 
 Choose based on actual complexity and user need.
+
+`agents/openai.yaml`, when present, is interface metadata only. The core skill
+must remain usable from `SKILL.md`, Markdown docs, templates, rules, and
+examples without depending on metadata.
 
 ## Step 8: Validate
 

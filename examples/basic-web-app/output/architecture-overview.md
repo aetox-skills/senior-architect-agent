@@ -64,6 +64,10 @@
 - API design is premature until persistence ownership and authentication
   requirements are known.
 
+## SVG Visual Artifact
+
+Deferred for v1. Mermaid remains the editable source of truth.
+
 ## Next Steps
 
 - Inspect actual source files before editing.

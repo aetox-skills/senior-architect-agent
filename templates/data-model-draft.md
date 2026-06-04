@@ -16,6 +16,10 @@ Purpose: Draft data entities for a proposed system without claiming they exist.
 
 -
 
+## Proposed Architecture Status
+
+- All entities and relationships in this file are proposed until approved.
+
 ## Proposed Entities
 
 | Entity | Purpose | Key Fields | Status |

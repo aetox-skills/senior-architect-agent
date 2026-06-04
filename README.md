@@ -1,6 +1,6 @@
 # senior-architect-agent
 
-Version: `v0.1.0 - Foundation Map`
+Version target: `v1.0.0 - Flagship Content Readiness`
 
 This project is a reusable AI agent skill that forces an agent to inspect,
 understand, question, map, document, and validate a software system or raw
@@ -9,6 +9,12 @@ system idea before suggesting architecture changes or editing code.
 Main slogan:
 
 > This skill does not make AI code faster. It makes AI understand before it acts.
+
+Expanded direction:
+
+> This skill helps AI agents unfold existing systems and raw ideas into
+> architecture maps that humans and future AI agents can understand, review,
+> and continue from.
 
 ## Purpose
 
@@ -47,15 +53,18 @@ data models, and integrations remain proposed until approved.
 
 ## Implementation Plan
 
-`v0.1.0` focuses on the foundation only:
+`v1.0.0` focuses on flagship content readiness:
 
-1. Define a strict, practical `SKILL.md`.
-2. Provide a small operating workflow covering intake, mode selection,
+1. Define a strict, practical `SKILL.md` for both operating modes.
+2. Provide an operating workflow covering intake, mode selection,
    inspection or idea extraction, classification, questioning, mapping,
    documentation, validation, and reporting.
 3. Add compact rule files that prevent common AI agent failure modes.
 4. Add reusable templates for architecture outputs.
-5. Include one small example showing correct behavior.
+5. Include small examples for existing-system mapping and idea-to-architecture
+   proposal behavior.
+6. Provide optional skill interface metadata without making the core skill
+   depend on it.
 
 ## File Tree
 
@@ -66,12 +75,16 @@ senior-architect-agent/
   LICENSE
   CHANGELOG.md
 
+  agents/
+    openai.yaml
+
   docs/
     philosophy.md
     workflow.md
     output-spec.md
     diagram-guidelines.md
     question-framework.md
+    project-core-th-final.md
 
   rules/
     inspection-rules.md
@@ -146,8 +159,11 @@ tradeoffs, and list decisions requiring approval.
 
 Use Markdown first. Use Mermaid diagrams when diagrams help.
 
-Generate SVG only when explicitly requested or when Markdown and Mermaid cannot
-express the architecture clearly enough.
+Mermaid is the editable source of truth for diagrams.
+
+SVG visual artifacts are deferred for v1. They may be added later as
+presentation or review artifacts when they make complex architecture easier to
+understand, but they must not replace Markdown and Mermaid as source of truth.
 
 ## License
 

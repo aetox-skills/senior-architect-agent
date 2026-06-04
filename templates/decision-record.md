@@ -26,6 +26,10 @@ What situation required this decision?
 
 -
 
+## Assumptions
+
+-
+
 ## Evidence
 
 | Evidence | Source |
@@ -59,6 +63,10 @@ Explain why this option was selected.
 ### Unknown
 
 - 
+
+## Decisions Requiring Approval
+
+-
 
 ## Review Trigger
 

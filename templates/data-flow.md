@@ -15,6 +15,10 @@ Purpose: Show how data moves through the observed system.
 
 -
 
+## Assumptions
+
+-
+
 ## Data Sources
 
 | Source | Data | Evidence |
@@ -43,6 +47,10 @@ flowchart LR
 ```
 
 ## Unclear Data Movement
+
+-
+
+## Unknowns
 
 -
 

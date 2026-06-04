@@ -15,6 +15,10 @@ Purpose: Record architecture risks, uncertainty, and practical mitigation option
 
 -
 
+## Assumptions
+
+-
+
 ## Risks
 
 | Risk | Evidence | Impact | Likelihood | Mitigation |
@@ -26,6 +30,10 @@ Purpose: Record architecture risks, uncertainty, and practical mitigation option
 | Uncertainty | Why It Matters | Next Step |
 | --- | --- | --- |
 |  |  |  |
+
+## Unknowns
+
+-
 
 ## Non-Risks
 

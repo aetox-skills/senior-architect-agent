@@ -14,6 +14,10 @@ Purpose: Help future AI agents understand the system quickly without repeating a
 
 -
 
+## Assumptions
+
+-
+
 ## Evidence
 
 - Files inspected:
@@ -26,6 +30,10 @@ Purpose: Help future AI agents understand the system quickly without repeating a
 |  |  |
 
 ## Open Questions
+
+-
+
+## Unknowns
 
 -
 

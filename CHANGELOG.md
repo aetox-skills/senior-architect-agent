@@ -1,5 +1,20 @@
 # Changelog
 
+## v1.0.0 - Flagship Content Readiness
+
+Pending review.
+
+Updated:
+
+- Two operating modes are now first-class:
+  Existing System Mapping Mode and Idea-to-Architecture Mode.
+- Markdown and Mermaid remain the editable source of truth.
+- SVG is documented as a future visual artifact, not generated in v1.
+- Thai project core document is the directional source of truth.
+- Optional `agents/openai.yaml` interface metadata is included without becoming
+  a core skill dependency.
+- Existing-system and idea-to-architecture examples demonstrate the core flow.
+
 ## v0.1.0 - Foundation Map
 
 Initial foundation release.
