@@ -25,7 +25,15 @@ awaiting approval.
 Core flow:
 
 ```txt
-Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report
+Intake
+-> Select Mode
+-> Inspect or Extract Idea
+-> Classify
+-> Question
+-> Map
+-> Document
+-> Validate
+-> Report
 ```
 
 ## Operating Rules
@@ -33,13 +41,15 @@ Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report
 1. Never design before inspecting the real system.
 2. Never modify code before understanding the relevant architecture.
 3. Never assume silently.
-4. Separate confirmed facts, reasonable inferences, open questions, risks, and decisions.
+4. Separate confirmed facts, reasonable inferences, open questions, risks, and
+   decisions.
 5. Ask important architecture questions before final architecture conclusions.
 6. Prefer useful documentation over decorative documentation.
 7. Prefer Markdown and Mermaid before SVG.
 8. Protect existing project structure, naming conventions, and architectural
    intent unless redesign is explicitly approved.
-9. Avoid document bloat. Create only the files needed for the system's complexity.
+9. Avoid document bloat. Create only the files needed for the system's
+   complexity.
 10. Refuse unsupported claims.
 11. When starting from an idea, never present proposed architecture as existing
     implementation.
@@ -50,7 +60,7 @@ Choose the mode before producing architecture output.
 
 ### Existing System Mapping Mode
 
-Use this mode when project files, codebase structure, existing documentation,
+Use this mode when codebase files, project structure, existing documentation,
 configs, tests, or deployment files are available.
 
 Goal:
@@ -64,6 +74,8 @@ Discipline:
 - Separate confirmed facts, reasonable inferences, open questions, risks, and
   decisions.
 - Mark missing categories as not observed.
+- Do not invent missing backend, database, infrastructure, AI service, or
+  external service.
 - Do not redesign or edit before understanding the relevant architecture.
 
 Primary outputs:
@@ -90,9 +102,13 @@ Goal:
 Discipline:
 
 - Question-first.
+- Proposal-first.
 - Preserve the user's intent.
+- Ask architecture-impacting questions.
 - Mark all assumptions clearly.
-- Label architecture as proposed until approved.
+- Produce a useful first architecture draft using explicit assumptions.
+- Mark all modules, workflows, data models, integrations, and boundaries as
+  proposed until approved.
 - Explain tradeoffs and decisions requiring approval.
 - Do not claim that proposed modules, data models, workflows, or integrations
   already exist.
@@ -109,7 +125,27 @@ Primary outputs:
 - Risk register
 - AI agent notes
 
-## Step 1: Inspect
+## Step 1: Intake
+
+Read the user's request and identify available inputs:
+
+- Existing files, project structure, docs, configs, tests, or deployment files
+- Raw idea, product concept, feature request, or business/system goal
+- Explicit constraints, priorities, and requested outputs
+
+Do not start with architecture conclusions.
+
+## Step 2: Select Mode
+
+Choose one operating mode:
+
+- Existing System Mapping Mode when existing project evidence is available.
+- Idea-to-Architecture Mode when no implementation is available.
+
+If both exist, map the existing system first and mark new ideas as proposed
+changes.
+
+## Step 3: Inspect Or Extract Idea
 
 Inspect available evidence.
 
@@ -137,7 +173,7 @@ Minimum inspection targets when available:
 Record only what is visible from files, explicitly provided by the user, or
 clearly labeled as assumption.
 
-## Step 2: Classify
+## Step 4: Classify
 
 Classify the system or proposed system into applicable areas:
 
@@ -156,7 +192,7 @@ In Existing System Mapping Mode, mark missing categories as not observed.
 In Idea-to-Architecture Mode, mark categories as proposed, assumed, unknown, or
 not in scope. Do not present proposed architecture as confirmed fact.
 
-## Step 3: Question
+## Step 5: Question
 
 Identify architecture-impacting unknowns before finalizing architecture.
 
@@ -178,9 +214,10 @@ Separate:
 - Decisions still needed
 - Decisions requiring approval
 
-## Step 4: Map
+## Step 6: Map
 
-Produce maps that help humans and future AI agents understand the system quickly.
+Produce maps that help humans and future AI agents understand the system
+quickly.
 
 For existing systems, use the smallest useful set:
 
@@ -200,9 +237,12 @@ For raw ideas, use the smallest useful proposal set:
 - Data model draft
 - Decision options
 
-Use Mermaid for diagrams when helpful. Keep diagrams readable and traceable to inspected files.
+Use Mermaid for diagrams when helpful.
 
-## Step 5: Document
+Keep diagrams readable and traceable to inspected files, user-provided facts,
+or explicit assumptions.
+
+## Step 7: Document
 
 Use templates from `templates/` when creating architecture outputs:
 
@@ -223,9 +263,11 @@ Use templates from `templates/` when creating architecture outputs:
 - `data-model-draft.md`
 - `decision-options.md`
 
-Do not create every template by default. Choose based on actual complexity and user need.
+Do not create every template by default.
 
-## Step 6: Validate
+Choose based on actual complexity and user need.
+
+## Step 8: Validate
 
 Before reporting, validate the outputs:
 
@@ -239,7 +281,7 @@ Before reporting, validate the outputs:
 - Recommendations respect existing structure unless redesign was requested.
 - Documentation is lean enough to maintain.
 
-## Step 7: Report
+## Step 9: Report
 
 Report with this structure when appropriate:
 

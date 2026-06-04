@@ -1,6 +1,7 @@
 flowchart LR
   %% Idea-to-Architecture Mode.
-  %% All nodes are proposed, not observed implementation.
+  %% All system components are proposed, not observed implementation.
+  %% Payment Provider is unknown and requires approval.
 
   Guest[Guest]:::actor --> Frontend[Frontend App]:::proposed
   Member[Member]:::actor --> Frontend
@@ -18,7 +19,7 @@ flowchart LR
   Pricing --> DB
   AdminModule --> DB
 
-  Payment --> Provider[Payment Provider<br/>requires approval]:::unknown
+  Payment --> Provider[Payment Provider]:::unknown
 
   classDef actor fill:#fff,stroke:#555;
   classDef proposed stroke-dasharray: 5 5;

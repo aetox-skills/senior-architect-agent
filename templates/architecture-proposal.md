@@ -20,6 +20,12 @@ Purpose: Turn a raw idea into a reviewable proposed architecture.
 
 Describe the proposed system in direct, concrete language.
 
+## Design Rationale
+
+- Explain why each major proposed component exists.
+- Tie rationale to user-provided facts, assumptions, or open questions.
+- Keep all rationale proposal-level until approved.
+
 ## Proposed Components
 
 | Component | Responsibility | Status | Rationale |

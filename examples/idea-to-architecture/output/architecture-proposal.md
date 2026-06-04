@@ -28,6 +28,18 @@ module, and database.
 
 All components are proposed and require approval before implementation.
 
+## Design Rationale
+
+- A frontend app is proposed because guests, members, and admins need distinct
+  interaction surfaces.
+- A backend API is proposed to keep booking, pricing, payment, and admin rules
+  outside the UI.
+- Separate booking, coach, and pricing services are proposed because court
+  availability, coach scheduling, and discounts can change independently.
+- A payment adapter is proposed to isolate external payment provider details.
+- A database is proposed because bookings, members, discounts, and payments need
+  durable records.
+
 ## Proposed Components
 
 | Component | Responsibility | Status |

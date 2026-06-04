@@ -50,7 +50,9 @@ data models, and integrations remain proposed until approved.
 `v0.1.0` focuses on the foundation only:
 
 1. Define a strict, practical `SKILL.md`.
-2. Provide a small operating workflow: `Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report`.
+2. Provide a small operating workflow covering intake, mode selection,
+   inspection or idea extraction, classification, questioning, mapping,
+   documentation, validation, and reporting.
 3. Add compact rule files that prevent common AI agent failure modes.
 4. Add reusable templates for architecture outputs.
 5. Include one small example showing correct behavior.
