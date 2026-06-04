@@ -1,0 +1,25 @@
+flowchart LR
+  %% Idea-to-Architecture Mode.
+  %% All nodes are proposed, not observed implementation.
+
+  Guest[Guest]:::actor --> Frontend[Frontend App]:::proposed
+  Member[Member]:::actor --> Frontend
+  Admin[Admin]:::actor --> Frontend
+
+  Frontend --> API[Backend API]:::proposed
+  API --> Booking[Booking Service]:::proposed
+  API --> Coach[Coach Service]:::proposed
+  API --> Pricing[Pricing Service]:::proposed
+  API --> AdminModule[Admin Module]:::proposed
+  API --> Payment[Payment Adapter]:::proposed
+
+  Booking --> DB[(Database)]:::proposed
+  Coach --> DB
+  Pricing --> DB
+  AdminModule --> DB
+
+  Payment --> Provider[Payment Provider<br/>requires approval]:::unknown
+
+  classDef actor fill:#fff,stroke:#555;
+  classDef proposed stroke-dasharray: 5 5;
+  classDef unknown stroke-dasharray: 2 4;

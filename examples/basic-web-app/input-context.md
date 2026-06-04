@@ -20,6 +20,12 @@ basic-web-app/
 
 Document the architecture before adding a backend API.
 
+## Inspection Limitations
+
+- Only the file tree and observed signals are provided.
+- Actual source file contents are not provided.
+- The app is not executed in this example.
+
 ## Observed Signals
 
 - `package.json` lists React and Vite.

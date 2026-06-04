@@ -1,5 +1,17 @@
 # AI Agent Notes
 
+## Scope
+
+- Project: `basic-web-app`
+- Purpose: Handoff notes for future AI agents before backend work.
+- Inspection source: Provided file tree and observed signals.
+
+## Inspection Limitations
+
+- File contents were not inspected in this example.
+- Runtime behavior was not executed.
+- Backend, database, auth, deployment, and tests were not observed.
+
 ## Current Understanding
 
 The provided context describes a small React and Vite todo app with local
@@ -19,11 +31,32 @@ No backend, database, API route, or deployment configuration was observed.
 - The current system is client-only.
 - `todoStorage.ts` is the safest current boundary for future persistence changes.
 
+## Evidence
+
+| Claim | Evidence |
+| --- | --- |
+| React and Vite are used | `package.json` lists React and Vite. |
+| App starts from `src/main.tsx` | Observed signal says it mounts the React app. |
+| Todo interactions live in `TodoList.tsx` | Observed signal says it owns rendering and interactions. |
+| Todo persistence is local | `todoStorage.ts` reads and writes browser storage. |
+| Backend is not confirmed | No backend or API route was observed. |
+
 ## Open Questions
 
 - Should backend storage replace browser storage or synchronize with it?
 - Is authentication required?
 - Is multi-device sync required?
+
+## Risks
+
+- Designing backend endpoints before deciding the source of truth.
+- Losing existing browser-stored todos during persistence migration.
+- Mixing API calls into UI components instead of preserving a service boundary.
+
+## Decisions
+
+- Treat backend API and database as future, not confirmed current components.
+- Inspect source files before editing.
 
 ## Safe Next Actions
 

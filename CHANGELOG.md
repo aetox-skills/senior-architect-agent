@@ -10,7 +10,10 @@ Added:
 - Practical workflow documentation for `Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report`.
 - Rule files for inspection, questions, documentation, diagrams, anti-overengineering, and AI handoff.
 - Markdown templates for core architecture outputs.
-- Small basic web app example showing confirmed facts, inferences, questions, diagrams, and handoff notes.
+- Basic web app example showing the full Foundation Map output package:
+  architecture overview, system boundary, module map, data flow, workflow map,
+  file responsibility map, open questions, risk register, handoff notes, and a
+  Mermaid diagram.
 
 Not included yet:
 

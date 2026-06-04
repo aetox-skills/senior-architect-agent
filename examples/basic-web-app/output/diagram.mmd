@@ -1,13 +1,23 @@
 flowchart LR
-  User[User] --> App[React App]
-  App --> TodoList[TodoList Component]
-  TodoList --> TodoStorage[todoStorage Service]
-  TodoStorage --> BrowserStorage[(Browser Storage)]
+  %% Observed from provided file tree and signals.
+  User[User] --> App
 
-  BackendAPI[Future Backend API]:::future
-  Database[(Future Database)]:::future
+  subgraph Browser["Observed browser boundary"]
+    App[React App]
+    TodoList[TodoList Component]
+    TodoStorage[todoStorage Service]
+    BrowserStorage[(Browser Storage)]
 
-  TodoStorage -. open question .-> BackendAPI
-  BackendAPI -. proposed only .-> Database
+    App --> TodoList
+    TodoList --> TodoStorage
+    TodoStorage --> BrowserStorage
+  end
+
+  %% Not observed. Included only because the user request is before adding a backend.
+  BackendAPI[Future Backend API<br/>not observed]:::future
+  Database[(Future Database<br/>not observed)]:::future
+
+  TodoStorage -. "open question: backend persistence" .-> BackendAPI
+  BackendAPI -. "open question: database ownership" .-> Database
 
   classDef future stroke-dasharray: 5 5;

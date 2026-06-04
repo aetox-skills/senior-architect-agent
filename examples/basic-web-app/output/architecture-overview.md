@@ -52,14 +52,17 @@
 
 ## Open Questions
 
-- Should the future backend own todo persistence, or should local storage remain as offline cache?
+- Should the future backend own todo persistence, or should local storage remain
+  as offline cache?
 - Will users authenticate before accessing todos?
 - Is multi-device sync required?
 
 ## Risks
 
-- Moving from local storage to a backend may require migration or data reset behavior.
-- API design is premature until persistence ownership and authentication requirements are known.
+- Moving from local storage to a backend may require migration or data reset
+  behavior.
+- API design is premature until persistence ownership and authentication
+  requirements are known.
 
 ## Next Steps
 

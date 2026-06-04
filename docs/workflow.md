@@ -1,7 +1,7 @@
 # Workflow
 
 Use this workflow when inspecting a project, preparing architecture
-documentation, or proposing architecture changes.
+documentation, or turning a raw idea into a reviewable architecture proposal.
 
 ```txt
 Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report
@@ -9,9 +9,13 @@ Inspect -> Classify -> Question -> Map -> Document -> Validate -> Report
 
 ## 1. Inspect
 
-Read the actual project structure before drawing conclusions.
+Start by selecting the operating mode.
 
-Inspect files that reveal system shape:
+Use Existing System Mapping Mode when files, code, docs, configs, tests, or
+deployment artifacts exist. Read the actual project structure before drawing
+conclusions.
+
+Inspect files that reveal system shape when available:
 
 - Root tree and workspace layout
 - README and docs
@@ -24,9 +28,15 @@ Inspect files that reveal system shape:
 - Tests
 - Deployment and infrastructure files
 
+Use Idea-to-Architecture Mode when only a raw idea, product concept, feature
+request, or business/system goal exists. Inspect the user's intent, domain
+terms, constraints, user types, feature list, and success goals.
+
+In idea mode, do not present proposed architecture as existing architecture.
+
 ## 2. Classify
 
-Sort observed components into architecture areas:
+Sort observed or proposed components into architecture areas:
 
 - Frontend
 - Backend
@@ -38,16 +48,25 @@ Sort observed components into architecture areas:
 - Tests and quality gates
 - Unknown or unclear
 
+In Existing System Mapping Mode, mark missing categories as not observed.
+
+In Idea-to-Architecture Mode, mark categories as proposed, assumed, unknown, or
+out of scope.
+
 ## 3. Question
 
 Ask questions only when the answer could change an architecture decision, risk,
-system boundary, module responsibility, data flow, or implementation plan.
+system boundary, module responsibility, data flow, workflow, data model, or
+implementation plan.
 
-If the question is not blocking, record it as an open question and continue.
+Existing systems are evidence-first: ask after inspecting what can be found.
+
+Raw ideas are question-first: ask important questions before presenting a
+proposal, then continue with explicit assumptions when safe.
 
 ## 4. Map
 
-Create the smallest useful set of maps:
+For existing systems, create the smallest useful set of maps:
 
 - System boundary
 - Module map
@@ -55,19 +74,36 @@ Create the smallest useful set of maps:
 - Workflow map
 - File responsibility map
 
+For raw ideas, create the smallest useful proposal set:
+
+- Idea brief
+- Architecture proposal
+- Module proposal
+- Workflow proposal
+- Data model draft
+- Decision options
+
 Use Mermaid when a diagram improves clarity.
 
 ## 5. Document
 
 Use templates from `templates/`. Do not create every template by default.
 
-Write in clear English. Keep claims traceable to inspected files or user-provided context.
+Write in clear English.
+
+For existing systems, keep claims traceable to inspected files or user-provided
+context.
+
+For raw ideas, keep proposals traceable to user intent and explicit
+assumptions.
 
 ## 6. Validate
 
-Check that documentation matches the inspected system:
+Check that documentation matches the selected mode:
 
 - Claims are supported or marked as inference.
+- Proposed architecture is labeled as proposed.
+- Assumptions are visible.
 - Open questions are not hidden.
 - Diagrams match the written description.
 - Risks are specific.
@@ -80,7 +116,10 @@ End with a concise report:
 - What was inspected
 - What is confirmed
 - What is inferred
+- What is proposed
+- What is assumed
 - What remains unknown
 - What risks exist
+- What decisions require approval
 - What was documented
 - What should happen next

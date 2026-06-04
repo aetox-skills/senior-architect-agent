@@ -4,15 +4,32 @@ This file defines the expected shape of architecture outputs.
 
 ## Required Separation
 
-Every architecture output should separate:
+Every architecture output should separate the categories that apply:
 
+- Confirmed architecture
 - Confirmed facts
 - Reasonable inferences
+- Proposed architecture
+- Assumptions
 - Open questions
 - Risks
-- Decisions
+- Decisions made
+- Decisions requiring approval
 
 Do not mix these categories in a single undifferentiated summary.
+
+## Architecture Status Labels
+
+Use these labels consistently:
+
+- `Confirmed architecture`: Architecture observed in files, docs, or explicit
+  user-provided system context.
+- `Confirmed`: Supported by inspected files or explicit user-provided facts.
+- `Inferred`: Reasonable from available evidence, but not directly confirmed.
+- `Proposed`: Suggested architecture for review, not approved or implemented.
+- `Assumed`: Temporary premise used to make progress.
+- `Unknown`: Important information not yet available.
+- `Requires approval`: A decision the user or owner must accept before work.
 
 ## Preferred Formats
 
@@ -30,14 +47,14 @@ needed visual clearly.
 
 ## Minimum Architecture Output
 
-For a small system, the minimum useful output is usually:
+For a small existing system, the minimum useful output is usually:
 
 - Architecture overview
 - Module map
 - Open questions
 - AI agent notes
 
-For larger systems, add:
+For larger existing systems, add:
 
 - System boundary
 - Data flow
@@ -45,6 +62,22 @@ For larger systems, add:
 - File responsibility map
 - Risk register
 - Decision records
+
+For a small raw idea, the minimum useful output is usually:
+
+- Idea brief
+- Architecture proposal
+- Open questions
+- AI agent notes
+
+For larger ideas, add:
+
+- Module proposal
+- Workflow proposal
+- Data model draft
+- Decision options
+- Risk register
+- Mermaid diagram
 
 ## Traceability
 
@@ -60,4 +93,17 @@ Inference:
   `next.config.*` are present.
 Open question:
   Which deployment platform is production?
+```
+
+Idea-mode example:
+
+```txt
+Confirmed:
+  The user wants member discounts and payments.
+Assumption:
+  Members need accounts to receive discounts.
+Proposed:
+  Add a booking service, payment integration, and admin management module.
+Requires approval:
+  Whether coaches are bookable resources, service providers, or both.
 ```
