@@ -64,6 +64,10 @@
 
 ```mermaid
 flowchart LR
+  %% Existing System Mapping Mode.
+  %% Future backend and database are not observed.
+  %% Dotted edges are open questions, not confirmed architecture.
+
   User[User] --> App
 
   subgraph Browser["Observed browser boundary"]
@@ -76,13 +80,13 @@ flowchart LR
     TodoStorage --> BrowserStorage
   end
 
-  BackendAPI[Future Backend API<br/>not observed]:::future
-  Database[(Future Database<br/>not observed)]:::future
+  BackendAPI[Future Backend API]:::unknown
+  Database[(Future Database)]:::unknown
 
-  TodoStorage -. open question .-> BackendAPI
-  BackendAPI -. open question .-> Database
+  TodoStorage -.-> BackendAPI
+  BackendAPI -.-> Database
 
-  classDef future stroke-dasharray: 5 5;
+  classDef unknown stroke-dasharray: 5 5;
 ```
 
 ## Open Questions
