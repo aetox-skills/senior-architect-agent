@@ -1,8 +1,35 @@
 # Changelog
 
-## Unreleased - v1 Flagship Content Readiness
+## Unreleased
 
-Pending review.
+Pending future changes.
+
+## v1.1.0 - Right-Sized Architecture Passes
+
+Release focus: reduce model load without weakening architecture discipline.
+
+Added:
+
+- `Scan Mode`, `Focus Mode`, and `Full Mode` pass levels.
+- Compact Architecture Note output for low-risk Scan Mode work.
+- Inspection budget guidance for large repositories.
+- Existing architecture context reuse before re-mapping stable areas.
+- Validation checks for selected pass level, inspection scope, skipped areas,
+  discipline labels, and risks.
+
+Updated:
+
+- Mermaid diagrams are generated only when requested, required for handoff, or
+  needed to clarify cross-module relationships.
+- Model requirements now describe small work as `Scan Mode` rather than
+  fast-path.
+- README now uses clearer search and discovery terms for AI architecture skill,
+  existing system mapping, architecture documentation, Mermaid diagrams, and AI
+  agent handoff.
+
+## v1.0.0 - Flagship Content Readiness
+
+Flagship content readiness release.
 
 Added:
 

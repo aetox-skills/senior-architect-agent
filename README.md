@@ -1,14 +1,19 @@
 # senior-architect-agent
 
-Version target: `v1.0.0 - Flagship Content Readiness`
+Current release: `v1.1.0 - Right-Sized Architecture Passes`
 
-`senior-architect-agent` is an AI architecture skill for architecture mapping,
-existing system mapping, architecture documentation, Mermaid diagrams, and AI
-agent handoff.
+Senior Architect Agent is an AI architecture skill for existing system mapping,
+software architecture documentation, architecture mapping, Mermaid diagrams,
+and AI agent handoff.
 
 This project is a reusable AI agent skill that forces an agent to inspect,
 understand, question, map, document, and validate a software system or raw
 system idea before suggesting architecture changes or editing code.
+
+Search terms this repository is meant to serve: `Senior Architect Agent`,
+`AI architecture skill`, `architecture mapping`, `existing system mapping`,
+`software architecture documentation`, `Mermaid architecture diagram`, and
+`AI agent handoff`.
 
 Main slogan:
 
@@ -86,7 +91,7 @@ Related skill:
   focused proposal discipline for raw ideas, product concepts, feature
   requests, and business/system goals without an existing implementation.
 
-## Implementation Plan
+## Release Direction
 
 `v1.0.0` established flagship content readiness:
 
@@ -106,13 +111,16 @@ Related skill:
 This is content readiness for a skill: Markdown architecture docs, Mermaid
 diagram sources, optional SVG visual artifacts, rules, templates, and examples.
 
-For small or low-risk work, the skill should use a compact architecture note
-instead of producing every output file. Full output packages are reserved for
-multi-module work, unclear boundaries, persistence, integrations,
-payments/security, major workflow changes, or future-agent handoff.
+`v1.1.0` adds right-sized architecture pass control:
 
-Fast-path is the default for small, bounded, or exploratory requests unless a
-real complexity trigger is found during inspection.
+- `Scan Mode` for compact architecture notes.
+- `Focus Mode` for scoped module, workflow, subsystem, or boundary work.
+- `Full Mode` for whole-system mapping, future-agent handoff, unclear
+  ownership, 3+ interacting modules, persistence, integrations, payment,
+  authentication, security, deployment, or major workflow changes.
+
+The skill starts with the smallest safe pass and promotes only when scope,
+evidence, risk, or handoff needs require it.
 
 ## File Tree
 
@@ -223,8 +231,8 @@ instructions across multiple gates, and reason through evidence before
 reporting.
 
 For normal use, prefer a model with at least 128K context and strong
-instruction following. Use 32K only for small fast-path tasks. Use 200K or more
-for large multi-service or multi-repo systems.
+instruction following. Use 32K only for small `Scan Mode` tasks. Use 200K or
+more for large multi-service or multi-repo systems.
 
 This skill is designed for models that can think through architecture gates,
 not just produce quick summaries. See [Model Requirements](docs/model-requirements.md).
