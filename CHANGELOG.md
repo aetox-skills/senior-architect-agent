@@ -6,6 +6,8 @@ Pending review.
 
 Added:
 
+- Cross-agent installation guidance in `INSTALL.md`.
+- `adapters/agents-md/AGENTS.example.md` for AGENTS.md-style runtimes.
 - Two first-class operating modes:
   Existing System Mapping Mode and Idea-to-Architecture Mode.
 - Templates and example output packages for both operating modes.

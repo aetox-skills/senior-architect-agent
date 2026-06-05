@@ -120,11 +120,16 @@ real complexity trigger is found during inspection.
 senior-architect-agent/
   README.md
   SKILL.md
+  INSTALL.md
   LICENSE
   CHANGELOG.md
 
   agents/
     openai.yaml
+
+  adapters/
+    agents-md/
+      AGENTS.example.md
 
   docs/
     philosophy.md
@@ -245,6 +250,9 @@ does not depend on it.
   [`examples/idea-to-architecture/output/`](examples/idea-to-architecture/output/)
 
 ## Install
+
+See [INSTALL.md](INSTALL.md) for Codex, Claude Code, Antigravity, AGENTS.md,
+and manual installation notes.
 
 Install this Codex skill from:
 
