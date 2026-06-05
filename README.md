@@ -26,6 +26,15 @@ Expanded direction:
 > and continue from.
 
 <p align="center">
+  <a href="assets/visuals/senior_architect_agent_workflow_infographic.png">
+    <img src="assets/visuals/senior_architect_agent_workflow_infographic.png" alt="Senior Architect Agent workflow infographic covering core workflow, mode selector, evidence gate, repository anatomy, output overview, and core flow animation" width="980">
+  </a>
+  <br>
+  <strong>Full workflow infographic</strong>: core flow, mode selection,
+  evidence gates, repository anatomy, and expected outputs.
+</p>
+
+<p align="center">
   <a href="assets/visuals/01_core_workflow_animated.svg">
     <img src="assets/visuals/senior_architect_agent_core_flow.gif" alt="Senior Architect Agent animated core flow: intake, mode selection, inspection, classification, questioning, mapping, documentation, validation, and reporting" width="920">
   </a>
@@ -193,6 +202,7 @@ senior-architect-agent/
 
   assets/
     visuals/
+      senior_architect_agent_workflow_infographic.png
       senior_architect_agent_core_flow.gif
       01_core_workflow.mmd
       01_core_workflow_animated.svg
