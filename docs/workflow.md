@@ -69,8 +69,16 @@ conclusions.
 Use Idea-to-Architecture Mode when only a raw idea, product concept, feature
 request, or business/system goal exists.
 
+If `$idea-to-architecture-agent` is available and the request is a pure raw
+idea with no implementation context, prefer that sibling skill for the focused
+proposal workflow.
+
 If both exist, map the existing system first and label new architecture as
 proposed.
+
+Use `senior-architect-agent` when the work mixes existing evidence with new
+proposals, needs broader architecture mapping, or requires boundary, risk, or
+handoff analysis.
 
 ## 3. Inspect or Extract Idea
 

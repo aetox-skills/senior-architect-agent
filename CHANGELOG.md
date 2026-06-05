@@ -34,6 +34,9 @@ Updated:
   the skill responsibly.
 - Fast-path selection now has a decision tree so small, bounded, or exploratory
   work does not default to a full output package.
+- Sibling-skill routing now explains when to prefer
+  `$idea-to-architecture-agent` for pure raw ideas without making it a
+  dependency of this skill.
 
 ## v0.1.0 - Foundation Map
 

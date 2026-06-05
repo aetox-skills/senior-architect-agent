@@ -181,6 +181,21 @@ AI ต้องทำสิ่งเหล่านี้:
 
 ---
 
+### 4.3 หมายเหตุเรื่อง skill ลูกเฉพาะทาง
+
+ถ้ามี `idea-to-architecture-agent` และงานเป็น raw idea ล้วนโดยไม่มีระบบจริงให้ตรวจ
+ให้ prefer skill ลูกตัวนั้นสำหรับ workflow ที่โฟกัสเฉพาะการเปลี่ยนไอเดียเป็น architecture proposal
+
+`senior-architect-agent` ยังต้องรองรับ Idea-to-Architecture Mode ต่อไปในฐานะ core skill
+โดยเฉพาะเมื่อไม่มี skill ลูกติดตั้งอยู่ เมื่องานเป็นไอเดียที่ผูกกับระบบเดิม
+หรือเมื่องานต้องการ architecture discipline ที่กว้างกว่า เช่น boundary, risk, validation
+และ AI handoff
+
+การมี skill ลูกไม่ใช่ dependency ของ `senior-architect-agent`
+และไม่เปลี่ยนความหมายหลักของโปรเจคแม่
+
+---
+
 ## 5. หลักการกลางของโปรเจค
 
 ---

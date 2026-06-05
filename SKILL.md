@@ -31,6 +31,14 @@ This skill supports both existing systems and raw ideas. In both cases, the
 agent must separate what is known from what is inferred, proposed, unknown, or
 awaiting approval.
 
+Sibling skill routing:
+
+If the request is a pure raw idea and `$idea-to-architecture-agent` is
+available, prefer that dedicated sibling skill. Continue with this skill when
+the idea is tied to existing system evidence, requires broader architecture
+mapping, needs boundary/risk/handoff work, or the dedicated skill is
+unavailable. Do not make this skill depend on the sibling skill.
+
 Core flow for both modes:
 
 ```txt
@@ -215,8 +223,15 @@ Choose one operating mode:
 - Existing System Mapping Mode when existing project evidence is available.
 - Idea-to-Architecture Mode when no implementation is available.
 
+If `$idea-to-architecture-agent` is available and the request is only a raw
+idea with no implementation context, prefer that sibling skill for the focused
+proposal work.
+
 If both exist, map the existing system first and mark new ideas as proposed
 changes.
+
+Use this skill for mixed existing-system and proposal work, broader
+architecture mapping, boundary analysis, risk review, or future-agent handoff.
 
 ## Step 3: Inspect or Extract Idea
 

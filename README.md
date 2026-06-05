@@ -51,6 +51,16 @@ The agent asks architecture-impacting questions, preserves the user's intent,
 states assumptions, and produces a reviewable proposal. All modules, workflows,
 data models, and integrations remain proposed until approved.
 
+## Related Skill Routing
+
+When `$idea-to-architecture-agent` is available, prefer it for pure raw ideas
+with no implementation context.
+
+Use this skill for existing systems, mixed existing-system and proposal work,
+architecture boundaries, risk review, handoff notes, or when the dedicated idea
+skill is not installed. The sibling skill is optional; this project does not
+depend on it.
+
 ## Implementation Plan
 
 `v1.0.0` established flagship content readiness:
