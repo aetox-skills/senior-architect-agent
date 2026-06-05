@@ -94,6 +94,7 @@ senior-architect-agent/
     output-spec.md
     diagram-guidelines.md
     question-framework.md
+    anti-patterns.md
     project-core-th-final.md
 
   rules/

@@ -67,6 +67,24 @@ Intake
     architectural judgment.
 14. Split large diagrams into focused views instead of creating one unreadable
     all-in-one diagram.
+15. Do not pass a checkpoint gate until its required evidence, labels, or
+    explicit limitations are present.
+
+## Checkpoint Gates
+
+Use these gates to keep the flow enforceable:
+
+- Intake gate: mode, initial scope, and fast-path or full-package decision are
+  recorded.
+- Inspection gate: evidence or user intent is recorded, with inspection
+  limitations when something cannot be verified.
+- Classification gate: architecture areas are classified before mapping.
+- Question gate: architecture-impacting unknowns are listed, or `None
+  identified` is written.
+- Mapping gate: maps and diagrams are traceable to evidence, user intent,
+  assumptions, or proposed status.
+- Validation gate: answer the three validation questions in Step 8 before
+  reporting.
 
 ## Operating Modes
 
@@ -158,6 +176,9 @@ Prefer module-level mapping when the user asks about one module or workflow.
 Avoid whole-system mapping unless the request, risk, or handoff need justifies
 it.
 
+Record the initial scope and whether the task uses the fast path or a full
+output package before proceeding.
+
 ## Step 2: Select Mode
 
 Choose one operating mode:
@@ -200,6 +221,9 @@ evidence to interpret, not as architecture by itself.
 Record only what is visible from files, explicitly provided by the user, or
 clearly labeled as assumption.
 
+If evidence or user intent is missing for an important area, record the
+inspection limitation instead of filling the gap with a guess.
+
 ## Step 4: Classify
 
 Classify the system or proposed system into applicable areas:
@@ -218,6 +242,8 @@ In Existing System Mapping Mode, mark missing categories as not observed.
 
 In Idea-to-Architecture Mode, mark categories as proposed, assumed, unknown, or
 not in scope. Do not present proposed architecture as confirmed fact.
+
+Do not map before classification is complete.
 
 ## Step 5: Question
 
@@ -240,6 +266,9 @@ Separate:
 - Decisions already made
 - Decisions still needed
 - Decisions requiring approval
+
+If no architecture-impacting questions are found, write `None identified` so
+the absence is explicit.
 
 ## Step 6: Map
 
@@ -289,6 +318,9 @@ Treat SVG as an optional visual artifact for presentation or review. Generate
 it from Mermaid when it helps, and do not use SVG as the architecture source of
 truth.
 
+Do not include untraceable components in maps or diagrams. Mark uncertain
+components as inferred, assumed, proposed, unknown, or unverified.
+
 ## Step 7: Document
 
 Use templates from `templates/` when creating architecture outputs:
@@ -320,18 +352,32 @@ examples without depending on metadata.
 
 ## Step 8: Validate
 
-Before reporting, validate the outputs:
+Before reporting, answer these three validation questions:
 
-- Every claim is backed by inspected files, user-provided context, or clearly
-  marked inference.
-- Every proposed element is labeled as proposed until approved.
-- Every assumption is visible.
-- Open questions are explicit.
-- Diagrams match the written map.
-- SVG visual artifacts, when present, match their Mermaid source.
-- Risks are specific and actionable.
-- Recommendations respect existing structure unless redesign was requested.
-- Documentation is lean enough to maintain.
+1. Claim traceability:
+   Does every important claim have a source?
+   If not, mark it as `Unverified`, `Assumed`, or remove it before passing.
+2. Scope alignment:
+   Does the final scope match the intake scope?
+   If it expanded, state what was added, why, and whether it is approved.
+3. Handoff readiness:
+   Does the handoff include unknowns and safe next actions?
+   If none are found, write `None identified` instead of leaving the section
+   blank.
+
+Use evidence strength for important claims:
+
+- `Direct`: supported directly by files or user-provided facts.
+- `Inferred`: derived from evidence but not directly confirmed.
+- `Assumed`: explicit working premise.
+- `Unverified`: no source yet; verify, mark, or remove before final decisions.
+
+Use `Verify first: Yes` for claims that humans or future agents should check
+before relying on them.
+
+Also confirm that proposed elements are labeled as proposed until approved,
+diagrams match the written map, SVG artifacts match their Mermaid source, and
+documentation is lean enough to maintain.
 
 ## Step 9: Report
 
@@ -344,8 +390,9 @@ Report with this structure when appropriate:
 5. Open questions
 6. Risks or unclear boundaries
 7. Decisions requiring approval
-8. Documentation created or updated
-9. Recommended next steps
+8. Validation gate answers
+9. Documentation created or updated
+10. Recommended next steps
 
 ## Rule References
 
@@ -357,6 +404,7 @@ Load these files when deeper guidance is needed:
 - `rules/diagram-rules.md`
 - `rules/anti-overengineering-rules.md`
 - `rules/agent-handoff-rules.md`
+- `docs/anti-patterns.md`
 
 ## Philosophy Reference
 

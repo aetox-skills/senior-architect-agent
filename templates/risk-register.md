@@ -21,6 +21,8 @@ Purpose: Record architecture risks, uncertainty, and practical mitigation option
 
 ## Risks
 
+Write `None identified` if no architecture risks were found.
+
 | Risk | Evidence | Impact | Likelihood | Mitigation |
 | --- | --- | --- | --- | --- |
 |  |  |  |  |  |
@@ -33,7 +35,7 @@ Purpose: Record architecture risks, uncertainty, and practical mitigation option
 
 ## Unknowns
 
--
+- Write `None identified` if no unknowns were found.
 
 ## Non-Risks
 
@@ -47,7 +49,7 @@ Items considered but not currently treated as architecture risks.
 
 ## Open Questions
 
--
+- Write `None identified` if no open questions were found.
 
 ## Next Steps
 

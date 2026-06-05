@@ -25,6 +25,11 @@ Updated:
 - Fast-path guidance now prevents small tasks from turning into full output
   packages.
 - Diagram guidance now emphasizes focused views for large systems.
+- Checkpoint gates now make intake, inspection, classification, questioning,
+  mapping, validation, and reporting easier to enforce.
+- Evidence strength and a three-question validation gate help prevent
+  unsupported claims, scope drift, and weak handoff notes.
+- Anti-pattern guidance now shows rejected architecture output patterns.
 
 ## v0.1.0 - Foundation Map
 

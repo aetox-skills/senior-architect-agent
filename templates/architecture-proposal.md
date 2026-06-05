@@ -5,16 +5,25 @@ Purpose: Turn a raw idea into a reviewable proposed architecture.
 ## Scope
 
 - Idea:
+- Intake scope:
+- Final proposal scope:
+- Scope change:
 - Proposal status: Proposed
 - Source:
 
 ## User-Provided Facts
 
--
+- Fact:
+  - Evidence:
+  - Evidence strength: Direct
+  - Verify first: No
 
 ## Assumptions
 
--
+- Assumption:
+  - Reason:
+  - Evidence strength: Assumed
+  - Verify first:
 
 ## Proposed Architecture
 
@@ -30,9 +39,9 @@ All architecture in this file is proposed until approved.
 
 ## Proposed Components
 
-| Component | Responsibility | Status | Rationale |
-| --- | --- | --- | --- |
-|  |  | Proposed |  |
+| Component | Responsibility | Status | Evidence Or Assumption | Evidence Strength | Requires Approval |
+| --- | --- | --- | --- | --- | --- |
+|  |  | Proposed |  | Assumed | Yes |
 
 ## Proposed Boundary
 
@@ -61,6 +70,12 @@ flowchart LR
 ## Decisions Requiring Approval
 
 -
+
+## Validation Gate
+
+1. Claim traceability:
+2. Scope alignment:
+3. Handoff readiness:
 
 ## SVG Visual Artifact
 

@@ -12,6 +12,8 @@ Failure mode prevented: Future AI agents repeat inspection work, miss uncertaint
 6. Include safe next actions.
 7. Include actions the next agent should avoid until questions are answered.
 8. Keep handoff notes short enough to read at session start.
+9. Write `None identified` when no unknowns, risks, or open questions were
+   found.
 
 ## Handoff Standard
 
@@ -21,3 +23,17 @@ A good handoff note lets the next agent understand:
 - Current documentation state
 - Known unknowns
 - Safe boundaries for future edits
+
+## Minimum Bar
+
+Every handoff must include:
+
+- What was inspected or provided
+- Current scope
+- Confirmed facts
+- Inferences
+- Assumptions or proposed items
+- Unknowns, or `None identified`
+- Risks, or `None identified`
+- Safe next actions
+- Actions to avoid until clarified

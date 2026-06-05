@@ -7,20 +7,31 @@ Purpose: Summarize the observed system architecture without hiding uncertainty.
 - Project:
 - Inspection date:
 - Inspected by:
-- Requested scope:
+- Intake scope:
+- Final documented scope:
+- Scope change:
 - Inspection source:
 
 ## Confirmed Facts
 
--
+- Fact:
+  - Evidence:
+  - Evidence strength: Direct
+  - Verify first: No
 
 ## Reasonable Inferences
 
--
+- Inference:
+  - Evidence:
+  - Evidence strength: Inferred
+  - Verify first:
 
 ## Assumptions
 
--
+- Assumption:
+  - Reason:
+  - Evidence strength: Assumed
+  - Verify first:
 
 ## System Summary
 
@@ -28,9 +39,9 @@ Describe the system in direct, concrete language.
 
 ## Main Components
 
-| Component | Responsibility | Evidence |
-| --- | --- | --- |
-|  |  |  |
+| Component | Responsibility | Status | Evidence | Evidence Strength | Verify First |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
 
 ## Evidence
 
@@ -53,6 +64,12 @@ Describe the system in direct, concrete language.
 ## Risks
 
 -
+
+## Validation Gate
+
+1. Claim traceability:
+2. Scope alignment:
+3. Handoff readiness:
 
 ## Next Steps
 

@@ -31,6 +31,21 @@ Use these labels consistently:
 - `Unknown`: Important information not yet available.
 - `Requires approval`: A decision the user or owner must accept before work.
 
+## Evidence Strength
+
+Evidence strength describes how strongly a claim is supported. It does not
+replace status labels.
+
+- `Direct`: Supported directly by inspected files, existing docs, or explicit
+  user-provided facts.
+- `Inferred`: Derived from available evidence, but not directly confirmed.
+- `Assumed`: Explicit working premise used to make progress.
+- `Unverified`: No source yet. Verify, mark clearly, or remove before final
+  architecture decisions.
+
+Use `Verify first: Yes` for important claims that humans or future agents
+should check before relying on them.
+
 ## Preferred Formats
 
 Use Markdown for primary documentation.
@@ -106,6 +121,16 @@ Mermaid source.
 ## Traceability
 
 Prefer references to files or directories when making claims.
+
+Before reporting, run the three-question validation gate:
+
+1. Does every important claim have a source?
+2. Does the final scope match the intake scope?
+3. Does the handoff include unknowns and safe next actions?
+
+If a claim has no source, mark it as `Unverified`, `Assumed`, or remove it.
+If scope expanded, state what changed and whether it is approved.
+If no unknowns or safe next actions are found, write `None identified`.
 
 Example:
 

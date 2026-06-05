@@ -29,6 +29,12 @@ Do not start with an architecture conclusion.
 Use the narrowest useful scope. Prefer module-level mapping when the user asks
 about one module or workflow.
 
+Gate before continuing:
+
+- Operating mode is selected or narrowed to the likely mode.
+- Initial scope is recorded.
+- Fast-path or full-package output is chosen.
+
 ## 2. Select Mode
 
 Start by selecting the operating mode.
@@ -67,6 +73,11 @@ types, feature list, and success goals.
 
 In idea mode, do not present proposed architecture as existing architecture.
 
+Gate before continuing:
+
+- Evidence or user intent is recorded.
+- Inspection limitations are named when something important cannot be verified.
+
 ## 4. Classify
 
 Sort observed or proposed components into architecture areas:
@@ -86,6 +97,11 @@ In Existing System Mapping Mode, mark missing categories as not observed.
 In Idea-to-Architecture Mode, mark categories as proposed, assumed, unknown, or
 out of scope.
 
+Gate before continuing:
+
+- Architecture areas are classified.
+- Missing or unclear categories are explicitly marked.
+
 ## 5. Question
 
 Ask questions only when the answer could change an architecture decision, risk,
@@ -96,6 +112,11 @@ Existing systems are evidence-first: ask after inspecting what can be found.
 
 Raw ideas are question-first: ask important questions before presenting a
 proposal, then continue with explicit assumptions when safe.
+
+Gate before continuing:
+
+- Architecture-impacting unknowns are listed.
+- If no important unknowns are found, write `None identified`.
 
 ## 6. Map
 
@@ -130,6 +151,13 @@ views would be clearer.
 Create SVG visual artifacts only when they help presentation or review. Generate
 SVG from Mermaid and keep Mermaid as the editable source of truth.
 
+Gate before continuing:
+
+- Maps and diagrams are traceable to evidence, user intent, assumptions, or
+  proposed status.
+- Uncertain nodes are marked inferred, assumed, proposed, unknown, or
+  unverified.
+
 ## 7. Document
 
 Use templates from `templates/`. Do not create every template by default.
@@ -144,15 +172,21 @@ assumptions.
 
 ## 8. Validate
 
-Check that documentation matches the selected mode:
+Answer the validation gate before reporting:
 
-- Claims are supported or marked as inference.
-- Proposed architecture is labeled as proposed.
-- Assumptions are visible.
-- Open questions are not hidden.
-- Diagrams match the written description.
-- Risks are specific.
-- Recommendations do not override existing architecture without approval.
+1. Claim traceability:
+   Does every important claim have a source?
+   If not, mark it as `Unverified`, `Assumed`, or remove it.
+2. Scope alignment:
+   Does the final scope match the intake scope?
+   If it expanded, state what was added, why, and whether it is approved.
+3. Handoff readiness:
+   Does the handoff include unknowns and safe next actions?
+   If none are found, write `None identified`.
+
+Also check that proposed architecture is labeled as proposed, assumptions are
+visible, diagrams match the written description, risks are specific, and
+recommendations do not override existing architecture without approval.
 
 ## 9. Report
 
@@ -166,5 +200,6 @@ End with a concise report:
 - What remains unknown
 - What risks exist
 - What decisions require approval
+- How the validation gate was answered
 - What was documented
 - What should happen next
