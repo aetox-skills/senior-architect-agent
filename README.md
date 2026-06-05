@@ -2,6 +2,10 @@
 
 Version target: `v1.0.0 - Flagship Content Readiness`
 
+`senior-architect-agent` is an AI architecture skill for architecture mapping,
+existing system mapping, architecture documentation, Mermaid diagrams, and AI
+agent handoff.
+
 This project is a reusable AI agent skill that forces an agent to inspect,
 understand, question, map, document, and validate a software system or raw
 system idea before suggesting architecture changes or editing code.
@@ -32,6 +36,21 @@ This skill adds a discipline layer:
 6. Leave handoff notes that future AI agents can use quickly.
 7. Avoid unsupported claims, decorative documentation, and overengineering.
 
+## Use When
+
+- An AI agent must map an existing codebase or software system.
+- A project needs architecture documentation before code changes.
+- A team needs module maps, workflow maps, data-flow notes, or Mermaid diagrams.
+- A future AI agent needs handoff notes, risks, unknowns, and safe next actions.
+- A raw idea is connected to an existing system or broader architecture review.
+
+## Do Not Use When
+
+- The task is a pure raw idea with no existing implementation and
+  `$idea-to-architecture-agent` is available.
+- The user only needs a small implementation fix with no architecture impact.
+- The output would become decorative documentation rather than useful context.
+
 ## Operating Modes
 
 ### Existing System Mapping Mode
@@ -53,13 +72,19 @@ data models, and integrations remain proposed until approved.
 
 ## Related Skill Routing
 
-When `$idea-to-architecture-agent` is available, prefer it for pure raw ideas
-with no implementation context.
+When [`$idea-to-architecture-agent`](https://github.com/aetox-skills/idea-to-architecture-agent)
+is available, prefer it for pure raw ideas with no implementation context.
 
 Use this skill for existing systems, mixed existing-system and proposal work,
 architecture boundaries, risk review, handoff notes, or when the dedicated idea
 skill is not installed. The sibling skill is optional; this project does not
 depend on it.
+
+Related skill:
+
+- [`idea-to-architecture-agent`](https://github.com/aetox-skills/idea-to-architecture-agent):
+  focused proposal discipline for raw ideas, product concepts, feature
+  requests, and business/system goals without an existing implementation.
 
 ## Implementation Plan
 
@@ -211,6 +236,21 @@ Markdown and Mermaid as source of truth.
 
 `agents/openai.yaml` is lightweight interface metadata only. The core skill
 does not depend on it.
+
+## Example Outputs
+
+- Existing system example:
+  [`examples/basic-web-app/output/`](examples/basic-web-app/output/)
+- Idea-to-architecture example:
+  [`examples/idea-to-architecture/output/`](examples/idea-to-architecture/output/)
+
+## Install
+
+Install this Codex skill from:
+
+```txt
+aetox-skills/senior-architect-agent
+```
 
 ## License
 
