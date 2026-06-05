@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Evidence Gate anti-hallucination conveyor</title>
+<desc id="desc">Animated pipeline rejecting unsupported claims</desc>
+<style>
+:root {
+  --bg:#0B1020; --panel:#111A33; --panel2:#17213F; --ink:#F4F7FF; --muted:#B8C2E0;
+  --cyan:#6CE5E8; --blue:#7AA2FF; --violet:#B088FF; --green:#6EE7A8; --amber:#FFD166; --red:#FF6B6B; --line:#5F6C95;
+}
+.bg { fill: var(--bg); }
+.grid { stroke:#101832; stroke-width:1; }
+.title { font: 700 42px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); }
+.subtitle { font: 400 21px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--muted); }
+.nodeText { font: 700 19px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); text-anchor:middle; dominant-baseline:middle; }
+.small { font: 400 15px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--muted); }
+.smallBold { font: 700 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); }
+.cardTitle { font: 700 27px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); }
+.line { stroke: var(--line); stroke-width:4; fill:none; marker-end:url(#arrow); }
+.dashed { stroke-dasharray: 8 8; }
+.token { fill: var(--amber); filter:url(#glow); }
+.pulse { animation: pulse 3.6s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
+.dash { stroke-dasharray: 12 12; animation: dash 1.8s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -48; } }
+.step { animation: stepGlow 9s ease-in-out infinite; }
+@keyframes stepGlow { 0%, 100% { filter:none; } 8% { filter:url(#glow); } 16% { filter:none; } }
+.reject { animation: rejectPulse 4s ease-in-out infinite; }
+@keyframes rejectPulse { 0%,100% { opacity:.65; } 50% { opacity:1; } }
+</style>
+<defs>
+<marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+  <path d="M 0 0 L 12 6 L 0 12 z" fill="#5F6C95"/>
+</marker>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+  <feGaussianBlur stdDeviation="5" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<rect class="bg" x="0" y="0" width="1600" height="900"/>
+<line class="grid" x1="0" y1="0" x2="0" y2="900"/>
+<line class="grid" x1="90" y1="0" x2="90" y2="900"/>
+<line class="grid" x1="180" y1="0" x2="180" y2="900"/>
+<line class="grid" x1="270" y1="0" x2="270" y2="900"/>
+<line class="grid" x1="360" y1="0" x2="360" y2="900"/>
+<line class="grid" x1="450" y1="0" x2="450" y2="900"/>
+<line class="grid" x1="540" y1="0" x2="540" y2="900"/>
+<line class="grid" x1="630" y1="0" x2="630" y2="900"/>
+<line class="grid" x1="720" y1="0" x2="720" y2="900"/>
+<line class="grid" x1="810" y1="0" x2="810" y2="900"/>
+<line class="grid" x1="900" y1="0" x2="900" y2="900"/>
+<line class="grid" x1="990" y1="0" x2="990" y2="900"/>
+<line class="grid" x1="1080" y1="0" x2="1080" y2="900"/>
+<line class="grid" x1="1170" y1="0" x2="1170" y2="900"/>
+<line class="grid" x1="1260" y1="0" x2="1260" y2="900"/>
+<line class="grid" x1="1350" y1="0" x2="1350" y2="900"/>
+<line class="grid" x1="1440" y1="0" x2="1440" y2="900"/>
+<line class="grid" x1="1530" y1="0" x2="1530" y2="900"/>
+<line class="grid" x1="0" y1="0" x2="1600" y2="0"/>
+<line class="grid" x1="0" y1="90" x2="1600" y2="90"/>
+<line class="grid" x1="0" y1="180" x2="1600" y2="180"/>
+<line class="grid" x1="0" y1="270" x2="1600" y2="270"/>
+<line class="grid" x1="0" y1="360" x2="1600" y2="360"/>
+<line class="grid" x1="0" y1="450" x2="1600" y2="450"/>
+<line class="grid" x1="0" y1="540" x2="1600" y2="540"/>
+<line class="grid" x1="0" y1="630" x2="1600" y2="630"/>
+<line class="grid" x1="0" y1="720" x2="1600" y2="720"/>
+<line class="grid" x1="0" y1="810" x2="1600" y2="810"/>
+<line class="grid" x1="0" y1="900" x2="1600" y2="900"/><text class="title" x="70" y="82">Evidence Gate — Anti-Hallucination Conveyor</text><text class="subtitle" x="72" y="124">A polished diagram is rejected unless every important claim is traceable and labeled.</text><rect x="70" y="330" width="210" height="140" rx="24" fill="#17213F" stroke="#6CE5E8" stroke-width="3"/><text class="smallBold" x="88" y="360">Claim</text><text class="small" x="88" y="398">statement or diagram node</text><line class="line dash" x1="280" y1="400" x2="320" y2="400"/><rect x="320" y="330" width="210" height="140" rx="24" fill="#17213F" stroke="#7AA2FF" stroke-width="3"/><text class="smallBold" x="338" y="360">Source?</text><text class="small" x="338" y="398">file, doc, user fact,</text><text class="small" x="338" y="420">assumption</text><line class="line dash" x1="530" y1="400" x2="570" y2="400"/><rect x="570" y="330" width="210" height="140" rx="24" fill="#17213F" stroke="#7AA2FF" stroke-width="3"/><text class="smallBold" x="588" y="360">Status Label</text><text class="small" x="588" y="398">Confirmed / Inferred /</text><text class="small" x="588" y="420">Proposed / Unknown</text><line class="line dash" x1="780" y1="400" x2="820" y2="400"/><rect x="820" y="330" width="210" height="140" rx="24" fill="#17213F" stroke="#7AA2FF" stroke-width="3"/><text class="smallBold" x="838" y="360">Impact?</text><text class="small" x="838" y="398">boundary, risk,</text><text class="small" x="838" y="420">workflow, plan</text><line class="line dash" x1="1030" y1="400" x2="1070" y2="400"/><rect x="1070" y="330" width="210" height="140" rx="24" fill="#17213F" stroke="#7AA2FF" stroke-width="3"/><text class="smallBold" x="1088" y="360">Validate</text><text class="small" x="1088" y="398">traceability + scope</text><text class="small" x="1088" y="420">+ handoff</text><line class="line dash" x1="1280" y1="400" x2="1320" y2="400"/><rect x="1320" y="330" width="210" height="140" rx="24" fill="#17213F" stroke="#6CE5E8" stroke-width="3"/><text class="smallBold" x="1338" y="360">Report</text><text class="small" x="1338" y="398">safe next actions</text><circle class="token" r="10">
+<animateMotion dur="7s" repeatCount="indefinite" path="M175 400 L425 400 L675 400 L925 400 L1175 400 L1425 400"/>
+</circle><text class="smallBold" x="185" y="630" fill="#FF6B6B">Rejected / repaired path</text><g class="reject" style="animation-delay:0.0s"><rect x="220" y="680" width="255" height="110" rx="20" fill="#361B2A" stroke="#FF6B6B" stroke-width="2"/><text class="smallBold" x="238" y="713">Unsupported node</text><text class="small" x="238" y="746">remove or mark Unknown</text></g><g class="reject" style="animation-delay:0.35s"><rect x="520" y="680" width="255" height="110" rx="20" fill="#361B2A" stroke="#FF6B6B" stroke-width="2"/><text class="smallBold" x="538" y="713">Hidden assumption</text><text class="small" x="538" y="746">move under Assumptions</text></g><g class="reject" style="animation-delay:0.7s"><rect x="820" y="680" width="255" height="110" rx="20" fill="#361B2A" stroke="#FF6B6B" stroke-width="2"/><text class="smallBold" x="838" y="713">Proposal as implementation</text><text class="small" x="838" y="746">relabel as Proposed</text></g><g class="reject" style="animation-delay:1.0499999999999998s"><rect x="1120" y="680" width="255" height="110" rx="20" fill="#361B2A" stroke="#FF6B6B" stroke-width="2"/><text class="smallBold" x="1138" y="713">Scope expansion</text><text class="small" x="1138" y="746">state change + approval</text></g><line x1="675" y1="470" x2="675" y2="650" stroke="#FF6B6B" stroke-width="4" stroke-dasharray="8 8"><animate attributeName="stroke-dashoffset" values="0;-48" dur="1.3s" repeatCount="indefinite"/></line><path d="M675 650 L665 632 L685 632 Z" fill="#FF6B6B"/></svg>

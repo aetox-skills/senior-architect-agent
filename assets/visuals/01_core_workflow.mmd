@@ -1,0 +1,9 @@
+flowchart LR
+  Intake --> SelectMode[Select Mode]
+  SelectMode --> Inspect[Inspect or Extract Idea]
+  Inspect --> Classify
+  Classify --> Question
+  Question --> Map
+  Map --> Document
+  Document --> Validate
+  Validate --> Report

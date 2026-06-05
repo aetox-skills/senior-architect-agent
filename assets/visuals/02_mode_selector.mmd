@@ -1,0 +1,9 @@
+flowchart LR
+  Request[User request] --> Existing[Existing System Mapping Mode]
+  Request --> Idea[Idea-to-Architecture Mode]
+  Existing --> Inspect[Inspect files, docs, configs, tests]
+  Existing --> RealBoundaries[Map real boundaries]
+  Idea --> ExtractIntent[Extract intent and constraints]
+  Idea --> Proposed[Mark modules/workflows/data as Proposed]
+  Inspect --> Output[Lean architecture output]
+  Proposed --> Output

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Repository anatomy</title>
+<desc id="desc">Animated repository map for senior-architect-agent</desc>
+<style>
+:root {
+  --bg:#0B1020; --panel:#111A33; --panel2:#17213F; --ink:#F4F7FF; --muted:#B8C2E0;
+  --cyan:#6CE5E8; --blue:#7AA2FF; --violet:#B088FF; --green:#6EE7A8; --amber:#FFD166; --red:#FF6B6B; --line:#5F6C95;
+}
+.bg { fill: var(--bg); }
+.grid { stroke:#101832; stroke-width:1; }
+.title { font: 700 42px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); }
+.subtitle { font: 400 21px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--muted); }
+.nodeText { font: 700 19px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); text-anchor:middle; dominant-baseline:middle; }
+.small { font: 400 15px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--muted); }
+.smallBold { font: 700 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); }
+.cardTitle { font: 700 27px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; fill: var(--ink); }
+.line { stroke: var(--line); stroke-width:4; fill:none; marker-end:url(#arrow); }
+.dashed { stroke-dasharray: 8 8; }
+.token { fill: var(--amber); filter:url(#glow); }
+.pulse {
+  animation: pulse 3.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: .55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+.dash {
+  stroke-dasharray: 12 12;
+  animation: dash 1.8s linear infinite;
+}
+@keyframes dash { to { stroke-dashoffset: -48; } }
+.step { animation: stepGlow 9s ease-in-out infinite; }
+@keyframes stepGlow {
+  0%, 100% { filter:none; }
+  8% { filter:url(#glow); }
+  16% { filter:none; }
+}
+.reject { animation: rejectPulse 4s ease-in-out infinite; }
+@keyframes rejectPulse {
+  0%,100% { opacity:.65; }
+  50% { opacity:1; }
+}
+</style>
+<defs>
+<marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+  <path d="M 0 0 L 12 6 L 0 12 z" fill="#5F6C95"/>
+</marker>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+  <feGaussianBlur stdDeviation="5" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<rect class="bg" x="0" y="0" width="1600" height="900"/>
+<g opacity=".35"><text class="small" x="60" y="165" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="213" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="261" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="309" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="357" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="405" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="453" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="501" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="549" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="597" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="645" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="693" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="741" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="789" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text><text class="small" x="60" y="837" fill="#17203D">{ inspect -&gt; classify -&gt; question -&gt; map -&gt; document -&gt; validate }</text></g><text class="title" x="70" y="82">Repository Anatomy — Skill as a Discipline Layer</text><text class="subtitle" x="72" y="124">SKILL.md is the spine. Docs, rules, templates, and examples make the behavior repeatable.</text><path class="line dash" d="M800 330 C650 260 520 260 450 310"/><path class="line dash" d="M800 465 C650 585 530 610 450 610"/><path class="line dash" d="M800 330 C950 260 1080 260 1150 315"/><path class="line dash" d="M800 465 C950 585 1080 610 1150 610"/><path class="line dash" d="M800 465 L800 650"/><rect x="630" y="330" width="340" height="135" rx="30" fill="#173D5A" stroke="#6CE5E8" stroke-width="4" class="pulse"/><text class="nodeText" x="800" y="384.0" text-anchor="middle">SKILL.md</text>
+<text class="nodeText" x="800" y="410.0" text-anchor="middle">Core flow + gates</text><g class="step" style="animation-delay:0.0s; transform-origin:295.0px 310.0px;"><rect x="140" y="230" width="310" height="160" rx="24" fill="#111A33" stroke="#7AA2FF" stroke-width="3"/><text class="cardTitle" x="164" y="274" fill="#7AA2FF">docs/</text><text class="smallBold" x="164" y="312">workflow • output spec</text><text class="smallBold" x="164" y="339">diagram guidelines</text><text class="smallBold" x="164" y="366">question framework</text><text class="smallBold" x="164" y="393">anti-patterns</text></g><g class="step" style="animation-delay:0.7s; transform-origin:295.0px 610.0px;"><rect x="140" y="530" width="310" height="160" rx="24" fill="#111A33" stroke="#FFD166" stroke-width="3"/><text class="cardTitle" x="164" y="574" fill="#FFD166">rules/</text><text class="smallBold" x="164" y="612">inspection • question</text><text class="smallBold" x="164" y="639">documentation • diagram</text><text class="smallBold" x="164" y="666">overengineering • handoff</text></g><g class="step" style="animation-delay:1.4s; transform-origin:1305.0px 317.5px;"><rect x="1150" y="230" width="310" height="175" rx="24" fill="#111A33" stroke="#B088FF" stroke-width="3"/><text class="cardTitle" x="1174" y="274" fill="#B088FF">templates/</text><text class="smallBold" x="1174" y="312">overview • boundary</text><text class="smallBold" x="1174" y="339">module map • data flow</text><text class="smallBold" x="1174" y="366">risk register • notes</text></g><g class="step" style="animation-delay:2.0999999999999996s; transform-origin:1305.0px 612.5px;"><rect x="1150" y="535" width="310" height="155" rx="24" fill="#111A33" stroke="#6EE7A8" stroke-width="3"/><text class="cardTitle" x="1174" y="579" fill="#6EE7A8">examples/</text><text class="smallBold" x="1174" y="617">basic web app</text><text class="smallBold" x="1174" y="644">idea-to-architecture</text><text class="smallBold" x="1174" y="671">Mermaid + SVG outputs</text></g><g class="step" style="animation-delay:2.8s; transform-origin:800.0px 712.5px;"><rect x="640" y="650" width="320" height="125" rx="24" fill="#111A33" stroke="#5F6C95" stroke-width="3"/><text class="cardTitle" x="664" y="694" fill="#5F6C95">agents/</text><text class="smallBold" x="664" y="732">openai.yaml</text><text class="smallBold" x="664" y="759">interface metadata only</text></g><rect x="435" y="805" width="730" height="53" rx="18" fill="#111A33" stroke="#6CE5E8" stroke-width="2"/><text class="smallBold" x="800" y="837" text-anchor="middle">Markdown + Mermaid = source of truth  •  SVG = presentation/review artifact</text><circle class="token" r="8"><animateMotion dur="6s" repeatCount="indefinite" path="M800 397 C650 260 520 260 290 310 C520 260 650 260 800 397 C950 260 1080 260 1305 315 C1080 260 950 260 800 397"/></circle></svg>
