@@ -39,59 +39,9 @@ Expanded direction:
     <img src="assets/visuals/senior_architect_agent_core_flow.gif" alt="Senior Architect Agent animated core flow: intake, mode selection, inspection, classification, questioning, mapping, documentation, validation, and reporting" width="920">
   </a>
   <br>
-  <a href="assets/visuals/01_core_workflow_animated.svg">Core workflow animated SVG</a> ·
+  <a href="assets/visuals/01_core_workflow_animated.svg">Core workflow animated SVG</a> |
   <a href="assets/visuals/01_core_workflow.mmd">Mermaid source</a>
 </p>
-
-## Visual Overview
-
-Senior Architect Agent is easiest to understand as a discipline loop: choose
-the right mode, inspect the available evidence, label uncertainty, then produce
-Markdown and Mermaid outputs that a human or future AI agent can continue from.
-
-Mermaid files are the editable source of truth. SVG, PNG, and GIF files are
-presentation artifacts for README pages, reviews, and handoffs.
-
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="assets/visuals/02_mode_selector_animated.svg">
-        <img src="assets/visuals/02_mode_selector_static.png" alt="Mode selector diagram showing existing system mapping versus idea-to-architecture mode">
-      </a>
-      <br>
-      <strong>Mode Selector</strong>
-      <br>
-      Routes work through existing-system mapping or idea-to-architecture before producing output.
-      <br>
-      <a href="assets/visuals/02_mode_selector_animated.svg">Animated SVG</a> ·
-      <a href="assets/visuals/02_mode_selector.mmd">Mermaid</a>
-    </td>
-    <td width="33%" valign="top">
-      <a href="assets/visuals/03_evidence_gate_animated.svg">
-        <img src="assets/visuals/03_evidence_gate_static.png" alt="Evidence gate diagram showing claim traceability, status labels, impact review, validation, and rejected paths">
-      </a>
-      <br>
-      <strong>Evidence Gate</strong>
-      <br>
-      Rejects or repairs unsupported claims, hidden assumptions, and accidental scope expansion.
-      <br>
-      <a href="assets/visuals/03_evidence_gate_animated.svg">Animated SVG</a> ·
-      <a href="assets/visuals/03_evidence_gate.mmd">Mermaid</a>
-    </td>
-    <td width="33%" valign="top">
-      <a href="assets/visuals/04_repository_anatomy_animated.svg">
-        <img src="assets/visuals/04_repository_anatomy_static.png" alt="Repository anatomy diagram showing SKILL.md connected to docs, rules, templates, examples, and agent metadata">
-      </a>
-      <br>
-      <strong>Repository Anatomy</strong>
-      <br>
-      Shows how <code>SKILL.md</code>, docs, rules, templates, examples, and metadata make the behavior repeatable.
-      <br>
-      <a href="assets/visuals/04_repository_anatomy_animated.svg">Animated SVG</a> ·
-      <a href="assets/visuals/04_repository_anatomy.mmd">Mermaid</a>
-    </td>
-  </tr>
-</table>
 
 ## Purpose
 
@@ -207,15 +157,6 @@ senior-architect-agent/
       01_core_workflow.mmd
       01_core_workflow_animated.svg
       01_core_workflow_static.png
-      02_mode_selector.mmd
-      02_mode_selector_animated.svg
-      02_mode_selector_static.png
-      03_evidence_gate.mmd
-      03_evidence_gate_animated.svg
-      03_evidence_gate_static.png
-      04_repository_anatomy.mmd
-      04_repository_anatomy_animated.svg
-      04_repository_anatomy_static.png
 
   agents/
     openai.yaml

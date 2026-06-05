@@ -1,8 +1,0 @@
-flowchart LR
-  Claim --> Source{Source exists?}
-  Source --> Label[Apply status label]
-  Label --> Impact{Architecture impact?}
-  Impact --> Validate[Validation gate]
-  Validate --> Report[Safe report]
-  Source -. no .-> Repair[Mark Unknown / Assumed / Remove]
-  Label -. missing .-> Repair
