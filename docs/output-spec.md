@@ -50,7 +50,8 @@ should check before relying on them.
 
 Use Markdown for primary documentation.
 
-Use Mermaid for diagrams when useful:
+Use Mermaid only when requested, required for handoff, or needed to clarify
+cross-module relationships:
 
 - `flowchart`
 - `sequenceDiagram`
@@ -65,20 +66,34 @@ Mermaid as the editable source of truth.
 
 Use the smallest output that still protects architectural understanding.
 
-For small or low-risk work, a compact architecture note may be enough when it
-still separates confirmed facts, inferences, assumptions, unknowns, risks, and
-decisions.
+Use pass levels to right-size output:
 
-Choose fast-path by default when the request is small, bounded, or exploratory.
-Keep it only when scope is one narrow workflow, one small idea, or 1-2 modules,
-and no trigger requires a full output package.
+- Scan Mode: compact architecture note for small, bounded, exploratory, or
+  low-risk work.
+- Focus Mode: scoped notes or maps for one module, workflow, subsystem, or
+  clear boundary.
+- Full Mode: full output package for whole-system mapping, future-agent
+  handoff, unclear ownership, 3+ interacting modules, persistence,
+  integrations, payment, authentication, security, deployment, or major
+  workflow changes.
 
-Fast-path output should include:
+Start with the smallest safe pass and promote only when scope, evidence, risk,
+or handoff needs require it.
 
+## Compact Architecture Note
+
+Use this shape for Scan Mode:
+
+- Pass level and reason
+- Scope
+- Evidence checked
+- Skipped areas, or `None identified`
 - Confirmed facts
-- Reasonable inferences or assumptions
+- Reasonable inferences
+- Assumptions, or `None identified`
 - Open questions, or `None identified`
 - Risks, or `None identified`
+- Decisions requiring approval, or `None identified`
 - Validation gate answers
 - Safe next actions
 
@@ -118,7 +133,8 @@ For larger ideas, add:
 - Data model draft
 - Decision options
 - Risk register
-- Mermaid diagram
+- Mermaid diagram when requested, required for handoff, or needed to clarify
+  cross-module relationships
 
 ## SVG Visual Artifact
 
@@ -146,6 +162,9 @@ Before reporting, run the three-question validation gate:
 If a claim has no source, mark it as `Unverified`, `Assumed`, or remove it.
 If scope expanded, state what changed and whether it is approved.
 If no unknowns or safe next actions are found, write `None identified`.
+
+Also state the selected pass level, justify the inspection scope, name skipped
+areas when relevant, and preserve discipline labels and risks.
 
 Example:
 

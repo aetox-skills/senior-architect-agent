@@ -14,6 +14,8 @@ Failure mode prevented: The agent creates impressive-looking diagrams that are n
 8. Use SVG only as a generated presentation or review artifact. Keep Mermaid as
    the editable source of truth.
 9. Let one diagram answer one architecture question.
+10. Generate diagrams only when requested, required for handoff, or needed to
+    clarify cross-module relationships.
 
 ## Diagram Types
 

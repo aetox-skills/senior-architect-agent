@@ -719,19 +719,22 @@ Diagram เป็น output สำคัญ แต่ไม่ใช่แก่
 
 ถ้าเอกสารเพิ่มภาระโดยไม่เพิ่มความเข้าใจ ต้องตัดหรือรวม
 
-สำหรับงานเล็กหรืองานความเสี่ยงต่ำ ให้ใช้ fast-path:
-สรุปเป็น architecture note สั้นที่ยังแยก fact, inference, assumption,
-unknown, risk และ decision ได้ชัด
+ให้เริ่มจาก architecture pass ที่เล็กที่สุดแต่ยังปลอดภัยต่อความเข้าใจ:
 
-การเลือก fast-path ควรเริ่มจาก assumption ว่างานเล็กใช้เส้นทางเล็กก่อน:
+- Scan Mode สำหรับงานเล็ก งานสำรวจ หรืองานความเสี่ยงต่ำ
+  ใช้ compact architecture note ที่ยังแยก fact, inference, assumption,
+  unknown, risk และ decision ได้ชัด
+- Focus Mode สำหรับ module, workflow, subsystem หรือ boundary ที่เจาะจง
+- Full Mode สำหรับ whole-system mapping, handoff ให้ AI รอบถัดไป,
+  boundary ไม่ชัด, 3+ modules ที่มี interaction จริง, persistence,
+  integration, payment/billing, authentication/authorization, security,
+  deployment หรือ workflow ใหญ่
 
-- ใช้ fast-path เมื่อเป็น workflow แคบหนึ่งเรื่อง, idea เล็กหนึ่งเรื่อง หรือ 1-2 modules
-- ยังอยู่ใน fast-path ได้ถ้าไม่มี persistence, integration, payment/billing,
-  authentication/authorization, security, deployment, infrastructure,
-  boundary ไม่ชัด, workflow ใหญ่ หรือ handoff-ready documentation
-- promote เป็น full output package เมื่อพบ trigger จริง
-- ถ้าไม่แน่ใจ ให้ inspect แคบก่อน และอย่า promote เป็น full package
-  เพียงเพราะ uncertainty
+เริ่มจาก pass ที่เล็กที่สุดก่อน แล้วค่อย promote เมื่อ scope, evidence,
+risk หรือ handoff need ทำให้ pass เดิมไม่พอ
+
+ถ้าไม่แน่ใจ ให้ inspect แคบก่อน บันทึกว่าเช็กอะไรแล้ว และอย่า promote
+เป็น full output package เพียงเพราะ uncertainty
 
 ---
 
@@ -828,7 +831,7 @@ assumptions, checkpoint gates และ validation gate ได้ตลอดง
 
 สกิลนี้ถูกออกแบบมาสำหรับ model ที่ “คิดได้” ไม่ใช่ model ที่แค่ “ตอบได้”
 
-model เล็กอาจใช้กับ fast-path หรืองานเล็กมากได้ แต่ไม่ควรถูกใช้เป็นตัวหลัก
+model เล็กอาจใช้กับ Scan Mode หรืองานเล็กมากได้ แต่ไม่ควรถูกใช้เป็นตัวหลัก
 สำหรับ full architecture mapping ของระบบกลางหรือใหญ่
 
 ---

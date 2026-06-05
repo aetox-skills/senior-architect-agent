@@ -70,7 +70,8 @@ Intake
 10. Refuse unsupported claims.
 11. When starting from an idea, never present proposed architecture as existing
     implementation.
-12. Use fast-path output for small or low-risk tasks.
+12. Start with the smallest safe architecture pass and promote only when
+    scope, evidence, risk, or handoff needs require it.
 13. Use available inspection tools as evidence helpers, not as replacements for
     architectural judgment.
 14. Split large diagrams into focused views instead of creating one unreadable
@@ -82,7 +83,7 @@ Intake
 
 Use these gates to keep the flow enforceable:
 
-- Intake gate: mode, initial scope, and fast-path or full-package decision are
+- Intake gate: mode, initial scope, selected pass level, and output path are
   recorded.
 - Inspection gate: evidence or user intent is recorded, with inspection
   limitations when something cannot be verified.
@@ -184,37 +185,26 @@ Prefer module-level mapping when the user asks about one module or workflow.
 Avoid whole-system mapping unless the request, risk, or handoff need justifies
 it.
 
-Record the initial scope and whether the task uses the fast path or a full
-output package before proceeding.
+Record the initial scope, selected pass level, and output path before
+proceeding.
 
-Fast-Path Decision Tree:
+Right-Sized Pass Control:
 
-Before producing architecture documentation, select the smallest valid output
-path.
+Before producing architecture documentation, select the smallest safe pass.
 
-1. Start with fast-path when the request appears small, bounded, or
-   exploratory.
-2. Keep fast-path only when all are true:
-   - Scope is one narrow workflow, one small idea, or 1-2 modules.
-   - No persistence, integration, payment or billing, authentication,
-     authorization, security, deployment, infrastructure, unclear boundary, or
-     major workflow change is involved.
-   - No handoff-ready documentation was requested.
-3. Promote to full package when any trigger is found:
-   - Persistence or database schema change.
-   - External integration.
-   - Payment or billing logic.
-   - Authentication, authorization, or security boundary.
-   - Deployment, infrastructure, or environment change.
-   - Major workflow or business flow change.
-   - Unclear ownership or module boundary.
-   - 3+ modules with meaningful interaction.
-   - Explicit future-agent handoff request.
-4. If uncertain:
-   - Inspect narrowly first.
-   - Record what was checked.
-   - Stay in fast-path unless a real trigger is found.
-   - Do not promote to full package because of uncertainty alone.
+- Scan Mode: use for small, bounded, exploratory, or low-risk work. Output a
+  compact architecture note.
+- Focus Mode: use for one module, one workflow, a small subsystem, or a change
+  that touches a clear boundary. Output only the maps or notes needed for that
+  scope.
+- Full Mode: use for whole-system mapping, future-agent handoff, unclear
+  ownership, 3+ interacting modules, persistence, integrations, payment,
+  authentication, security, deployment, or major workflow changes.
+
+Start in Scan Mode unless the request already shows a Focus or Full trigger.
+Promote only when inspected evidence, scope, risk, or handoff requirements make
+the smaller pass unsafe. If uncertain, inspect narrowly first, record what was
+checked, and do not promote because of uncertainty alone.
 
 ## Step 2: Select Mode
 
@@ -241,6 +231,12 @@ For Existing System Mapping Mode, inspect project files, folders, docs,
 configs, tests, package manifests, build scripts, deployment files, naming
 patterns, and architecture signals.
 
+Reuse existing architecture context before re-mapping. Read existing
+architecture overviews, handoff notes, ADRs, current-state docs, or Mermaid
+sources first when present. Do not re-map stable areas unless evidence
+conflicts, the current scope touches that boundary, or the user asks for a full
+re-check.
+
 For Idea-to-Architecture Mode, inspect the user's stated idea, goals,
 constraints, user types, domain terms, requested features, and implied
 boundaries. Do not treat the idea as an existing implementation.
@@ -257,6 +253,16 @@ Minimum inspection targets when available:
 - Test structure
 - Deployment or infrastructure config
 - Existing architecture notes or ADRs
+
+Inspection budget for large repositories:
+
+- Start with top-level structure.
+- Read README and existing docs.
+- Read package, build, framework, and environment config.
+- Identify entry points.
+- Inspect routing, module registries, or service registries.
+- Inspect relevant modules only.
+- Go deeper only when evidence, risk, or the selected scope requires it.
 
 Use available inspection tools such as file search, file tree inspection, git
 history, validators, and Mermaid checks when they help. Treat tool output as
@@ -321,9 +327,12 @@ quickly.
 
 Use the output path selected during intake.
 
-For fast-path work, keep the output to a compact architecture note while still
+For Scan Mode, keep the output to a compact architecture note while still
 inspecting, classifying, questioning, mapping, validating, and reporting in
 compact form.
+
+For Focus Mode, document only the relevant module, workflow, boundary, risks,
+and safe next actions.
 
 For existing systems, use the smallest useful set:
 
@@ -343,7 +352,8 @@ For raw ideas, use the smallest useful proposal set:
 - Data model draft
 - Decision options
 
-Use Mermaid for diagrams when helpful.
+Use Mermaid for diagrams only when requested, required for handoff, or needed
+to clarify cross-module relationships.
 
 Keep diagrams readable and traceable to inspected files, user-provided facts,
 or explicit assumptions.
@@ -420,20 +430,28 @@ Also confirm that proposed elements are labeled as proposed until approved,
 diagrams match the written map, SVG artifacts match their Mermaid source, and
 documentation is lean enough to maintain.
 
+Also confirm:
+
+- Selected pass level is stated.
+- Inspection scope is justified.
+- Skipped areas are named when relevant.
+- Discipline labels and risks are preserved.
+
 ## Step 9: Report
 
 Report with this structure when appropriate:
 
 1. What was inspected
-2. Confirmed architecture facts
-3. Reasonable inferences
-4. Proposed architecture and assumptions, if working from an idea
-5. Open questions
-6. Risks or unclear boundaries
-7. Decisions requiring approval
-8. Validation gate answers
-9. Documentation created or updated
-10. Recommended next steps
+2. Selected pass level and why
+3. Confirmed architecture facts
+4. Reasonable inferences
+5. Proposed architecture and assumptions, if working from an idea
+6. Open questions
+7. Risks or unclear boundaries
+8. Decisions requiring approval
+9. Validation gate answers
+10. Documentation created or updated
+11. Recommended next steps
 
 ## Rule References
 

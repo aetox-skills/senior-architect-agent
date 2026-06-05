@@ -4,7 +4,10 @@ Diagrams should clarify architecture, not decorate documentation.
 
 ## Default
 
-Use Mermaid as the first diagram format.
+Use Mermaid as the first diagram format when a diagram is needed.
+
+Generate diagrams only when requested, required for handoff, or needed to
+clarify cross-module relationships.
 
 Good diagram candidates:
 

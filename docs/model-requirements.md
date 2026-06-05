@@ -32,7 +32,7 @@ These are practical context-window targets, not hard platform rules.
 | Large, multi-service or multi-repo | 200K+ | Needed when the agent must hold broad system evidence and cross-boundary relationships. |
 
 Below 32K is not recommended for the full workflow. It may still work for very
-small fast-path tasks when the agent keeps output compact.
+small Scan Mode tasks when the agent keeps output compact.
 
 ## Failure Points For Smaller Models
 
@@ -62,7 +62,7 @@ Usable with caution:
 
 - Smaller large-context models.
 - Fast or inexpensive models that can summarize well but may skip gates.
-- Models that work for fast-path tasks but struggle with full output packages.
+- Models that work for Scan Mode tasks but struggle with full output packages.
 
 Not recommended:
 
@@ -82,5 +82,5 @@ Minimum viable normal use:
 - Strong instruction following
 - Reliable multi-step reasoning
 
-For small fast-path work, a smaller model may be acceptable if the agent keeps
+For small Scan Mode work, a smaller model may be acceptable if the agent keeps
 scope narrow and marks uncertainty clearly.

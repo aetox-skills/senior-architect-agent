@@ -10,7 +10,12 @@ Purpose: Summarize the observed system architecture without hiding uncertainty.
 - Intake scope:
 - Final documented scope:
 - Scope change:
+- Pass level: Scan Mode / Focus Mode / Full Mode
+- Pass reason:
+- Inspection scope:
+- Skipped areas:
 - Inspection source:
+- Existing architecture context reused:
 
 ## Confirmed Facts
 
@@ -48,6 +53,7 @@ Describe the system in direct, concrete language.
 - Key files:
 - Key directories:
 - User-provided context:
+- Existing docs reused:
 
 ## Decisions
 
@@ -70,6 +76,9 @@ Describe the system in direct, concrete language.
 1. Claim traceability:
 2. Scope alignment:
 3. Handoff readiness:
+4. Pass level stated:
+5. Inspection scope justified:
+6. Skipped areas named:
 
 ## Next Steps
 

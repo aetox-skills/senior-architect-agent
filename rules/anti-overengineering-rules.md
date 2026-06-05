@@ -14,44 +14,37 @@ documentation system.
 5. Do not create separate files when one concise document is enough.
 6. Do not convert every uncertainty into a blocking question.
 7. Do not redesign existing structure unless redesign is requested or clearly justified.
-8. Use fast-path output for small or low-risk tasks.
+8. Start with the smallest safe pass and promote only when scope, evidence,
+   risk, or handoff needs require it.
 
-## Fast-Path Decision Tree
+## Pass Levels
 
-Start with fast-path when the request appears small, bounded, or exploratory.
+Use:
 
-Keep fast-path only when all are true:
+- Scan Mode for small, bounded, exploratory, or low-risk work.
+- Focus Mode for one module, one workflow, a small subsystem, or a clear
+  boundary.
+- Full Mode for whole-system mapping, future-agent handoff, unclear ownership,
+  3+ interacting modules, persistence, integrations, payment, authentication,
+  security, deployment, or major workflow changes.
 
-- Scope is one narrow workflow, one small idea, or 1-2 modules.
-- No persistence, integration, payment or billing, authentication,
-  authorization, security, deployment, infrastructure, unclear boundary, or
-  major workflow change is involved.
-- No handoff-ready documentation was requested.
-
-Promote to a full output package when any trigger is found:
-
-- Persistence or database schema change
-- External integration
-- Payment or billing logic
-- Authentication, authorization, or security boundary
-- Deployment, infrastructure, or environment change
-- Major workflow or business flow change
-- Unclear ownership or module boundary
-- 3+ modules with meaningful interaction
-- Explicit future-agent handoff request
-
-If uncertain, inspect narrowly first. Record what was checked, stay in
-fast-path unless a real trigger is found, and do not promote because of
-uncertainty alone.
+If uncertain, inspect narrowly first. Record what was checked, stay in the
+smallest safe pass unless a real trigger is found, and do not promote because
+of uncertainty alone.
 
 ## Lean Default
 
-For small projects, prefer:
+For Scan Mode, prefer a compact architecture note with:
 
-- One architecture overview
-- One module map
-- One open questions list
-- One AI handoff note
+- Pass level and reason
+- Scope
+- Evidence checked
+- Skipped areas
+- Confirmed facts
+- Inferences or assumptions
+- Open questions
+- Risks
+- Safe next actions
 
 Add more only when the project has enough complexity to justify it.
 

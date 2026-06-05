@@ -33,30 +33,23 @@ Gate before continuing:
 
 - Operating mode is selected or narrowed to the likely mode.
 - Initial scope is recorded.
-- Fast-path or full-package output is chosen.
+- Selected pass level and output path are recorded.
 
-Fast-Path Decision Tree:
+Right-Sized Pass Control:
 
-1. Start with fast-path when the request appears small, bounded, or
-   exploratory.
-2. Keep fast-path only when all are true:
-   - Scope is one narrow workflow, one small idea, or 1-2 modules.
-   - No persistence, integration, payment or billing, authentication,
-     authorization, security, deployment, infrastructure, unclear boundary, or
-     major workflow change is involved.
-   - No handoff-ready documentation was requested.
-3. Promote to full package when any trigger is found:
-   - Persistence or database schema change.
-   - External integration.
-   - Payment or billing logic.
-   - Authentication, authorization, or security boundary.
-   - Deployment, infrastructure, or environment change.
-   - Major workflow or business flow change.
-   - Unclear ownership or module boundary.
-   - 3+ modules with meaningful interaction.
-   - Explicit future-agent handoff request.
-4. If uncertain, inspect narrowly first and stay in fast-path unless a real
-   trigger is found.
+Start with the smallest safe pass and promote only when scope, evidence, risk,
+or handoff needs require it.
+
+- Scan Mode: small, bounded, exploratory, or low-risk work. Output a compact
+  architecture note.
+- Focus Mode: one module, one workflow, a small subsystem, or a clear boundary.
+  Output only the maps or notes needed for that scope.
+- Full Mode: whole-system mapping, future-agent handoff, unclear ownership, 3+
+  interacting modules, persistence, integrations, payment, authentication,
+  security, deployment, or major workflow changes.
+
+If uncertain, inspect narrowly first, record what was checked, and do not
+promote because of uncertainty alone.
 
 ## 2. Select Mode
 
@@ -94,6 +87,23 @@ Inspect files that reveal system shape when available:
 - Configuration and environment examples
 - Tests
 - Deployment and infrastructure files
+
+Reuse existing architecture context before re-mapping. Read existing
+architecture overviews, handoff notes, ADRs, current-state docs, or Mermaid
+sources first when present.
+
+Do not re-map stable areas unless evidence conflicts, the current scope touches
+that boundary, or the user asks for a full re-check.
+
+For large repositories, use this inspection budget:
+
+- Top-level structure
+- README and existing docs
+- Config files
+- Entry points
+- Routing, module registries, or service registries
+- Relevant modules only
+- Deeper files only when evidence, risk, or selected scope requires it
 
 Use available inspection tools such as file search, file tree inspection, git
 history, validators, and Mermaid checks when they help. Treat their output as
@@ -168,10 +178,12 @@ For raw ideas, create the smallest useful proposal set:
 - Data model draft
 - Decision options
 
-Use the output path selected during intake. On the fast path, produce a compact
-architecture note instead of a full output package.
+Use the output path selected during intake. In Scan Mode, produce a compact
+architecture note instead of a full output package. In Focus Mode, document
+only the relevant module, workflow, boundary, risks, and safe next actions.
 
-Use Mermaid when a diagram improves clarity.
+Use Mermaid only when requested, required for handoff, or needed to clarify
+cross-module relationships.
 
 For large systems, split diagrams by purpose, such as boundary, module,
 workflow, and data-flow views. Do not use one diagram when several focused
@@ -217,11 +229,19 @@ Also check that proposed architecture is labeled as proposed, assumptions are
 visible, diagrams match the written description, risks are specific, and
 recommendations do not override existing architecture without approval.
 
+Also verify that:
+
+- Selected pass level is stated.
+- Inspection scope is justified.
+- Skipped areas are named when relevant.
+- Discipline labels and risks are preserved.
+
 ## 9. Report
 
 End with a concise report:
 
 - What was inspected
+- Selected pass level and why
 - What is confirmed
 - What is inferred
 - What is proposed

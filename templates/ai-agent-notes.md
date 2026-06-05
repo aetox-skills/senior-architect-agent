@@ -11,6 +11,10 @@ Purpose: Help future AI agents understand the system quickly without repeating a
 - Intake scope:
 - Final documented scope:
 - Scope change:
+- Pass level:
+- Inspection scope:
+- Skipped areas:
+- Existing architecture context reused:
 
 ## Confirmed Facts
 
@@ -36,6 +40,7 @@ Purpose: Help future AI agents understand the system quickly without repeating a
 ## Evidence
 
 - Files inspected:
+- Existing docs reused:
 - Context provided:
 
 ## Important Paths
@@ -72,6 +77,8 @@ Purpose: Help future AI agents understand the system quickly without repeating a
 
 - What was inspected or provided:
 - Current scope:
+- Selected pass level:
+- Skipped areas named:
 - Confirmed facts included:
 - Inferences included:
 - Assumptions or proposed items included:

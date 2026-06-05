@@ -18,6 +18,10 @@ intent without reading the real project.
 8. Prefer the narrowest useful scope before mapping the whole system.
 9. Use available inspection tools to gather evidence faster, then interpret the
    evidence before making architecture claims.
+10. Reuse existing architecture maps, handoff notes, ADRs, current-state docs,
+    and Mermaid sources before re-mapping stable areas.
+11. Do not re-map stable areas unless evidence conflicts, the scope touches
+    that boundary, or the user asks for a full re-check.
 
 ## Minimum Evidence
 
@@ -32,3 +36,16 @@ Before documenting architecture, gather evidence for:
 - Testing or validation surface
 
 Tool output can support evidence, but it is not architecture by itself.
+
+## Inspection Budget for Large Repositories
+
+Start with:
+
+- Top-level structure
+- README and existing docs
+- Config files
+- Entry points
+- Routing, module registries, or service registries
+- Relevant modules only
+
+Inspect deeper files only when evidence, risk, or selected scope requires it.
