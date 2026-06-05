@@ -44,12 +44,12 @@ Expanded direction:
 </p>
 
 <p align="center">
-  <a href="assets/visuals/01_core_workflow_animated.svg">
+  <a href="assets/visuals/senior_architect_agent_core_flow.gif">
     <img src="assets/visuals/senior_architect_agent_core_flow.gif" alt="Senior Architect Agent animated core flow: intake, mode selection, inspection, classification, questioning, mapping, documentation, validation, and reporting" width="920">
   </a>
   <br>
-  <a href="assets/visuals/01_core_workflow_animated.svg">Core workflow animated SVG</a> |
-  <a href="assets/visuals/01_core_workflow.mmd">Mermaid source</a>
+  <strong>Core flow animation</strong>: inspect evidence, classify claims,
+  ask before mapping, then deliver traceable architecture output.
 </p>
 
 ## Purpose
@@ -165,8 +165,9 @@ senior-architect-agent/
       senior_architect_agent_workflow_infographic.png
       senior_architect_agent_core_flow.gif
       01_core_workflow.mmd
-      01_core_workflow_animated.svg
-      01_core_workflow_static.png
+
+  scripts/
+    build_core_flow_gif.py
 
   agents/
     openai.yaml
