@@ -179,6 +179,35 @@ it.
 Record the initial scope and whether the task uses the fast path or a full
 output package before proceeding.
 
+Fast-Path Decision Tree:
+
+Before producing architecture documentation, select the smallest valid output
+path.
+
+1. Start with fast-path when the request appears small, bounded, or
+   exploratory.
+2. Keep fast-path only when all are true:
+   - Scope is one narrow workflow, one small idea, or 1-2 modules.
+   - No persistence, integration, payment or billing, authentication,
+     authorization, security, deployment, infrastructure, unclear boundary, or
+     major workflow change is involved.
+   - No handoff-ready documentation was requested.
+3. Promote to full package when any trigger is found:
+   - Persistence or database schema change.
+   - External integration.
+   - Payment or billing logic.
+   - Authentication, authorization, or security boundary.
+   - Deployment, infrastructure, or environment change.
+   - Major workflow or business flow change.
+   - Unclear ownership or module boundary.
+   - 3+ modules with meaningful interaction.
+   - Explicit future-agent handoff request.
+4. If uncertain:
+   - Inspect narrowly first.
+   - Record what was checked.
+   - Stay in fast-path unless a real trigger is found.
+   - Do not promote to full package because of uncertainty alone.
+
 ## Step 2: Select Mode
 
 Choose one operating mode:
@@ -275,14 +304,11 @@ the absence is explicit.
 Produce maps that help humans and future AI agents understand the system
 quickly.
 
-Fast-path threshold:
+Use the output path selected during intake.
 
-- For small or low-risk tasks, keep the output to a compact architecture note.
-- Use a full output package only for multi-module work, unclear boundaries,
-  persistence, integrations, payments, security, major workflow changes, or
-  future-agent handoff.
-- Even on the fast path, still inspect, classify, question, map, validate, and
-  report in compact form.
+For fast-path work, keep the output to a compact architecture note while still
+inspecting, classifying, questioning, mapping, validating, and reporting in
+compact form.
 
 For existing systems, use the smallest useful set:
 

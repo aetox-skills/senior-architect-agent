@@ -76,6 +76,9 @@ instead of producing every output file. Full output packages are reserved for
 multi-module work, unclear boundaries, persistence, integrations,
 payments/security, major workflow changes, or future-agent handoff.
 
+Fast-path is the default for small, bounded, or exploratory requests unless a
+real complexity trigger is found during inspection.
+
 ## File Tree
 
 ```txt
@@ -95,6 +98,7 @@ senior-architect-agent/
     diagram-guidelines.md
     question-framework.md
     anti-patterns.md
+    model-requirements.md
     project-core-th-final.md
 
   rules/
@@ -171,6 +175,19 @@ evidence to interpret, not architecture by itself.
 When only an idea exists, the agent should not pretend a system exists. It
 should clarify intent, mark assumptions, propose architecture, identify
 tradeoffs, and list decisions requiring approval.
+
+## Model Requirements
+
+This skill is intended for models that can hold long context, follow
+instructions across multiple gates, and reason through evidence before
+reporting.
+
+For normal use, prefer a model with at least 128K context and strong
+instruction following. Use 32K only for small fast-path tasks. Use 200K or more
+for large multi-service or multi-repo systems.
+
+This skill is designed for models that can think through architecture gates,
+not just produce quick summaries. See [Model Requirements](docs/model-requirements.md).
 
 ## Preferred Outputs
 

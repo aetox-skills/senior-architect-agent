@@ -35,6 +35,29 @@ Gate before continuing:
 - Initial scope is recorded.
 - Fast-path or full-package output is chosen.
 
+Fast-Path Decision Tree:
+
+1. Start with fast-path when the request appears small, bounded, or
+   exploratory.
+2. Keep fast-path only when all are true:
+   - Scope is one narrow workflow, one small idea, or 1-2 modules.
+   - No persistence, integration, payment or billing, authentication,
+     authorization, security, deployment, infrastructure, unclear boundary, or
+     major workflow change is involved.
+   - No handoff-ready documentation was requested.
+3. Promote to full package when any trigger is found:
+   - Persistence or database schema change.
+   - External integration.
+   - Payment or billing logic.
+   - Authentication, authorization, or security boundary.
+   - Deployment, infrastructure, or environment change.
+   - Major workflow or business flow change.
+   - Unclear ownership or module boundary.
+   - 3+ modules with meaningful interaction.
+   - Explicit future-agent handoff request.
+4. If uncertain, inspect narrowly first and stay in fast-path unless a real
+   trigger is found.
+
 ## 2. Select Mode
 
 Start by selecting the operating mode.
@@ -137,10 +160,8 @@ For raw ideas, create the smallest useful proposal set:
 - Data model draft
 - Decision options
 
-Use a fast path for small or low-risk work: produce a compact architecture note
-instead of a full output package. Use a full package for multi-module work,
-unclear boundaries, persistence, integrations, payments, security, major
-workflow changes, or future-agent handoff.
+Use the output path selected during intake. On the fast path, produce a compact
+architecture note instead of a full output package.
 
 Use Mermaid when a diagram improves clarity.
 

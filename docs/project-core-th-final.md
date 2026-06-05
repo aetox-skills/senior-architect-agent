@@ -708,9 +708,15 @@ Diagram เป็น output สำคัญ แต่ไม่ใช่แก่
 สรุปเป็น architecture note สั้นที่ยังแยก fact, inference, assumption,
 unknown, risk และ decision ได้ชัด
 
-full output package ควรใช้เมื่อมีหลาย module, boundary ไม่ชัด, persistence,
-integration, payment/security, workflow สำคัญ หรือจำเป็นต้องส่งต่อให้ AI
-รอบถัดไป
+การเลือก fast-path ควรเริ่มจาก assumption ว่างานเล็กใช้เส้นทางเล็กก่อน:
+
+- ใช้ fast-path เมื่อเป็น workflow แคบหนึ่งเรื่อง, idea เล็กหนึ่งเรื่อง หรือ 1-2 modules
+- ยังอยู่ใน fast-path ได้ถ้าไม่มี persistence, integration, payment/billing,
+  authentication/authorization, security, deployment, infrastructure,
+  boundary ไม่ชัด, workflow ใหญ่ หรือ handoff-ready documentation
+- promote เป็น full output package เมื่อพบ trigger จริง
+- ถ้าไม่แน่ใจ ให้ inspect แคบก่อน และอย่า promote เป็น full package
+  เพียงเพราะ uncertainty
 
 ---
 
@@ -796,6 +802,19 @@ SVG visual artifact อยู่ในขอบเขตได้เมื่อ
 - AI handoff context
 
 เหตุผลคือโปรเจคนี้ต้องรักษาความคมของการเป็น architecture skill
+
+### 15.1 Model Fit
+
+สกิลนี้เหมาะกับ model ที่ถือ context ได้ยาว ทำตาม instruction ได้สม่ำเสมอ
+และ reasoning หลายขั้นได้จริง
+
+model ที่ใช้กับสกิลนี้ควรจำ intake scope, classification, evidence,
+assumptions, checkpoint gates และ validation gate ได้ตลอดงาน
+
+สกิลนี้ถูกออกแบบมาสำหรับ model ที่ “คิดได้” ไม่ใช่ model ที่แค่ “ตอบได้”
+
+model เล็กอาจใช้กับ fast-path หรืองานเล็กมากได้ แต่ไม่ควรถูกใช้เป็นตัวหลัก
+สำหรับ full architecture mapping ของระบบกลางหรือใหญ่
 
 ---
 

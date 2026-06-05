@@ -69,6 +69,19 @@ For small or low-risk work, a compact architecture note may be enough when it
 still separates confirmed facts, inferences, assumptions, unknowns, risks, and
 decisions.
 
+Choose fast-path by default when the request is small, bounded, or exploratory.
+Keep it only when scope is one narrow workflow, one small idea, or 1-2 modules,
+and no trigger requires a full output package.
+
+Fast-path output should include:
+
+- Confirmed facts
+- Reasonable inferences or assumptions
+- Open questions, or `None identified`
+- Risks, or `None identified`
+- Validation gate answers
+- Safe next actions
+
 For a small existing system, the minimum useful output is usually:
 
 - Architecture overview
@@ -85,9 +98,11 @@ For larger existing systems, add:
 - Risk register
 - Decision records
 
-Use larger output packages when the work spans multiple modules, has unclear
-boundaries, changes persistence, adds integrations, touches payments or
-security, changes major workflows, or needs future-agent handoff.
+Use larger output packages when the work has persistence or database schema
+changes, external integrations, payment or billing logic, authentication,
+authorization, security boundaries, deployment or infrastructure changes, major
+workflow changes, unclear ownership or module boundaries, 3+ interacting
+modules, or explicit future-agent handoff.
 
 For a small raw idea, the minimum useful output is usually:
 

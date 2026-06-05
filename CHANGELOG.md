@@ -30,6 +30,10 @@ Updated:
 - Evidence strength and a three-question validation gate help prevent
   unsupported claims, scope drift, and weak handoff notes.
 - Anti-pattern guidance now shows rejected architecture output patterns.
+- Model-fit guidance now explains context and reasoning requirements for using
+  the skill responsibly.
+- Fast-path selection now has a decision tree so small, bounded, or exploratory
+  work does not default to a full output package.
 
 ## v0.1.0 - Foundation Map
 
