@@ -80,6 +80,21 @@ Use pass levels to right-size output:
 Start with the smallest safe pass and promote only when scope, evidence, risk,
 or handoff needs require it.
 
+If the task has no architecture impact, output only:
+
+- `No architecture pass required`
+- Reason
+- Uncertainty that would change the decision, or `None identified`
+- Recommended next step
+
+## Artifact Budget
+
+- Scan Mode: one compact architecture note.
+- Focus Mode: one to three artifacts.
+- Full Mode: full output package only when scope, risk, or handoff requires it.
+
+If output exceeds the budget, state why.
+
 ## Compact Architecture Note
 
 Use this shape for Scan Mode:
@@ -165,6 +180,13 @@ If no unknowns or safe next actions are found, write `None identified`.
 
 Also state the selected pass level, justify the inspection scope, name skipped
 areas when relevant, and preserve discipline labels and risks.
+
+If the pass level was promoted, state the trigger, evidence, and risk of
+staying in the smaller pass.
+
+If mapping or validation exposed an architecture-changing unknown, state
+whether the flow looped back to questions or proceeded with a labeled
+assumption.
 
 Example:
 

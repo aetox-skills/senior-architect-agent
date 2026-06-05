@@ -84,7 +84,7 @@ Intake
 Use these gates to keep the flow enforceable:
 
 - Intake gate: mode, initial scope, selected pass level, and output path are
-  recorded.
+  recorded, or an early exit is declared when no architecture pass is needed.
 - Inspection gate: evidence or user intent is recorded, with inspection
   limitations when something cannot be verified.
 - Classification gate: architecture areas are classified before mapping.
@@ -188,6 +188,18 @@ it.
 Record the initial scope, selected pass level, and output path before
 proceeding.
 
+Early Exit Rule:
+
+If the task is a small implementation fix with no architecture impact, do not
+run an architecture pass or create architecture documentation. Report:
+
+- `No architecture pass required`
+- Why there is no architecture impact
+- Any uncertainty that would change that conclusion
+- Recommended next step
+
+If architecture impact is unclear, use Scan Mode rather than exiting.
+
 Right-Sized Pass Control:
 
 Before producing architecture documentation, select the smallest safe pass.
@@ -205,6 +217,13 @@ Start in Scan Mode unless the request already shows a Focus or Full trigger.
 Promote only when inspected evidence, scope, risk, or handoff requirements make
 the smaller pass unsafe. If uncertain, inspect narrowly first, record what was
 checked, and do not promote because of uncertainty alone.
+
+Promotion gate:
+
+- Name the trigger.
+- Cite the evidence or user request.
+- State the risk of staying in the smaller pass.
+- Keep the current pass if the trigger is speculative.
 
 ## Step 2: Select Mode
 
@@ -320,6 +339,13 @@ Separate:
 If no architecture-impacting questions are found, write `None identified` so
 the absence is explicit.
 
+Loopback rule:
+
+If mapping, documentation, or validation exposes an architecture-changing
+unknown, return to Step 5 before final conclusions. Either ask the question or
+mark the output as incomplete and proceed only with a clearly labeled
+assumption.
+
 ## Step 6: Map
 
 Produce maps that help humans and future AI agents understand the system
@@ -397,6 +423,14 @@ Do not create every template by default.
 
 Choose based on actual complexity and user need.
 
+Artifact budget:
+
+- Scan Mode: one compact architecture note.
+- Focus Mode: one to three artifacts.
+- Full Mode: full output package only when scope, risk, or handoff requires it.
+
+If output exceeds the budget, state why before creating extra artifacts.
+
 `agents/openai.yaml`, when present, is interface metadata only. The core skill
 must remain usable from `SKILL.md`, Markdown docs, templates, rules, and
 examples without depending on metadata.
@@ -436,6 +470,10 @@ Also confirm:
 - Inspection scope is justified.
 - Skipped areas are named when relevant.
 - Discipline labels and risks are preserved.
+- Any pass promotion has a trigger, evidence, and risk statement.
+- Output stays within artifact budget, or the over-budget reason is stated.
+- Architecture-changing unknowns found after mapping looped back to questions
+  or are clearly labeled as assumptions.
 
 ## Step 9: Report
 

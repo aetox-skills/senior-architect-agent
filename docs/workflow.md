@@ -35,6 +35,12 @@ Gate before continuing:
 - Initial scope is recorded.
 - Selected pass level and output path are recorded.
 
+Early exit:
+
+If the task is a small implementation fix with no architecture impact, write
+`No architecture pass required`, explain why, and do not create architecture
+documentation. If architecture impact is unclear, use Scan Mode.
+
 Right-Sized Pass Control:
 
 Start with the smallest safe pass and promote only when scope, evidence, risk,
@@ -50,6 +56,13 @@ or handoff needs require it.
 
 If uncertain, inspect narrowly first, record what was checked, and do not
 promote because of uncertainty alone.
+
+Promotion gate:
+
+- Name the trigger.
+- Cite the evidence or user request.
+- State the risk of staying in the smaller pass.
+- Keep the current pass if the trigger is speculative.
 
 ## 2. Select Mode
 
@@ -159,6 +172,10 @@ Gate before continuing:
 - Architecture-impacting unknowns are listed.
 - If no important unknowns are found, write `None identified`.
 
+Loop back to this step if mapping, documentation, or validation exposes an
+architecture-changing unknown. Either ask the question or proceed only with a
+clearly labeled assumption.
+
 ## 6. Map
 
 For existing systems, create the smallest useful set of maps:
@@ -181,6 +198,14 @@ For raw ideas, create the smallest useful proposal set:
 Use the output path selected during intake. In Scan Mode, produce a compact
 architecture note instead of a full output package. In Focus Mode, document
 only the relevant module, workflow, boundary, risks, and safe next actions.
+
+Artifact budget:
+
+- Scan Mode: one compact architecture note.
+- Focus Mode: one to three artifacts.
+- Full Mode: full output package only when scope, risk, or handoff requires it.
+
+If output exceeds the budget, state why before creating extra artifacts.
 
 Use Mermaid only when requested, required for handoff, or needed to clarify
 cross-module relationships.
@@ -235,6 +260,10 @@ Also verify that:
 - Inspection scope is justified.
 - Skipped areas are named when relevant.
 - Discipline labels and risks are preserved.
+- Any pass promotion has a trigger, evidence, and risk statement.
+- Output stays within artifact budget, or the over-budget reason is stated.
+- Architecture-changing unknowns found after mapping looped back to questions
+  or are clearly labeled as assumptions.
 
 ## 9. Report
 

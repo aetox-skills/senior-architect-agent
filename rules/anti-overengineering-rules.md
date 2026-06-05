@@ -16,6 +16,8 @@ documentation system.
 7. Do not redesign existing structure unless redesign is requested or clearly justified.
 8. Start with the smallest safe pass and promote only when scope, evidence,
    risk, or handoff needs require it.
+9. Exit early when the task has no architecture impact.
+10. Do not exceed the artifact budget without stating why.
 
 ## Pass Levels
 
@@ -32,6 +34,14 @@ If uncertain, inspect narrowly first. Record what was checked, stay in the
 smallest safe pass unless a real trigger is found, and do not promote because
 of uncertainty alone.
 
+Promotion requires:
+
+- A real trigger
+- Evidence or an explicit user request
+- A risk statement for staying in the smaller pass
+
+Do not promote because the system merely appears complex.
+
 ## Lean Default
 
 For Scan Mode, prefer a compact architecture note with:
@@ -47,6 +57,15 @@ For Scan Mode, prefer a compact architecture note with:
 - Safe next actions
 
 Add more only when the project has enough complexity to justify it.
+
+## Artifact Budget
+
+- Scan Mode: one compact architecture note.
+- Focus Mode: one to three artifacts.
+- Full Mode: full output package only when scope, risk, or handoff requires it.
+
+If the task has no architecture impact, write `No architecture pass required`
+and stop architecture documentation.
 
 ## Full Package Threshold
 
