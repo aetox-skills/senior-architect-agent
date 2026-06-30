@@ -2,9 +2,9 @@
 
 Current release: `v1.1.0 - Right-Sized Architecture Passes`
 
-Senior Architect Agent is an AI architecture skill for existing system mapping,
-software architecture documentation, architecture mapping, Mermaid diagrams,
-and AI agent handoff.
+**This is not a documentation tool. It is a cognitive framework that turns AI agents into senior architects — forcing evidence-first thinking, honest uncertainty, and deep system understanding before action.**
+
+Senior Architect Agent is a cognitive discipline layer for AI agents. It transforms agents into architects who truly understand a system and can write that understanding down — separating what is known from what is inferred, naming uncertainty instead of hiding it, and producing maps that humans and future AI agents can trust.
 
 This project is a reusable AI agent skill that forces an agent to inspect,
 understand, question, map, document, and validate a software system or raw
@@ -12,12 +12,14 @@ system idea before suggesting architecture changes or editing code.
 
 Search terms this repository is meant to serve: `Senior Architect Agent`,
 `AI architecture skill`, `architecture mapping`, `existing system mapping`,
-`software architecture documentation`, `Mermaid architecture diagram`, and
-`AI agent handoff`.
+`software architecture documentation`, `Mermaid architecture diagram`,
+`AI agent handoff`, `AI architecture reasoning`, `evidence-first AI`,
+`cognitive framework for AI agents`.
 
 Main slogan:
 
-> This skill does not make AI code faster. It makes AI understand before it acts.
+> An architect who truly understands the system and writes it down.  
+> Not a documentation generator — a cognitive framework that makes AI read before it draws.
 
 Expanded direction:
 

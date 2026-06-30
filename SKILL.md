@@ -1,11 +1,12 @@
 ---
 name: senior-architect-agent
 description: >-
-  Architecture inspection and documentation discipline for AI agents.
-  Use when an AI agent must understand an existing software project,
-  map architecture, produce documentation, prepare handoff notes,
-  ask architecture-impacting questions, propose architecture changes
-  before editing code, or turn a raw idea into a reviewable architecture proposal.
+  Cognitive framework that transforms AI agents into senior architects —
+  evidence-first system understanding, honest uncertainty mapping,
+  and architecture reasoning before action. Use when an agent must
+  understand a codebase, map architecture, produce handoff notes,
+  propose changes, or turn an idea into a reviewable proposal
+  without guessing.
 ---
 
 # Senior Architect Agent
