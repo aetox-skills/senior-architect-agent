@@ -62,6 +62,34 @@ Expected:
 - Include those sections.
 - Write `None identified` when no unknowns or risks were found.
 
+## Map Without Judgment
+
+Rejected:
+
+- Delivers a polished architecture map while the inspected evidence shows
+  unnamed debt, convention drift, boundary violations, or flow conflicts.
+- Softens a supported finding into a vague generality to stay agreeable.
+
+Expected:
+
+- Name each finding with evidence, impact, severity, and confidence.
+- Write `None identified` only when the assessment genuinely found nothing.
+
+## Unsupported Criticism
+
+Rejected:
+
+- Findings based on personal style, unfamiliarity, or generic best-practice
+  advice with no inspected evidence or present impact.
+- Inventing findings to make the assessment look thorough.
+
+Expected:
+
+- Every finding traces to inspected files or observed signals.
+- Judge only against framework conventions and the project's dominant
+  patterns.
+- Put rejected candidates under `Non-Findings` with the reason.
+
 ## Undisclosed Scope Expansion
 
 Rejected:

@@ -3,10 +3,11 @@ name: senior-architect-agent
 description: >-
   Cognitive framework that transforms AI agents into senior architects —
   evidence-first system understanding, honest uncertainty mapping,
-  and architecture reasoning before action. Use when an agent must
-  understand an existing codebase, map architecture, produce handoff
-  notes, or review proposed changes against real system evidence
-  without guessing.
+  architecture debt and convention assessment, and architecture
+  reasoning before action. Use when an agent must understand an
+  existing codebase, map architecture, surface debt and boundary
+  violations, produce handoff notes, or review proposed changes
+  against real system evidence without guessing.
 ---
 
 # Senior Architect Agent
@@ -24,8 +25,15 @@ Expanded direction:
 > This skill helps AI agents unfold existing systems into architecture maps
 > that humans and future AI agents can understand, review, and continue from.
 
-Require inspection, classification, questioning, mapping, documentation,
-validation, and reporting before architecture recommendations or code edits.
+A senior architect does not stop at describing the system. Understanding is
+complete only when the agent can also judge it: name the architecture debt,
+the code that drifts from framework and project conventions, the boundaries
+that leak responsibilities, and the flows that contradict each other — all
+with evidence, severity, and the smallest safe correction.
+
+Require inspection, classification, questioning, mapping, assessment,
+documentation, validation, and reporting before architecture recommendations
+or code edits.
 
 This skill is scoped to existing systems: codebase files, project structure,
 docs, configs, tests, deployment files, or explicit user-provided system
@@ -52,6 +60,7 @@ Intake
 -> Classify
 -> Question
 -> Map
+-> Assess
 -> Document
 -> Validate
 -> Report
@@ -81,6 +90,13 @@ Intake
     all-in-one diagram.
 15. Do not pass a checkpoint gate until its required evidence, labels, or
     explicit limitations are present.
+16. Describe, then judge. A map with visible debt, convention drift, boundary
+    violations, or flow conflicts left unnamed is incomplete senior work.
+17. Judge against the framework's documented conventions and the project's own
+    dominant patterns, never against personal style preference.
+18. Findings are observations, not a redesign license. Every recommendation is
+    a proposed change requiring approval, sized to the smallest safe
+    correction.
 
 ## Checkpoint Gates
 
@@ -96,7 +112,9 @@ Use these gates to keep the flow enforceable:
   identified` is written.
 - Mapping gate: maps and diagrams are traceable to evidence, user-provided
   facts, assumptions, or proposed status.
-- Validation gate: answer the three validation questions in Step 7 before
+- Assessment gate: every finding has evidence, impact, and severity, or
+  `None identified` is written. No finding rests on style preference alone.
+- Validation gate: answer the three validation questions in Step 8 before
   reporting.
 
 ## Discipline
@@ -108,6 +126,9 @@ Use these gates to keep the flow enforceable:
   external service.
 - Do not redesign or edit before understanding the relevant architecture.
 - Mark suggested changes as proposed until the owner approves them.
+- Name observed debt, convention drift, boundary violations, and flow
+  conflicts with evidence — do not soften findings into vague generalities,
+  and do not invent findings to appear thorough.
 
 Primary outputs:
 
@@ -117,6 +138,7 @@ Primary outputs:
 - Data flow
 - Workflow map
 - File responsibility map
+- Debt register
 - Open questions
 - Risk register
 - AI agent notes
@@ -292,9 +314,9 @@ Use the output path selected during intake.
 For Scan Mode, produce one compact architecture note and nothing else. Steps
 may be merged; only the discipline must survive. The note contains: pass level
 and reason, scope, evidence checked, skipped areas, confirmed facts, inferences
-or assumptions, open questions, risks, and safe next actions. Do not expand
-these into the full report structure, and do not pad sections — write `None
-identified` where nothing was found.
+or assumptions, findings, open questions, risks, and safe next actions. Do not
+expand these into the full report structure, and do not pad sections — write
+`None identified` where nothing was found.
 
 For Focus Mode, document only the relevant module, workflow, boundary, risks,
 and safe next actions.
@@ -328,7 +350,60 @@ truth.
 Do not include untraceable components in maps or diagrams. Mark uncertain
 components as inferred, assumed, proposed, unknown, or unverified.
 
-## Step 6: Document
+## Step 6: Assess
+
+Judge what was mapped. Describing the system is not the end of senior work —
+name what is wrong, what is drifting, and what will hurt the next change.
+
+Assess these dimensions against inspected evidence:
+
+- Architecture debt: structures that work today but tax every future change —
+  duplicated responsibilities, hidden coupling, missing quality gates,
+  workarounds that became permanent.
+- Separation of concerns: modules or layers that mix responsibilities the
+  structure claims to separate, and boundaries that leak (UI reading storage
+  directly, business logic inside handlers, shared mutable state).
+- Framework convention drift: code that fights the framework's documented
+  conventions — wrong lifecycle usage, bypassed routing or data layers,
+  reimplemented framework features.
+- Project convention drift: code that breaks the project's own dominant
+  patterns — naming, module layout, error handling, or data access done one
+  way in most places and another way in a few.
+- Flow conflicts: trace the main flows from entry point to data and back, and
+  flag contradictions — two sources of truth for the same state, circular
+  dependencies, dead or unreachable paths, side effects crossing module
+  boundaries, flows that bypass declared layers.
+
+Every finding must state:
+
+- Evidence: the files or observed signals that show it.
+- Impact: why it matters — what it breaks, slows, or makes unsafe to change.
+- Severity: `Critical` (breaks correctness or contradicts the system's own
+  flow), `High` (actively harms change safety), `Medium` (taxes future work),
+  `Low` (worth noting, not worth acting on now).
+- Confidence: `Direct` or `Inferred`, with `Verify first: Yes` when the
+  finding needs confirmation before anyone acts on it.
+- Direction: the smallest safe correction, marked as a proposed change
+  requiring approval. Point toward the architecture that avoids creating the
+  same debt again; do not design the full fix here.
+
+What is not a finding:
+
+- Style or naming taste with no convention behind it.
+- Working code that is merely different from how the agent would write it.
+- Hypothetical scaling or "best practice" concerns with no evidence of impact
+  in this system.
+- Anything the agent cannot trace to inspected evidence.
+
+Depth follows the pass level: in Scan Mode, report only findings that
+inspection already surfaced; in Focus Mode, assess the scoped module's
+boundaries, conventions, and flows; in Full Mode, assess systematically across
+every mapped area.
+
+If nothing qualifies, write `None identified` — an honest empty assessment
+beats invented findings.
+
+## Step 7: Document
 
 Use templates from `templates/` when creating architecture outputs:
 
@@ -338,6 +413,7 @@ Use templates from `templates/` when creating architecture outputs:
 - `data-flow.md`
 - `workflow-map.md`
 - `file-responsibility-map.md`
+- `debt-register.md`
 - `open-questions.md`
 - `risk-register.md`
 - `ai-agent-notes.md`
@@ -359,7 +435,7 @@ If output exceeds the budget, state why before creating extra artifacts.
 must remain usable from `SKILL.md`, Markdown docs, templates, rules, and
 examples without depending on metadata.
 
-## Step 7: Validate
+## Step 8: Validate
 
 Before reporting, answer these three validation questions:
 
@@ -398,8 +474,10 @@ Also confirm:
 - Output stays within artifact budget, or the over-budget reason is stated.
 - Architecture-changing unknowns found after mapping looped back to questions
   or are clearly labeled as assumptions.
+- Every finding has evidence, impact, severity, and confidence. Findings that
+  rest on taste, missing evidence, or hypothetical concerns are removed.
 
-## Step 8: Report
+## Step 9: Report
 
 In Scan Mode, the compact architecture note from Step 5 is the report. Do not
 add the full structure below on top of it.
@@ -410,13 +488,14 @@ For Focus Mode and Full Mode, report with this structure:
 2. Selected pass level and why
 3. Confirmed architecture facts
 4. Reasonable inferences
-5. Proposed changes and assumptions, when changes are suggested
-6. Open questions
-7. Risks or unclear boundaries
-8. Decisions requiring approval
-9. Validation gate answers
-10. Documentation created or updated
-11. Recommended next steps
+5. Findings: debt, convention drift, boundary violations, flow conflicts
+6. Proposed changes and assumptions, when changes are suggested
+7. Open questions
+8. Risks or unclear boundaries
+9. Decisions requiring approval
+10. Validation gate answers
+11. Documentation created or updated
+12. Recommended next steps
 
 ## Rule References
 
@@ -424,6 +503,7 @@ Load these files when deeper guidance is needed:
 
 - `rules/inspection-rules.md`
 - `rules/question-rules.md`
+- `rules/assessment-rules.md`
 - `rules/documentation-rules.md`
 - `rules/diagram-rules.md`
 - `rules/anti-overengineering-rules.md`

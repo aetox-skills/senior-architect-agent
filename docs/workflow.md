@@ -12,6 +12,7 @@ Intake
 -> Classify
 -> Question
 -> Map
+-> Assess
 -> Document
 -> Validate
 -> Report
@@ -26,8 +27,9 @@ and the validation gate, read `SKILL.md`:
 - Step 3: Classify
 - Step 4: Question, loopback rule
 - Step 5: Map
-- Step 6: Document, artifact budget
-- Step 7: Validate
-- Step 8: Report
+- Step 6: Assess — debt, convention drift, boundary violations, flow conflicts
+- Step 7: Document, artifact budget
+- Step 8: Validate
+- Step 9: Report
 
 Deeper guidance stays in `rules/` and `docs/anti-patterns.md`.

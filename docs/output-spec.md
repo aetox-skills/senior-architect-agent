@@ -9,6 +9,7 @@ Every architecture output should separate the categories that apply:
 - Confirmed architecture
 - Confirmed facts
 - Reasonable inferences
+- Findings (debt, convention drift, boundary violations, flow conflicts)
 - Proposed changes
 - Assumptions
 - Open questions
@@ -105,6 +106,7 @@ Use this shape for Scan Mode, matching `SKILL.md` Step 5:
 - Skipped areas, or `None identified`
 - Confirmed facts
 - Inferences or assumptions, or `None identified`
+- Findings, or `None identified`
 - Open questions, or `None identified`
 - Risks, or `None identified`
 - Safe next actions
@@ -122,8 +124,13 @@ For larger existing systems, add:
 - Data flow
 - Workflow map
 - File responsibility map
+- Debt register
 - Risk register
 - Decision records
+
+Findings follow the shape in `rules/assessment-rules.md`: observation,
+evidence, impact, severity, confidence, and the smallest safe correction
+marked as `Proposed` and `Requires approval`.
 
 Use larger output packages when the work has persistence or database schema
 changes, external integrations, payment or billing logic, authentication,

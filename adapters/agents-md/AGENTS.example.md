@@ -22,6 +22,9 @@ before proposing architecture changes or editing code.
 
 - Inspect before design.
 - Understand before editing.
+- Describe, then judge: name debt, convention drift, boundary violations, and
+  flow conflicts with evidence, impact, and severity — never from style
+  preference.
 - Separate confirmed facts, inferences, assumptions, unknowns, risks, and
   decisions.
 - Mark proposed architecture as proposed.
@@ -35,6 +38,8 @@ End architecture work with:
 
 - confirmed facts
 - reasonable inferences
+- findings (debt, drift, boundary violations, flow conflicts), or `None
+  identified`
 - open questions
 - risks
 - decisions requiring approval

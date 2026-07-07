@@ -2,8 +2,25 @@
 
 ## Unreleased
 
-Release focus: single-core scope and internal deduplication so the skill
-practices its own anti-bloat rules.
+Release focus: single-core scope, internal deduplication, and senior-level
+assessment — the skill now judges systems, not just describes them.
+
+Added:
+
+- `Assess` step in the core flow (`... Map -> Assess -> Document ...`).
+  Describing the system is not the end of senior work: the agent must name
+  architecture debt, framework and project convention drift, separation-of-
+  concerns violations, and flow conflicts found in the mapped evidence.
+- Finding discipline: every finding requires evidence, impact, severity
+  (`Critical`/`High`/`Medium`/`Low`), confidence, and the smallest safe
+  correction marked as a proposed change requiring approval. Judged only
+  against framework conventions and the project's dominant patterns — never
+  personal style. `None identified` is a valid assessment.
+- `rules/assessment-rules.md` with assessment dimensions, finding shape,
+  non-findings, and depth-by-pass-level guidance.
+- `templates/debt-register.md` and an example debt register in
+  `examples/basic-web-app/output/`.
+- Anti-patterns: `Map Without Judgment` and `Unsupported Criticism`.
 
 Removed (breaking):
 
@@ -15,9 +32,10 @@ Removed (breaking):
   `module-proposal.md`, `workflow-proposal.md`, `data-model-draft.md`,
   `decision-options.md`.
 - The `examples/idea-to-architecture/` example package.
-- The `Select Mode` step. With one scope there is nothing to select; the core
-  flow is now 8 steps (`Intake -> Inspect -> Classify -> Question -> Map ->
-  Document -> Validate -> Report`) and raw-idea routing happens during intake.
+- The `Select Mode` step. With one scope there is nothing to select; raw-idea
+  routing happens during intake. Combined with the new `Assess` step, the core
+  flow is `Intake -> Inspect -> Classify -> Question -> Map -> Assess ->
+  Document -> Validate -> Report`.
 
 Still supported:
 
@@ -35,8 +53,8 @@ Updated:
   is the report instead of the full report structure.
 - The Thai directional core document, README, docs, and interface metadata now
   reflect the single existing-system scope.
-- `assets/visuals/01_core_workflow.mmd` matches the 8-step flow. The rendered
-  workflow infographic and core-flow GIF still show the old 9-step flow and
+- `assets/visuals/01_core_workflow.mmd` matches the new 9-step flow. The
+  rendered workflow infographic and core-flow GIF still show the old flow and
   need regeneration.
 
 Fixed:
