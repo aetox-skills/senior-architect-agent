@@ -113,8 +113,6 @@ Discipline:
 
 - Evidence-first.
 - Confirm claims from files or user-provided context.
-- Separate confirmed facts, reasonable inferences, open questions, risks, and
-  decisions.
 - Mark missing categories as not observed.
 - Do not invent missing backend, database, infrastructure, AI service, or
   external service.
@@ -154,8 +152,6 @@ Discipline:
 - Mark all modules, workflows, data models, integrations, and boundaries as
   proposed until approved.
 - Explain tradeoffs and decisions requiring approval.
-- Do not claim that proposed modules, data models, workflows, or integrations
-  already exist.
 
 Primary outputs:
 
@@ -340,6 +336,10 @@ Separate:
 If no architecture-impacting questions are found, write `None identified` so
 the absence is explicit.
 
+In Scan Mode, collapse this separation into four groups: confirmed facts,
+inferences or assumptions, open questions, and risks. Use the full separation
+only in Focus Mode and Full Mode.
+
 Loopback rule:
 
 If mapping, documentation, or validation exposes an architecture-changing
@@ -354,9 +354,12 @@ quickly.
 
 Use the output path selected during intake.
 
-For Scan Mode, keep the output to a compact architecture note while still
-inspecting, classifying, questioning, mapping, validating, and reporting in
-compact form.
+For Scan Mode, produce one compact architecture note and nothing else. Steps
+may be merged; only the discipline must survive. The note contains: pass level
+and reason, scope, evidence checked, skipped areas, confirmed facts, inferences
+or assumptions, open questions, risks, and safe next actions. Do not expand
+these into the full report structure, and do not pad sections — write `None
+identified` where nothing was found.
 
 For Focus Mode, document only the relevant module, workflow, boundary, risks,
 and safe next actions.
@@ -478,7 +481,10 @@ Also confirm:
 
 ## Step 9: Report
 
-Report with this structure when appropriate:
+In Scan Mode, the compact architecture note from Step 6 is the report. Do not
+add the full structure below on top of it.
+
+For Focus Mode and Full Mode, report with this structure:
 
 1. What was inspected
 2. Selected pass level and why

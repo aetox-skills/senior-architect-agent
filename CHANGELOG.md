@@ -2,7 +2,22 @@
 
 ## Unreleased
 
-Pending future changes.
+Release focus: remove internal duplication so the skill practices its own
+anti-bloat rules.
+
+Updated:
+
+- `SKILL.md` is now the single source of truth for the workflow;
+  `docs/workflow.md` is reduced to a pointer instead of a near-verbatim copy.
+- Removed repeated fact/inference-separation and proposed-status statements
+  inside `SKILL.md`; each rule is now stated once.
+- Scan Mode is explicitly lightweight: steps may merge, the separation
+  taxonomy collapses to four groups, and the compact architecture note itself
+  is the report instead of the full report structure.
+
+Fixed:
+
+- Removed stray Chinese characters in the Thai README usage section.
 
 ## v1.1.0 - Right-Sized Architecture Passes
 

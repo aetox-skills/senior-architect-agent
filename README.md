@@ -1,157 +1,121 @@
 # senior-architect-agent
 
-Current release: `v1.1.0 - Right-Sized Architecture Passes`
+รุ่นปัจจุบัน: `v1.1.0 — Right-Sized Architecture Passes`
 
-**This is not a documentation tool. It is a cognitive framework that turns AI agents into senior architects — forcing evidence-first thinking, honest uncertainty, and deep system understanding before action.**
+**นี่ไม่ใช่เครื่องมือทำเอกสาร มันคือ cognitive framework ที่เปลี่ยน AI agents ให้เป็น senior architects — บังคับ evidence-first thinking, ความไม่แน่นอนที่ซื่อสัตย์, และความเข้าใจระบบอย่างลึกซึ้งก่อนลงมือ**
 
-Senior Architect Agent is a cognitive discipline layer for AI agents. It transforms agents into architects who truly understand a system and can write that understanding down — separating what is known from what is inferred, naming uncertainty instead of hiding it, and producing maps that humans and future AI agents can trust.
+Senior Architect Agent คือชั้นระเบียบวินัยทางความคิดสำหรับ AI agents มันเปลี่ยน agents ให้เป็น architects ที่เข้าใจระบบจริงๆ และเขียนความเข้าใจนั้นออกมา — แยกสิ่งที่รู้กับสิ่งที่ inferred, ตั้งชื่อความไม่แน่นอนแทนที่จะซ่อนมัน, และสร้าง maps ที่มนุษย์และ AI agents ในอนาคตสามารถ trust ได้
 
-This project is a reusable AI agent skill that forces an agent to inspect,
-understand, question, map, document, and validate a software system or raw
-system idea before suggesting architecture changes or editing code.
+โปรเจกต์นี้เป็น AI agent skill ที่ใช้ซ้ำได้ — บังคับให้ agent inspect, เข้าใจ, ตั้งคำถาม, map, document, และ validate ระบบซอฟต์แวร์หรือไอเดียระบบดิบๆ ก่อนจะเสนอการเปลี่ยนแปลงสถาปัตยกรรมหรือแก้โค้ด
 
-Search terms this repository is meant to serve: `Senior Architect Agent`,
-`AI architecture skill`, `architecture mapping`, `existing system mapping`,
-`software architecture documentation`, `Mermaid architecture diagram`,
-`AI agent handoff`, `AI architecture reasoning`, `evidence-first AI`,
-`cognitive framework for AI agents`.
+คำค้นที่ Repository นี้ตั้งใจรองรับ: `Senior Architect Agent`, `AI architecture skill`, `architecture mapping`, `existing system mapping`, `software architecture documentation`, `Mermaid architecture diagram`, `AI agent handoff`, `AI architecture reasoning`, `evidence-first AI`, `cognitive framework for AI agents`
 
-Main slogan:
+สโลแกนหลัก:
 
-> An architect who truly understands the system and writes it down.  
-> Not a documentation generator — a cognitive framework that makes AI read before it draws.
+> สถาปนิกที่เข้าใจระบบจริงๆ และเขียนมันลงไป  
+> ไม่ใช่เครื่องสร้างเอกสาร — มันคือ cognitive framework ที่ทำให้ AI อ่านก่อนวาด
 
-Expanded direction:
+ทิศทางขยาย:
 
-> This skill helps AI agents unfold existing systems and raw ideas into
-> architecture maps that humans and future AI agents can understand, review,
-> and continue from.
+> Skill นี้ช่วยให้ AI agents คลี่คลายระบบที่มีอยู่และไอเดียดิบๆ ออกมาเป็น architecture maps ที่มนุษย์และ AI agents ในอนาคตสามารถเข้าใจ ตรวจสอบ และต่อยอดได้
 
 <p align="center">
   <a href="assets/visuals/from_powerful_models_to_elite_architects.png">
-    <img src="assets/visuals/from_powerful_models_to_elite_architects.png" alt="From powerful models to elite senior architect infographic showing models wearing the Senior Architect cognitive framework" width="980">
+    <img src="assets/visuals/from_powerful_models_to_elite_architects.png" alt="From powerful models to elite senior architect infographic แสดงโมเดลที่สวม Senior Architect cognitive framework" width="980">
   </a>
   <br>
-  <strong>From powerful models to elite senior architects</strong>: the skill
-  adds a disciplined cognitive framework around capable models.
+  <strong>From powerful models to elite senior architects</strong>: skill เพิ่มชั้น cognitive framework ที่มีระเบียบวินัยรอบโมเดลที่มีความสามารถ
 </p>
 
 <p align="center">
   <a href="assets/visuals/senior_architect_agent_workflow_infographic.png">
-    <img src="assets/visuals/senior_architect_agent_workflow_infographic.png" alt="Senior Architect Agent workflow infographic covering core workflow, mode selector, evidence gate, repository anatomy, output overview, and core flow animation" width="980">
+    <img src="assets/visuals/senior_architect_agent_workflow_infographic.png" alt="Senior Architect Agent workflow infographic ครอบคลุม core workflow, mode selector, evidence gate, repository anatomy, output overview, และ core flow animation" width="980">
   </a>
   <br>
-  <strong>Full workflow infographic</strong>: core flow, mode selection,
-  evidence gates, repository anatomy, and expected outputs.
+  <strong>Full workflow infographic</strong>: core flow, mode selection, evidence gates, repository anatomy, และ expected outputs
 </p>
 
 <p align="center">
   <a href="assets/visuals/senior_architect_agent_core_flow.gif">
-    <img src="assets/visuals/senior_architect_agent_core_flow.gif" alt="Senior Architect Agent animated core flow: intake, mode selection, inspection, classification, questioning, mapping, documentation, validation, and reporting" width="920">
+    <img src="assets/visuals/senior_architect_agent_core_flow.gif" alt="Senior Architect Agent animated core flow: intake, mode selection, inspection, classification, questioning, mapping, documentation, validation, และ reporting" width="920">
   </a>
   <br>
-  <strong>Core flow animation</strong>: inspect evidence, classify claims,
-  ask before mapping, then deliver traceable architecture output.
+  <strong>Core flow animation</strong>: inspect evidence, classify claims, ask before mapping, แล้ว deliver traceable architecture output
 </p>
 
-## Purpose
+## จุดประสงค์
 
-AI agents often edit code before they understand the architecture. They also
-turn raw ideas into confident designs too early.
+AI agents มักแก้โค้ดก่อนเข้าใจสถาปัตยกรรม และเปลี่ยนไอเดียดิบๆ เป็นดีไซน์ที่ confident เร็วเกินไป
 
-This skill adds a discipline layer:
+Skill นี้เพิ่มชั้นระเบียบวินัย:
 
-1. Inspect the real system first.
-2. Preserve user intent when no system exists yet.
-3. Separate confirmed facts, proposed architecture, assumptions, inferences,
-   open questions, risks, and decisions.
-4. Ask architecture-impacting questions before finalizing conclusions.
-5. Produce useful Markdown and Mermaid architecture maps.
-6. Leave handoff notes that future AI agents can use quickly.
-7. Avoid unsupported claims, decorative documentation, and overengineering.
+1. ตรวจสอบระบบจริงก่อน
+2. รักษาเจตนาของผู้ใช้เมื่อยังไม่มีระบบ
+3. แยก confirmed facts, proposed architecture, assumptions, inferences, open questions, risks, และ decisions
+4. ถามคำถามที่มีผลต่อสถาปัตยกรรมก่อนสรุป
+5. สร้าง Markdown และ Mermaid architecture maps ที่มีประโยชน์
+6. ทิ้ง handoff notes ที่ AI agents ในอนาคตใช้ได้ทันที
+7. หลีกเลี่ยง unsupported claims, decorative documentation, และ overengineering
 
-## Use When
+## ใช้เมื่อ
 
-- An AI agent must map an existing codebase or software system.
-- A project needs architecture documentation before code changes.
-- A team needs module maps, workflow maps, data-flow notes, or Mermaid diagrams.
-- A future AI agent needs handoff notes, risks, unknowns, and safe next actions.
-- A raw idea is connected to an existing system or broader architecture review.
+- AI agent ต้อง map existing codebase หรือระบบซอฟต์แวร์
+- โปรเจกต์ต้องการ architecture documentation ก่อนแก้โค้ด
+- ทีมต้องการ module maps, workflow maps, data-flow notes, หรือ Mermaid diagrams
+- AI agent ในอนาคตต้องการ handoff notes, risks, unknowns, และ safe next actions
+- ไอเดียดิบๆ เชื่อมโยงกับระบบที่มีอยู่หรือการ review สถาปัตยกรรมในวงกว้าง
 
-## Do Not Use When
+## **ไม่** ใช้เมื่อ
 
-- The task is a pure raw idea with no existing implementation and
-  `$idea-to-architecture-agent` is available.
-- The user only needs a small implementation fix with no architecture impact.
-- The output would become decorative documentation rather than useful context.
+- งานเป็นไอเดียดิบๆ ล้วนๆ ที่ไม่มี implementation และมี `$idea-to-architecture-agent` อยู่
+- ผู้ใช้ต้องการแค่ implementation fix เล็กๆ ที่ไม่มีผลต่อสถาปัตยกรรม
+- Output จะกลายเป็น decorative documentation แทนที่จะเป็น context ที่มีประโยชน์
 
-## Operating Modes
+## โหมดการทำงาน
 
 ### Existing System Mapping Mode
 
-Use this mode when project files, codebase structure, or existing documentation
-are available.
+ใช้เมื่อมี project files, codebase structure, หรือเอกสารที่มีอยู่
 
-The agent inspects what exists, maps real boundaries and responsibilities, and
-marks uncertainty instead of inventing missing architecture.
+Agent inspect สิ่งที่มี, map boundaries และ responsibilities ที่แท้จริง, และ mark ความไม่แน่นอนแทนที่จะ invent สถาปัตยกรรมที่หายไป
 
 ### Idea-to-Architecture Mode
 
-Use this mode when the user provides a raw idea, product concept, feature
-request, or business/system goal without an implementation.
+ใช้เมื่อผู้ใช้ให้ไอเดียดิบ, product concept, feature request, หรือเป้าหมายธุรกิจ/ระบบ ที่ยังไม่มี implementation
 
-The agent asks architecture-impacting questions, preserves the user's intent,
-states assumptions, and produces a reviewable proposal. All modules, workflows,
-data models, and integrations remain proposed until approved.
+Agent ถามคำถามที่มีผลต่อสถาปัตยกรรม, รักษาเจตนาของผู้ใช้, ระบุ assumptions, และสร้าง proposal ที่ตรวจสอบได้ ทุก module, workflow, data model, และ integrations ยังคงเป็น "เสนอ" จนกว่าจะได้รับการอนุมัติ
 
-## Related Skill Routing
+## การเลือกใช้ Skill ที่เกี่ยวข้อง
 
-When [`$idea-to-architecture-agent`](https://github.com/aetox-skills/idea-to-architecture-agent)
-is available, prefer it for pure raw ideas with no implementation context.
+เมื่อมี [`$idea-to-architecture-agent`](https://github.com/aetox-skills/idea-to-architecture-agent) อยู่ ให้ใช้มันสำหรับไอเดียดิบๆ ที่ไม่มี implementation context
 
-Use this skill for existing systems, mixed existing-system and proposal work,
-architecture boundaries, risk review, handoff notes, or when the dedicated idea
-skill is not installed. The sibling skill is optional; this project does not
-depend on it.
+ใช้ skill นี้สำหรับระบบที่มีอยู่, งานผสม existing-system และ proposal, architecture boundaries, risk review, handoff notes, หรือเมื่อ dedicated idea skill ไม่ได้ติดตั้ง
 
-Related skill:
+Skill ที่เกี่ยวข้อง:
 
-- [`idea-to-architecture-agent`](https://github.com/aetox-skills/idea-to-architecture-agent):
-  focused proposal discipline for raw ideas, product concepts, feature
-  requests, and business/system goals without an existing implementation.
+- [`idea-to-architecture-agent`](https://github.com/aetox-skills/idea-to-architecture-agent): proposal discipline สำหรับไอเดียดิบ, product concepts, feature requests, และเป้าหมายธุรกิจ/ระบบที่ไม่มี implementation
 
-## Release Direction
+## ทิศทาง Release
 
-`v1.0.0` established flagship content readiness:
+`v1.0.0` สร้าง content readiness หลัก:
 
-1. Define a strict, practical `SKILL.md` for both operating modes.
-2. Provide an operating workflow covering intake, mode selection,
-   inspection or idea extraction, classification, questioning, mapping,
-   documentation, validation, and reporting.
-3. Add compact rule files that prevent common AI agent failure modes.
-4. Add reusable templates for architecture outputs.
-5. Include small examples for existing-system mapping and idea-to-architecture
-   proposal behavior.
-6. Provide optional skill interface metadata without making the core skill
-   depend on it.
-7. Include SVG visual artifacts generated from Mermaid example diagrams when
-   they help review or presentation.
+1. กำหนด `SKILL.md` ที่เข้มงวดและใช้งานได้จริงสำหรับทั้งสองโหมด
+2. มี operating workflow ครอบคลุม intake, mode selection, inspection หรือ idea extraction, classification, questioning, mapping, documentation, validation, และ reporting
+3. เพิ่ม rule files ขนาดกะทัดรัดที่ป้องกัน failure modes ทั่วไปของ AI agents
+4. เพิ่ม templates ที่ใช้ซ้ำได้สำหรับ architecture outputs
+5. มีตัวอย่างเล็กๆ สำหรับ existing-system mapping และ idea-to-architecture proposal
+6. มี optional skill interface metadata โดยไม่ทำให้ core skill พึ่งพามัน
+7. รวม SVG visual artifacts ที่สร้างจาก Mermaid example diagrams
 
-This is content readiness for a skill: Markdown architecture docs, Mermaid
-diagram sources, optional SVG visual artifacts, rules, templates, and examples.
+`v1.1.0` เพิ่ม right-sized architecture pass control:
 
-`v1.1.0` adds right-sized architecture pass control:
+- `Scan Mode` สำหรับ architecture notes แบบกะทัดรัด
+- `Focus Mode` สำหรับงาน scoped module, workflow, subsystem, หรือ boundary
+- `Full Mode` สำหรับการ mapping ทั้งระบบ, future-agent handoff, ความเป็นเจ้าของไม่ชัดเจน, 3+ modules ที่ interact กัน, persistence, integrations, payment, authentication, security, deployment, หรือ major workflow changes
 
-- `Scan Mode` for compact architecture notes.
-- `Focus Mode` for scoped module, workflow, subsystem, or boundary work.
-- `Full Mode` for whole-system mapping, future-agent handoff, unclear
-  ownership, 3+ interacting modules, persistence, integrations, payment,
-  authentication, security, deployment, or major workflow changes.
+Skill เริ่มจาก smallest safe pass และเลื่อนระดับเมื่อ scope, evidence, risk, หรือ handoff needs ต้องการ
 
-The skill starts with the smallest safe pass and promotes only when scope,
-evidence, risk, or handoff needs require it.
-
-## File Tree
+## โครงสร้างไฟล์
 
 ```txt
 senior-architect-agent/
@@ -244,64 +208,44 @@ senior-architect-agent/
         ai-agent-notes.md
 ```
 
-## How To Use
+## วิธีใช้
 
-Use this skill when an AI agent is asked to understand a codebase, plan
-architecture changes, review system structure, document architecture, create
-handoff notes, propose redesigns, or turn a raw idea into an architecture
-proposal.
+ใช้ skill นี้เมื่อ AI agent ถูกขอให้เข้าใจ codebase, วางแผนการเปลี่ยนแปลงสถาปัตยกรรม, ตรวจสอบโครงสร้างระบบ, ทำเอกสารสถาปัตยกรรม, สร้าง handoff notes, เสนอ redesign, หรือเปลี่ยนไอเดียดิบเป็น architecture proposal
 
-When files exist, the agent should not begin with code edits. It should inspect
-the project, classify what exists, ask important questions, map the system,
-document confirmed facts and uncertainty, then report safe next steps.
+เมื่อมีไฟล์อยู่ agent ไม่ควรเริ่มด้วยการแก้โค้ด ควร inspect โปรเจกต์, classify สิ่งที่มี, ถามคำถามสำคัญ, map ระบบ, document confirmed facts และ uncertainty, แล้วรายงาน safe next steps
 
-Agents may use available inspection tools such as file search, file tree
-inspection, git history, validators, and Mermaid checks. Tool output is
-evidence to interpret, not architecture by itself.
+Agents อาจใช้ inspection tools เช่น file search, file tree inspection, git history, validators, และ Mermaid checks Tool output เป็น evidence ที่ต้องตีความ ไม่ใช่สถาปัตยกรรมในตัวมันเอง
 
-When only an idea exists, the agent should not pretend a system exists. It
-should clarify intent, mark assumptions, propose architecture, identify
-tradeoffs, and list decisions requiring approval.
+เมื่อมีแค่ไอเดีย agent ไม่ควรทำเป็นว่าระบบมีอยู่ ควร clarify intent, mark assumptions, propose architecture, ระบุ tradeoffs, และแจกแจง decisions ที่ต้องได้รับการอนุมัติ
 
-## Model Requirements
+## ข้อกำหนดโมเดล
 
-This skill is intended for models that can hold long context, follow
-instructions across multiple gates, and reason through evidence before
-reporting.
+Skill นี้เหมาะกับโมเดลที่สามารถ hold long context, follow instructions ผ่านหลาย gates, และ reasoning ผ่าน evidence ก่อนรายงาน
 
-For normal use, prefer a model with at least 128K context and strong
-instruction following. Use 32K only for small `Scan Mode` tasks. Use 200K or
-more for large multi-service or multi-repo systems.
+สำหรับการใช้งานปกติ แนะนำโมเดลที่มี context อย่างน้อย 128K และ instruction following ที่แข็งแรง ใช้ 32K สำหรับ `Scan Mode` เล็กๆ เท่านั้น ใช้ 200K+ สำหรับระบบ multi-service หรือ multi-repo ขนาดใหญ่
 
-This skill is designed for models that can think through architecture gates,
-not just produce quick summaries. See [Model Requirements](docs/model-requirements.md).
+Skill นี้ถูกออกแบบมาสำหรับโมเดลที่สามารถคิดผ่าน architecture gates ไม่ใช่แค่ produce quick summaries ดู [Model Requirements](docs/model-requirements.md)
 
-## Preferred Outputs
+## Output ที่แนะนำ
 
-Use Markdown first. Use Mermaid diagrams when diagrams help.
+ใช้ Markdown ก่อน ใช้ Mermaid diagrams เมื่อ diagram ช่วยได้
 
-Mermaid is the editable source of truth for diagrams.
+Mermaid เป็น editable source of truth สำหรับ diagrams
 
-SVG visual artifacts may be included when they make architecture easier to
-review or present. SVG files are generated artifacts and must not replace
-Markdown and Mermaid as source of truth.
+SVG visual artifacts อาจรวมเมื่อทำให้สถาปัตยกรรมตรวจสอบหรือนำเสนอได้ง่ายขึ้น SVG files เป็น generated artifacts และต้องไม่แทนที่ Markdown และ Mermaid ในฐานะ source of truth
 
-`agents/openai.yaml` is lightweight interface metadata only. The core skill
-does not depend on it.
+`agents/openai.yaml` เป็นแค่ lightweight interface metadata เท่านั้น core skill ไม่ได้พึ่งพามัน
 
-## Example Outputs
+## ตัวอย่าง Output
 
-- Existing system example:
-  [`examples/basic-web-app/output/`](examples/basic-web-app/output/)
-- Idea-to-architecture example:
-  [`examples/idea-to-architecture/output/`](examples/idea-to-architecture/output/)
+- Existing system example: [`examples/basic-web-app/output/`](examples/basic-web-app/output/)
+- Idea-to-architecture example: [`examples/idea-to-architecture/output/`](examples/idea-to-architecture/output/)
 
-## Install
+## การติดตั้ง
 
-See [INSTALL.md](INSTALL.md) for Codex, Claude Code, Antigravity, AGENTS.md,
-and manual installation notes.
+ดู [INSTALL.md](INSTALL.md) สำหรับ Codex, Claude Code, Antigravity, AGENTS.md, และ manual installation
 
-Install this Codex skill from:
+ติดตั้ง Codex skill นี้จาก:
 
 ```txt
 aetox-skills/senior-architect-agent
