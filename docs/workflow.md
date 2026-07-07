@@ -8,8 +8,7 @@ Core flow:
 
 ```txt
 Intake
--> Select Mode
--> Inspect or Extract Idea
+-> Inspect
 -> Classify
 -> Question
 -> Map
@@ -21,14 +20,14 @@ Intake
 For step-by-step guidance, checkpoint gates, pass levels, artifact budgets,
 and the validation gate, read `SKILL.md`:
 
-- Step 1: Intake, early exit rule, right-sized pass control
-- Step 2: Select Mode
-- Step 3: Inspect or Extract Idea, inspection budget
-- Step 4: Classify
-- Step 5: Question, loopback rule
-- Step 6: Map
-- Step 7: Document, artifact budget
-- Step 8: Validate
-- Step 9: Report
+- Step 1: Intake, sibling-skill routing, early exit rule, right-sized pass
+  control
+- Step 2: Inspect, inspection budget
+- Step 3: Classify
+- Step 4: Question, loopback rule
+- Step 5: Map
+- Step 6: Document, artifact budget
+- Step 7: Validate
+- Step 8: Report
 
 Deeper guidance stays in `rules/` and `docs/anti-patterns.md`.

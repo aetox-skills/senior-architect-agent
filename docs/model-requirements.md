@@ -38,7 +38,7 @@ small Scan Mode tasks when the agent keeps output compact.
 
 Smaller or weaker models often fail in predictable places:
 
-- Step 4 to Step 6: forgetting classification before mapping and inventing
+- Step 3 to Step 5: forgetting classification before mapping and inventing
   diagram nodes.
 - Validation gate: guessing the intake scope instead of comparing it to the
   final scope.

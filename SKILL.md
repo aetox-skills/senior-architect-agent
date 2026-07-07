@@ -4,8 +4,8 @@ description: >-
   Cognitive framework that transforms AI agents into senior architects —
   evidence-first system understanding, honest uncertainty mapping,
   and architecture reasoning before action. Use when an agent must
-  understand a codebase, map architecture, produce handoff notes,
-  propose changes, or turn an idea into a reviewable proposal
+  understand an existing codebase, map architecture, produce handoff
+  notes, or review proposed changes against real system evidence
   without guessing.
 ---
 
@@ -21,31 +21,34 @@ and optional SVG visual artifacts.
 
 Expanded direction:
 
-> This skill helps AI agents unfold existing systems and raw ideas into
-> architecture maps that humans and future AI agents can understand, review,
-> and continue from.
+> This skill helps AI agents unfold existing systems into architecture maps
+> that humans and future AI agents can understand, review, and continue from.
 
 Require inspection, classification, questioning, mapping, documentation,
 validation, and reporting before architecture recommendations or code edits.
 
-This skill supports both existing systems and raw ideas. In both cases, the
-agent must separate what is known from what is inferred, proposed, unknown, or
-awaiting approval.
+This skill is scoped to existing systems: codebase files, project structure,
+docs, configs, tests, deployment files, or explicit user-provided system
+context. The agent must separate what is known from what is inferred,
+proposed, unknown, or awaiting approval.
 
 Sibling skill routing:
 
-If the request is a pure raw idea and `$idea-to-architecture-agent` is
-available, prefer that dedicated sibling skill. Continue with this skill when
-the idea is tied to existing system evidence, requires broader architecture
-mapping, needs boundary/risk/handoff work, or the dedicated skill is
-unavailable. Do not make this skill depend on the sibling skill.
+If the request is a pure raw idea with no implementation and no existing
+system evidence, route to `$idea-to-architecture-agent`. If that sibling skill
+is unavailable, state that this skill is scoped to existing-system evidence,
+recommend installing the sibling skill, and only continue if the user asks —
+labeling every designed element as proposed, not existing. Do not make this
+skill depend on the sibling skill.
 
-Core flow for both modes:
+When an idea is tied to an existing system, use this skill: map the existing
+system first, then mark new elements as proposed changes.
+
+Core flow:
 
 ```txt
 Intake
--> Select Mode
--> Inspect or Extract Idea
+-> Inspect
 -> Classify
 -> Question
 -> Map
@@ -69,8 +72,7 @@ Intake
 9. Avoid document bloat. Create only the files needed for the system's
    complexity.
 10. Refuse unsupported claims.
-11. When starting from an idea, never present proposed architecture as existing
-    implementation.
+11. Never present proposed changes as existing implementation.
 12. Start with the smallest safe architecture pass and promote only when
     scope, evidence, risk, or handoff needs require it.
 13. Use available inspection tools as evidence helpers, not as replacements for
@@ -84,32 +86,20 @@ Intake
 
 Use these gates to keep the flow enforceable:
 
-- Intake gate: mode, initial scope, selected pass level, and output path are
-  recorded, or an early exit is declared when no architecture pass is needed.
-- Inspection gate: evidence or user intent is recorded, with inspection
-  limitations when something cannot be verified.
+- Intake gate: initial scope, selected pass level, and output path are
+  recorded, or an early exit is declared when no architecture pass is needed,
+  or the request is routed to the sibling skill.
+- Inspection gate: evidence or user-provided system context is recorded, with
+  inspection limitations when something cannot be verified.
 - Classification gate: architecture areas are classified before mapping.
 - Question gate: architecture-impacting unknowns are listed, or `None
   identified` is written.
-- Mapping gate: maps and diagrams are traceable to evidence, user intent,
-  assumptions, or proposed status.
-- Validation gate: answer the three validation questions in Step 8 before
+- Mapping gate: maps and diagrams are traceable to evidence, user-provided
+  facts, assumptions, or proposed status.
+- Validation gate: answer the three validation questions in Step 7 before
   reporting.
 
-## Operating Modes
-
-Choose the mode before producing architecture output.
-
-### Existing System Mapping Mode
-
-Use this mode when codebase files, project structure, existing documentation,
-configs, tests, or deployment files are available.
-
-Goal:
-
-- Inspect and map what exists before suggesting changes.
-
-Discipline:
+## Discipline
 
 - Evidence-first.
 - Confirm claims from files or user-provided context.
@@ -117,6 +107,7 @@ Discipline:
 - Do not invent missing backend, database, infrastructure, AI service, or
   external service.
 - Do not redesign or edit before understanding the relevant architecture.
+- Mark suggested changes as proposed until the owner approves them.
 
 Primary outputs:
 
@@ -132,51 +123,21 @@ Primary outputs:
 - Mermaid diagrams
 - SVG visual artifacts when useful for presentation or review
 
-### Idea-to-Architecture Mode
-
-Use this mode when the user provides a raw idea, product concept, feature
-request, business goal, or system goal without an existing implementation.
-
-Goal:
-
-- Transform the idea into a reviewable architecture proposal.
-
-Discipline:
-
-- Question-first.
-- Proposal-first.
-- Preserve the user's intent.
-- Ask architecture-impacting questions.
-- Mark all assumptions clearly.
-- Produce a useful first architecture draft using explicit assumptions.
-- Mark all modules, workflows, data models, integrations, and boundaries as
-  proposed until approved.
-- Explain tradeoffs and decisions requiring approval.
-
-Primary outputs:
-
-- Idea brief
-- Architecture proposal
-- Module proposal
-- Workflow proposal
-- Data model draft
-- Decision options
-- Open questions
-- Risk register
-- AI agent notes
-- Mermaid diagrams
-- SVG visual artifacts when useful for presentation or review
-
 ## Step 1: Intake
 
 Read the user's request and identify available inputs:
 
 - Existing files, project structure, docs, configs, tests, or deployment files
-- Raw idea, product concept, feature request, or business/system goal
 - Explicit constraints, priorities, and requested outputs
 - The narrowest useful project area or module scope
 
 Do not start with architecture conclusions.
+
+Routing rule:
+
+If the request is a pure raw idea with no implementation and no existing
+system evidence, apply the sibling skill routing above instead of running this
+flow.
 
 Prefer module-level mapping when the user asks about one module or workflow.
 Avoid whole-system mapping unless the request, risk, or handoff need justifies
@@ -222,40 +183,17 @@ Promotion gate:
 - State the risk of staying in the smaller pass.
 - Keep the current pass if the trigger is speculative.
 
-## Step 2: Select Mode
+## Step 2: Inspect
 
-Choose one operating mode:
-
-- Existing System Mapping Mode when existing project evidence is available.
-- Idea-to-Architecture Mode when no implementation is available.
-
-If `$idea-to-architecture-agent` is available and the request is only a raw
-idea with no implementation context, prefer that sibling skill for the focused
-proposal work.
-
-If both exist, map the existing system first and mark new ideas as proposed
-changes.
-
-Use this skill for mixed existing-system and proposal work, broader
-architecture mapping, boundary analysis, risk review, or future-agent handoff.
-
-## Step 3: Inspect or Extract Idea
-
-Inspect available evidence.
-
-For Existing System Mapping Mode, inspect project files, folders, docs,
-configs, tests, package manifests, build scripts, deployment files, naming
-patterns, and architecture signals.
+Inspect available evidence: project files, folders, docs, configs, tests,
+package manifests, build scripts, deployment files, naming patterns, and
+architecture signals.
 
 Reuse existing architecture context before re-mapping. Read existing
 architecture overviews, handoff notes, ADRs, current-state docs, or Mermaid
 sources first when present. Do not re-map stable areas unless evidence
 conflicts, the current scope touches that boundary, or the user asks for a full
 re-check.
-
-For Idea-to-Architecture Mode, inspect the user's stated idea, goals,
-constraints, user types, domain terms, requested features, and implied
-boundaries. Do not treat the idea as an existing implementation.
 
 Minimum inspection targets when available:
 
@@ -287,12 +225,12 @@ evidence to interpret, not as architecture by itself.
 Record only what is visible from files, explicitly provided by the user, or
 clearly labeled as assumption.
 
-If evidence or user intent is missing for an important area, record the
-inspection limitation instead of filling the gap with a guess.
+If evidence or user-provided context is missing for an important area, record
+the inspection limitation instead of filling the gap with a guess.
 
-## Step 4: Classify
+## Step 3: Classify
 
-Classify the system or proposed system into applicable areas:
+Classify the system into applicable areas:
 
 - Frontend
 - Backend
@@ -304,14 +242,11 @@ Classify the system or proposed system into applicable areas:
 - Tests and quality gates
 - Unknown or unclear areas
 
-In Existing System Mapping Mode, mark missing categories as not observed.
-
-In Idea-to-Architecture Mode, mark categories as proposed, assumed, unknown, or
-not in scope. Do not present proposed architecture as confirmed fact.
+Mark missing categories as not observed.
 
 Do not map before classification is complete.
 
-## Step 5: Question
+## Step 4: Question
 
 Identify architecture-impacting unknowns before finalizing architecture.
 
@@ -325,7 +260,7 @@ Separate:
 
 - Confirmed facts
 - Reasonable inferences
-- Proposed architecture
+- Proposed changes
 - Assumptions
 - Open questions
 - Risks
@@ -343,11 +278,11 @@ only in Focus Mode and Full Mode.
 Loopback rule:
 
 If mapping, documentation, or validation exposes an architecture-changing
-unknown, return to Step 5 before final conclusions. Either ask the question or
+unknown, return to Step 4 before final conclusions. Either ask the question or
 mark the output as incomplete and proceed only with a clearly labeled
 assumption.
 
-## Step 6: Map
+## Step 5: Map
 
 Produce maps that help humans and future AI agents understand the system
 quickly.
@@ -364,7 +299,7 @@ identified` where nothing was found.
 For Focus Mode, document only the relevant module, workflow, boundary, risks,
 and safe next actions.
 
-For existing systems, use the smallest useful set:
+Use the smallest useful set:
 
 - Architecture overview
 - System boundary
@@ -372,15 +307,6 @@ For existing systems, use the smallest useful set:
 - Data flow
 - Workflow map
 - File responsibility map
-
-For raw ideas, use the smallest useful proposal set:
-
-- Idea brief
-- Architecture proposal
-- Module proposal
-- Workflow proposal
-- Data model draft
-- Decision options
 
 Use Mermaid for diagrams only when requested, required for handoff, or needed
 to clarify cross-module relationships.
@@ -402,7 +328,7 @@ truth.
 Do not include untraceable components in maps or diagrams. Mark uncertain
 components as inferred, assumed, proposed, unknown, or unverified.
 
-## Step 7: Document
+## Step 6: Document
 
 Use templates from `templates/` when creating architecture outputs:
 
@@ -416,12 +342,6 @@ Use templates from `templates/` when creating architecture outputs:
 - `risk-register.md`
 - `ai-agent-notes.md`
 - `decision-record.md`
-- `idea-brief.md`
-- `architecture-proposal.md`
-- `module-proposal.md`
-- `workflow-proposal.md`
-- `data-model-draft.md`
-- `decision-options.md`
 
 Do not create every template by default.
 
@@ -439,7 +359,7 @@ If output exceeds the budget, state why before creating extra artifacts.
 must remain usable from `SKILL.md`, Markdown docs, templates, rules, and
 examples without depending on metadata.
 
-## Step 8: Validate
+## Step 7: Validate
 
 Before reporting, answer these three validation questions:
 
@@ -464,7 +384,7 @@ Use evidence strength for important claims:
 Use `Verify first: Yes` for claims that humans or future agents should check
 before relying on them.
 
-Also confirm that proposed elements are labeled as proposed until approved,
+Also confirm that proposed changes are labeled as proposed until approved,
 diagrams match the written map, SVG artifacts match their Mermaid source, and
 documentation is lean enough to maintain.
 
@@ -479,9 +399,9 @@ Also confirm:
 - Architecture-changing unknowns found after mapping looped back to questions
   or are clearly labeled as assumptions.
 
-## Step 9: Report
+## Step 8: Report
 
-In Scan Mode, the compact architecture note from Step 6 is the report. Do not
+In Scan Mode, the compact architecture note from Step 5 is the report. Do not
 add the full structure below on top of it.
 
 For Focus Mode and Full Mode, report with this structure:
@@ -490,7 +410,7 @@ For Focus Mode and Full Mode, report with this structure:
 2. Selected pass level and why
 3. Confirmed architecture facts
 4. Reasonable inferences
-5. Proposed architecture and assumptions, if working from an idea
+5. Proposed changes and assumptions, when changes are suggested
 6. Open questions
 7. Risks or unclear boundaries
 8. Decisions requiring approval

@@ -2,8 +2,27 @@
 
 ## Unreleased
 
-Release focus: remove internal duplication so the skill practices its own
-anti-bloat rules.
+Release focus: single-core scope and internal deduplication so the skill
+practices its own anti-bloat rules.
+
+Removed (breaking):
+
+- Idea-to-Architecture Mode. Pure raw-idea work is now always routed to the
+  sibling skill `idea-to-architecture-agent`. If the sibling skill is not
+  installed, the agent states the scope limitation instead of running a
+  built-in idea workflow.
+- Idea-mode templates: `idea-brief.md`, `architecture-proposal.md`,
+  `module-proposal.md`, `workflow-proposal.md`, `data-model-draft.md`,
+  `decision-options.md`.
+- The `examples/idea-to-architecture/` example package.
+- The `Select Mode` step. With one scope there is nothing to select; the core
+  flow is now 8 steps (`Intake -> Inspect -> Classify -> Question -> Map ->
+  Document -> Validate -> Report`) and raw-idea routing happens during intake.
+
+Still supported:
+
+- Mixed work where a new idea is tied to an existing system: map the existing
+  system first, then mark new elements as proposed changes until approved.
 
 Updated:
 
@@ -14,6 +33,11 @@ Updated:
 - Scan Mode is explicitly lightweight: steps may merge, the separation
   taxonomy collapses to four groups, and the compact architecture note itself
   is the report instead of the full report structure.
+- The Thai directional core document, README, docs, and interface metadata now
+  reflect the single existing-system scope.
+- `assets/visuals/01_core_workflow.mmd` matches the 8-step flow. The rendered
+  workflow infographic and core-flow GIF still show the old 9-step flow and
+  need regeneration.
 
 Fixed:
 

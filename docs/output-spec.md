@@ -9,7 +9,7 @@ Every architecture output should separate the categories that apply:
 - Confirmed architecture
 - Confirmed facts
 - Reasonable inferences
-- Proposed architecture
+- Proposed changes
 - Assumptions
 - Open questions
 - Risks
@@ -97,19 +97,16 @@ If output exceeds the budget, state why.
 
 ## Compact Architecture Note
 
-Use this shape for Scan Mode:
+Use this shape for Scan Mode, matching `SKILL.md` Step 5:
 
 - Pass level and reason
 - Scope
 - Evidence checked
 - Skipped areas, or `None identified`
 - Confirmed facts
-- Reasonable inferences
-- Assumptions, or `None identified`
+- Inferences or assumptions, or `None identified`
 - Open questions, or `None identified`
 - Risks, or `None identified`
-- Decisions requiring approval, or `None identified`
-- Validation gate answers
 - Safe next actions
 
 For a small existing system, the minimum useful output is usually:
@@ -133,23 +130,6 @@ changes, external integrations, payment or billing logic, authentication,
 authorization, security boundaries, deployment or infrastructure changes, major
 workflow changes, unclear ownership or module boundaries, 3+ interacting
 modules, or explicit future-agent handoff.
-
-For a small raw idea, the minimum useful output is usually:
-
-- Idea brief
-- Architecture proposal
-- Open questions
-- AI agent notes
-
-For larger ideas, add:
-
-- Module proposal
-- Workflow proposal
-- Data model draft
-- Decision options
-- Risk register
-- Mermaid diagram when requested, required for handoff, or needed to clarify
-  cross-module relationships
 
 ## SVG Visual Artifact
 
@@ -198,17 +178,4 @@ Inference:
   `next.config.*` are present.
 Open question:
   Which deployment platform is production?
-```
-
-Idea-mode example:
-
-```txt
-Confirmed:
-  The user wants member discounts and payments.
-Assumption:
-  Members need accounts to receive discounts.
-Proposed:
-  Add a booking service, payment integration, and admin management module.
-Requires approval:
-  Whether coaches are bookable resources, service providers, or both.
 ```
