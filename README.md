@@ -82,6 +82,8 @@ Agent inspect สิ่งที่มี, map boundaries และ responsibili
 
 หลัง map แล้ว agent ต้อง assess: ชี้ architecture debt, โค้ดที่หลุด convention, boundary ที่รั่ว, และ flow ที่ขัดแย้ง โดยทุก finding ต้องมีหลักฐาน impact severity และแนวทางแก้ที่เล็กที่สุด (mark เป็น proposed) — ตัดสินจาก convention ของ framework และ pattern หลักของโปรเจกต์เท่านั้น ไม่ใช่รสนิยมส่วนตัว ถ้าไม่พบปัญหาจริงให้เขียน `None identified` ไม่ต้อง invent findings
 
+เมื่อมี codebase intelligence MCP (dependency graph) agent ใช้ graph query ช่วยเร่งการ map dependency chains, หา circular dependencies, และวัด blast radius ของการเปลี่ยนแปลง — เป็น optional enhancement เท่านั้น: graph คือเครื่องนำทาง ไม่ใช่ตัวแทนการอ่านโค้ดจริง เมื่อ graph ขัดกับไฟล์จริงให้ยึดไฟล์ และเมื่อไม่มี MCP skill ทำงานตาม flow เดิมได้ครบทุกขั้น
+
 ## การเลือกใช้ Skill ที่เกี่ยวข้อง
 
 ไอเดียดิบๆ ที่ไม่มี implementation context เป็นหน้าที่ของ [`$idea-to-architecture-agent`](https://github.com/aetox-skills/idea-to-architecture-agent) ถ้ายังไม่ได้ติดตั้ง agent ควรแจ้งข้อจำกัดและแนะนำให้ติดตั้ง แทนที่จะทำงานนอกขอบเขตของ skill นี้
@@ -94,10 +96,11 @@ Skill ที่เกี่ยวข้อง:
 
 ## ทิศทาง Release
 
-รุ่นถัดไป (unreleased) มีการเปลี่ยนแปลงหลักสองเรื่อง ดูรายละเอียดใน [CHANGELOG.md](CHANGELOG.md):
+รุ่นนี้มีการเปลี่ยนแปลงหลักสามเรื่อง ดูรายละเอียดใน [CHANGELOG.md](CHANGELOG.md):
 
 1. ตัด Idea-to-Architecture Mode ออกจาก skill นี้ งานไอเดียดิบทั้งหมด route ไปที่ sibling skill `idea-to-architecture-agent` เพื่อให้ skill นี้โฟกัสแก่นเดียว: เข้าใจระบบที่มีอยู่จริงแล้วกางออกมาเป็นเอกสารที่ตรวจสอบได้
 2. เพิ่ม `Assess` step เข้า core flow: ซีเนียร์ไม่หยุดที่การบรรยาย ต้องชี้ architecture debt, convention drift, boundary violations, และ flow conflicts พร้อมหลักฐาน มาพร้อม `rules/assessment-rules.md` และ template `debt-register.md`
+3. เพิ่ม knowledge-graph-assisted mapping และ assessment แบบ optional: เมื่อมี codebase intelligence MCP agent ใช้ graph query เร่งการ map dependency chains และใช้ graph cycles, fan-in outliers, layer violations เป็น signal ป้อน assessment dimensions เดิม โดย graph data เข้า evidence taxonomy เดิมและ file reading ชนะเสมอเมื่อขัดแย้งกัน — ไม่มี MCP ก็ทำงานตาม flow เดิมได้ครบ
 
 `v1.0.0` สร้าง content readiness หลัก:
 

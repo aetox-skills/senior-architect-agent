@@ -3,7 +3,8 @@ name: senior-architect-agent
 description: >-
   Cognitive framework that transforms AI agents into senior architects —
   evidence-first system understanding, honest uncertainty mapping,
-  architecture debt and convention assessment, and architecture
+  architecture debt and convention assessment, knowledge-graph-assisted
+  dependency mapping, impact and blast radius analysis, and architecture
   reasoning before action. Use when an agent must understand an
   existing codebase, map architecture, surface debt and boundary
   violations, produce handoff notes, or review proposed changes
@@ -243,8 +244,10 @@ Inspection budget for large repositories:
 - Go deeper only when evidence, risk, or the selected scope requires it.
 
 Use available inspection tools such as file search, file tree inspection, git
-history, validators, and Mermaid checks when they help. Treat tool output as
-evidence to interpret, not as architecture by itself.
+history, validators, Mermaid checks, and codebase graph queries when they
+help. When a graph tool is available, listing modules with their consumers
+early can reveal high-impact inspection targets and shared coupling. Treat
+tool output as evidence to interpret, not as architecture by itself.
 
 Record only what is visible from files, explicitly provided by the user, or
 clearly labeled as assumption.
@@ -352,6 +355,34 @@ truth.
 Do not include untraceable components in maps or diagrams. Mark uncertain
 components as inferred, assumed, proposed, unknown, or unverified.
 
+Knowledge-Graph-Assisted Mapping (optional):
+
+When a codebase intelligence MCP is available, query dependency and caller
+data to accelerate mapping. Graph-derived data maps into the existing
+evidence-strength taxonomy:
+
+- Static-analysis-resolved relationships: `Direct`, with source noted as
+  `[from graph: <tool>]`
+- Heuristic or estimated relationships: `Inferred` + `Verify first: Yes`
+
+When graph output and file reading conflict, file reading wins. Code is the
+source of truth; graph data may be stale or incomplete.
+
+Useful graph queries during mapping:
+
+- Module dependency chains from entry point to persistence.
+- Caller lists for key functions or modules — the blast radius of a change.
+- Shared modules with high consumer counts (inspect further; not a finding
+  by itself).
+- Validation of the manually built map: divergence between the map and
+  graph data is a signal to re-inspect, and file reading decides.
+
+Always cross-check critical graph findings with direct file reading. Graph is
+a navigation aid, not a replacement for architectural judgment (Rule 13).
+
+If no graph tool is available, map with file search and file reads as usual —
+the mapping discipline is unchanged.
+
 ## Step 6: Assess
 
 Judge what was mapped. Describing the system is not the end of senior work —
@@ -396,6 +427,33 @@ What is not a finding:
 - Hypothetical scaling or "best practice" concerns with no evidence of impact
   in this system.
 - Anything the agent cannot trace to inspected evidence.
+
+Graph-Derived Signals (when available):
+
+Codebase intelligence data feeds into the existing assessment dimensions — it
+does not create new ones. Treat graph results as signals that accelerate
+inspection, not as findings that skip the finding shape.
+
+- Circular dependencies (graph cycles): a candidate for the `Flow conflicts`
+  dimension. Must still state evidence, impact, severity, and confidence
+  through the standard finding shape. A circular dependency between two
+  modules that the language tolerates may be `Medium`; one that breaks
+  correctness is `Critical`. No severity is pre-assigned.
+- Layer boundary violations (a graph edge that bypasses declared layers, such
+  as UI importing persistence directly): a candidate for `Separation of
+  concerns`. Cross-check with file reading before filing.
+- High-consumer modules (fan-in outlier in this codebase): a signal to
+  inspect — not a finding. Shared utilities are designed to have high fan-in.
+  Inspect whether the coupling is structural or incidental; file a finding
+  only when evidence confirms harm.
+- Zero consumers in graph: `Inferred` + `Verify first: Yes`. Graph cannot
+  detect dynamic imports, dependency injection containers, reflection, or
+  public API surfaces. An unreferenced export is not dead code until
+  confirmed by search and human judgment.
+
+All graph-derived findings follow the same confidence taxonomy
+(`Direct`/`Inferred`/`Verify first: Yes`) and the same finding shape as
+file-derived findings. Graph does not bypass assessment discipline.
 
 Depth follows the pass level: in Scan Mode, report only findings that
 inspection already surfaced; in Focus Mode, assess the scoped module's

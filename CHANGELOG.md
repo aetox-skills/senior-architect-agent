@@ -21,6 +21,14 @@ Added:
 - `templates/debt-register.md` and an example debt register in
   `examples/basic-web-app/output/`.
 - Anti-patterns: `Map Without Judgment` and `Unsupported Criticism`.
+- Knowledge-graph-assisted mapping and assessment (optional). When a codebase
+  intelligence MCP is available, Step 5 uses dependency and caller queries to
+  accelerate mapping, and Step 6 treats graph cycles, layer-crossing edges,
+  fan-in outliers, and zero-consumer exports as signals feeding the existing
+  assessment dimensions — no new finding category. Graph data maps into the
+  existing evidence-strength taxonomy (`Direct`/`Inferred` + `Verify first:
+  Yes`), severity is never pre-assigned, and file reading wins when graph and
+  source disagree. Without such a tool, the flow is unchanged.
 
 Removed (breaking):
 

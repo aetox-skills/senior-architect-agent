@@ -73,3 +73,11 @@ Every finding records:
 Do not promote the pass level just to hunt for more findings. If evidence
 suggests deeper problems outside the current scope, record that as an open
 question or recommended next inspection instead.
+
+## Graph-Derived Signals
+
+When codebase graph data is available, its signals feed into the same
+dimensions, finding shape, and confidence taxonomy above — no parallel
+system. Graph does not pre-assign severity, bypass `Verify first: Yes` for
+heuristic results, or turn fan-in outliers into findings without inspected
+impact. When graph data and a file read disagree, the file read wins.
