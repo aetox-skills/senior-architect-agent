@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.0.0
 
 Release focus: single-core scope, internal deduplication, and senior-level
 assessment — the skill now judges systems, not just describes them.
