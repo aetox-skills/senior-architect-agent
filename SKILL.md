@@ -68,6 +68,8 @@ Intake
 
 ## Operating Rules
 
+0. Default to Scan Mode. Promotion to Focus or Full Mode requires inspected
+   evidence, a named trigger, and a stated risk — never promote on speculation.
 1. Never design before inspecting the real system.
 2. Never modify code before understanding the relevant architecture.
 3. Never assume silently.
