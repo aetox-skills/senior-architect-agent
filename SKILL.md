@@ -100,6 +100,9 @@ Intake
 18. Findings are observations, not a redesign license. Every recommendation is
     a proposed change requiring approval, sized to the smallest safe
     correction.
+19. Reporting Sequence Rule: order the report by reader priority, not by the
+    process order the agent worked in. Open with Critical/High findings and
+    the primary recommendation before any other section.
 
 ## Checkpoint Gates
 
@@ -542,13 +545,26 @@ Also confirm:
 In Scan Mode, the compact architecture note from Step 5 is the report. Do not
 add the full structure below on top of it.
 
-For Focus Mode and Full Mode, report with this structure:
+For Focus Mode and Full Mode, report in two layers per the Reporting
+Sequence Rule (Rule 19): reader priority first, process order second.
+
+Layer 1 — Synthesis (always required, 3-5 lines, opens the report):
+
+- Critical/High findings, each with its evidence reference
+- The primary recommendation
+
+If no Critical/High findings exist, state that plainly and lead with the
+primary recommendation instead.
+
+Layer 2 — Detail on demand (unchanged content, give only when the user asks
+for detail or a checkpoint gate requires it in writing):
 
 1. What was inspected
 2. Selected pass level and why
 3. Confirmed architecture facts
 4. Reasonable inferences
 5. Findings: debt, convention drift, boundary violations, flow conflicts
+   (full list, including Medium/Low)
 6. Proposed changes and assumptions, when changes are suggested
 7. Open questions
 8. Risks or unclear boundaries
